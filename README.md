@@ -1,2 +1,3 @@
-# Repository-TutoringCenter
-TutoringCenter - Tutoring Database Web Application
+# TutoringCenter - Tutoring Database Web Application
+
+The README file will soon be updated.
