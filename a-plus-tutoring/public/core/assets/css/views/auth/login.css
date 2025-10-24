@@ -1,0 +1,91 @@
+/* LOGIN VIEW CONTAINER */
+.div-login-view-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    width: 90%;
+    max-width: 64rem;
+    padding: 2.4rem;
+    background-color: var(--white);
+    box-shadow: 0 0.8rem 1.6rem rgba(0, 0, 0, 0.1);
+    border-radius: 1.2rem;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+}
+
+/* LOGIN VIEW LOGO CONTAINER */
+.div-login-view-logo-container {
+    position: absolute;
+    top: -6.4rem;
+    left: -6.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 12.8rem;
+    aspect-ratio: 1 / 1;
+    background-color: var(--primary);
+    transform: rotate(45deg);
+}
+
+.div-login-view-logo-container img {
+    position: absolute;
+    right: 1.2rem;
+    width: 24%;
+    transform: rotate(-45deg);
+}
+
+/* HEADER LOGIN VIEW CONTAINER */
+.header-login-view-container {
+    text-align: center;
+}
+
+.header-login-view-container h2 {
+    font-size: 2rem;
+}
+
+.header-login-view-container p {
+    font-size: 1.4rem;
+}
+
+.header-login-view-container span {
+    color: var(--primary);
+}
+
+/* LOGIN VIEW FORM */
+.form-login-view {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    width: 80%;
+}
+
+/* FOOTER LOGIN VIEW CONTAINER */
+.footer-login-view-container {
+    position: relative;
+    width: 100%;
+    padding-top: 1.2rem;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.footer-login-view-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 80%;
+    height: 0.2rem;
+    background-color: var(--primary-tint);
+    border-radius: 0 0 0.4rem 0.4rem;
+    transform: translateX(-50%);
+}
+
+.footer-login-view-container p a:link,
+.footer-login-view-container p a:visited {
+    color: var(--primary);
+}
