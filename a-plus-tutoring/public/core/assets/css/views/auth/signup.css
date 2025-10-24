@@ -1,0 +1,99 @@
+/* SIGNUP VIEW CONTAINER */
+.div-signup-view-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    width: 90%;
+    max-width: 64rem;
+    padding: 2.4rem;
+    background-color: var(--white);
+    box-shadow: 0 0.8rem 1.6rem rgba(0, 0, 0, 0.1);
+    border-radius: 1.2rem;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+}
+
+/* SIGNUP VIEW LOGO CONTAINER */
+.div-signup-view-logo-container {
+    position: absolute;
+    top: -6.4rem;
+    left: -6.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 12.8rem;
+    aspect-ratio: 1 / 1;
+    background-color: var(--primary);
+    transform: rotate(45deg);
+}
+
+.div-signup-view-logo-container img {
+    position: absolute;
+    right: 1.2rem;
+    width: 24%;
+    transform: rotate(-45deg);
+}
+
+/* HEADER SIGNUP VIEW CONTAINER */
+.header-signup-view-container {
+    text-align: center;
+}
+
+.header-signup-view-container h2 {
+    font-size: 2rem;
+}
+
+.header-signup-view-container p {
+    font-size: 1.4rem;
+}
+
+.header-signup-view-container span {
+    color: var(--primary);
+}
+
+/* SIGNUP VIEW FORM */
+.form-signup-view {
+    display: flex;
+    gap: 1.2rem;
+    width: 80%;
+    overflow: hidden;
+}
+
+.div-form-signup-view-carousel-item-container {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    width: 100%;
+}
+
+/* FOOTER SIGNUP VIEW CONTAINER */
+.footer-signup-view-container {
+    position: relative;
+    width: 100%;
+    padding-top: 1.2rem;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.footer-signup-view-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 80%;
+    height: 0.2rem;
+    background-color: var(--primary-tint);
+    border-radius: 0 0 0.4rem 0.4rem;
+    transform: translateX(-50%);
+}
+
+.footer-signup-view-container p a:link,
+.footer-signup-view-container p a:visited {
+    color: var(--primary);
+}
