@@ -1,0 +1,108 @@
+/* DISPLAY GRID */
+.grid-2-columns {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3-columns {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4-columns {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* MULTI INPUT CONTAINERS */
+.div-multi-input-containers {
+    display: grid;
+    column-gap: 1.2rem;
+    width: 100%;
+}
+
+/* INPUT CONTAINER */
+.div-input-container {
+    display: flex;
+    align-items: center;
+    height: 3.6rem;
+}
+
+/* INPUT CONTAINER LABEL */
+.div-input-container label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    font-size: 1.6rem;
+    border-top: 0.2rem solid var(--primary-tint);
+    border-right: 0.2rem solid var(--primary-tint);
+    border-bottom: 0.2rem solid var(--primary-tint);
+    border-radius: 0 0.4rem 0.4rem 0;
+}
+
+.div-input-container label ion-icon {
+    color: var(--primary-tint);
+}
+
+/* INPUT CONTAINER INPUT/SELECT */
+.div-input-container input,
+.div-input-container select {
+    width: 100%;
+    height: 100%;
+    padding: 0 1.2rem;
+    font-size: 1.4rem;
+    color: var(--white);
+    background-color: var(--primary-tint);
+    border: none;
+    border-radius: 0.4rem 0 0 0.4rem;
+}
+
+.div-input-container select option {
+    color: inherit;
+}
+
+/* FORM CONTROL BUTTONS CONTAINER */
+.div-form-control-btns-container {
+    display: grid;
+    column-gap: 1.2rem;
+    width: 100%;
+}
+
+/* BUTTON */
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1.4rem;
+    background-color: var(--white);
+    border: none;
+    border-radius: 0.4rem;
+    cursor: pointer;
+}
+
+.btn span,
+.btn ion-icon {
+    color: inherit;
+}
+
+/* BUTTON STYLES */
+.btn-primary {
+    color: var(--white);
+    background-color: var(--primary);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-shade);
+}
+
+.btn-secondary {
+    color: var(--primary);
+    box-shadow: inset 0 0 0 0.2rem var(--primary);
+}
+
+.btn-secondary:hover {
+    color: var(--white);
+    background-color: var(--primary);
+}
