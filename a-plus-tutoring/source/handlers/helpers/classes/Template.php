@@ -1,6 +1,6 @@
 <?php
 
-namespace Source\Classes\Helpers\Classes;
+namespace Source\Handlers\Helpers\Classes;
 
 class Template
 {
