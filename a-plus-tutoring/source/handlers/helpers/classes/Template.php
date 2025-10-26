@@ -8,7 +8,7 @@ class Template
     {
         $relativePath = '/core/assets/css/views/' . $path . '.css';
 
-        if (file_exists(FOLDER_PATH . $relativePath)) {
+        if (file_exists(LOCAL_PATH . $relativePath)) {
             return '<link rel="stylesheet" href="' . SERVER_PATH . $relativePath . '">';
         }
 

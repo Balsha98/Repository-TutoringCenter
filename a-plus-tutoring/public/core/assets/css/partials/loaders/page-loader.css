@@ -12,22 +12,26 @@
     z-index: 9999;
 }
 
-.div-page-loader-container img {
-    width: 12rem;
-    animation-name: side-to-side;
-    animation-direction: alternate-reverse;
-    animation-iteration-count: infinite;
-    animation-duration: 0.8s;
+.hide-page-loader {
+    opacity: 0;
+    z-index: -1;
 }
 
-@keyframes side-to-side {
+/* PAGE LOADER CONTAINER LOGO */
+.div-page-loader-container img {
+    width: 12rem;
+    animation-name: blinking;
+    animation-direction: alternate-reverse;
+    animation-iteration-count: infinite;
+    animation-duration: 0.4s;
+}
+
+@keyframes blinking {
     0% {
-        transform: rotate(45deg);
-        opacity: 0.6;
+        opacity: 0.4;
     }
 
     100% {
-        transform: rotate(-45deg);
         opacity: 1;
     }
 }
