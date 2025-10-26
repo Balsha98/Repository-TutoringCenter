@@ -1,6 +1,8 @@
+    <?php require_once __DIR__ . '/../../partials/loaders/page-loader.php'; ?>
+
     <div class="div-login-view-container">
         <div class="div-login-view-logo-container">
-            <img src="<?php echo IMAGES_PATH . '/site-logo-inverted.png' ?>" alt="Website Logo">
+            <img src="<?php echo IMAGES_PATH . '/site-logo-inverted.png' ?>" alt="Inverted Website Logo">
         </div>
         <header class="header-login-view-container">
             <h2>Welcome to A<sup>+</sup> Tutoring!</h2>
