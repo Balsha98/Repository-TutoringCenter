@@ -36,7 +36,6 @@
     border-top: 0.2rem solid var(--primary-tint);
     border-right: 0.2rem solid var(--primary-tint);
     border-bottom: 0.2rem solid var(--primary-tint);
-    border-radius: 0 0.4rem 0.4rem 0;
 }
 
 .div-input-container label ion-icon {
@@ -53,7 +52,6 @@
     color: var(--white);
     background-color: var(--primary-tint);
     border: none;
-    border-radius: 0.4rem 0 0 0.4rem;
 }
 
 .div-input-container select option {
@@ -78,7 +76,6 @@
     font-size: 1.4rem;
     background-color: var(--white);
     border: none;
-    border-radius: 0.4rem;
     cursor: pointer;
 }
 
