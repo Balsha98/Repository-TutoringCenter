@@ -38,7 +38,7 @@
                 <div class="div-multi-input-containers grid-2-columns">
                     <div class="div-input-container">
                         <select id="role" name="role">
-                            <option value="default">Role</option>
+                            <option value="">Role</option>
                             <option value="student">Student</option>
                             <option value="tutor">Tutor</option>
                         </select>
