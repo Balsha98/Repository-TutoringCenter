@@ -1,0 +1,33 @@
+/* PAGE LOADER CONTAINER */
+.div-page-loader-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--primary-tint);
+    z-index: 9999;
+}
+
+.div-page-loader-container img {
+    width: 12rem;
+    animation-name: side-to-side;
+    animation-direction: alternate-reverse;
+    animation-iteration-count: infinite;
+    animation-duration: 0.8s;
+}
+
+@keyframes side-to-side {
+    0% {
+        transform: rotate(45deg);
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: rotate(-45deg);
+        opacity: 1;
+    }
+}
