@@ -7,6 +7,7 @@ USE aplus_tutoring_center;
 -- TABLE STUDENT
 CREATE TABLE student (
     id INT NOT NULL AUTO_INCREMENT,
+    type VARCHAR(10) NOT NULL DEFAULT "student",
     first_name VARCHAR(100) NOT NULL,
     last_name VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL,
@@ -18,22 +19,23 @@ CREATE TABLE student (
     PRIMARY KEY (id)
 );
 
-INSERT INTO student VALUES
-(1, "Emily", "Carter", "ecarter1@rit.edu", "e8e9689deac5bac977b64e85c1105bd1419608f1223bdafb8e5fbdf6cf939879", "Senior", "Computer Science", "(585) 341-7721", "2022-08-29"),
-(2, "Jacob", "Nguyen", "jnguyen2@rit.edu", "c35d6aaf3b3885dfc9f36cddf48a65e93a919e13165fbbcfc0f9de5636279559", "Junior", "Software Engineering", "(585) 298-4403", "2023-01-17"),
-(3, "Sophia", "Patel", "spatel3@rit.edu", "fc5a299cd6cd644f40bdcc8f7ae00e89a4ae4fbc44031c4bc27e54dd4bcb9773", "Freshman", "Mechanical Engineering", "(585) 555-9281", "2025-09-01"),
-(4, "Liam", "Thompson", "lthompson4@rit.edu", "f73137d930c31d188d901d57d78c13c88458d61600d1355d28c8841d590a6d69", "Senior", "Electrical Engineering", "(585) 612-7339", "2022-08-30"),
-(5, "Ava", "Ramirez", "aramirez5@rit.edu", "bf446ea38129b6f1a1ada774c9130c81a33904db1ee88e5b557d76ef1fb5e22d", "Junior", "Game Design & Development", "(585) 470-8812", "2023-09-05"),
-(6, "Noah", "Johnson", "njohnson6@rit.edu", "cf3a3bbe331c3950d16a8e9917c5bb8340e7c0ef917da25d4a96f92d074bce05", "Sophomore", "Information Technology", "(585) 429-6654", "2024-01-22"),
-(7, "Mia", "Chen", "mchen7@rit.edu", "a6ae07ad556c5f9348cc09c16ed17a437e65acc71e689c1b19f872f1dab3c9c1", "Freshman", "Biomedical Engineering", "(585) 351-9917", "2025-08-23"),
-(8, "William", "Scott", "wscott8@rit.edu", "d0784c6b1785dcd474688d46b1fe99792ff66f6b56bebf26dda0c08516bac22e", "Junior", "Cybersecurity", "(585) 772-5408", "2023-08-28"),
-(9, "Isabella", "Brooks", "ibrooks9@rit.edu", "da2da8e71c82b18aaec0e9dcf817ab09481a8b55061066f011b3e38188788f65", "Senior", "Industrial Design", "(585) 398-2245", "2022-09-06"),
-(10, "James", "Rivera", "jrivera10@rit.edu", "119c9ae6f9ca741bd0a76f87fba0b22cab5413187afb2906aa2875c38e213603", "Sophomore", "Civil Engineering Technology", "(585) 645-7093", "2024-08-26");
+INSERT INTO student (id, first_name, last_name, email, password, grade, major, phone, date_enrolled) VALUES
+(1, "Emily", "Carter", "ec3414@rit.edu", "e8e9689deac5bac977b64e85c1105bd1419608f1223bdafb8e5fbdf6cf939879", "Senior", "Computer Science", "(585) 341-7721", "2022-08-29"),
+(2, "Jacob", "Nguyen", "jn5161@rit.edu", "c35d6aaf3b3885dfc9f36cddf48a65e93a919e13165fbbcfc0f9de5636279559", "Junior", "Software Engineering", "(585) 298-4403", "2023-01-17"),
+(3, "Sophia", "Patel", "sp8961@rit.edu", "fc5a299cd6cd644f40bdcc8f7ae00e89a4ae4fbc44031c4bc27e54dd4bcb9773", "Freshman", "Mechanical Engineering", "(585) 555-9281", "2025-09-01"),
+(4, "Liam", "Thompson", "lt3516@rit.edu", "f73137d930c31d188d901d57d78c13c88458d61600d1355d28c8841d590a6d69", "Senior", "Electrical Engineering", "(585) 612-7339", "2022-08-30"),
+(5, "Ava", "Ramirez", "ar6923@rit.edu", "bf446ea38129b6f1a1ada774c9130c81a33904db1ee88e5b557d76ef1fb5e22d", "Junior", "Game Design & Development", "(585) 470-8812", "2023-09-05"),
+(6, "Noah", "Johnson", "nj9151@rit.edu", "cf3a3bbe331c3950d16a8e9917c5bb8340e7c0ef917da25d4a96f92d074bce05", "Sophomore", "Information Technology", "(585) 429-6654", "2024-01-22"),
+(7, "Mia", "Chen", "mc2451@rit.edu", "a6ae07ad556c5f9348cc09c16ed17a437e65acc71e689c1b19f872f1dab3c9c1", "Freshman", "Biomedical Engineering", "(585) 351-9917", "2025-08-23"),
+(8, "William", "Scott", "ws8634@rit.edu", "d0784c6b1785dcd474688d46b1fe99792ff66f6b56bebf26dda0c08516bac22e", "Junior", "Cybersecurity", "(585) 772-5408", "2023-08-28"),
+(9, "Isabella", "Brooks", "ib5413@rit.edu", "da2da8e71c82b18aaec0e9dcf817ab09481a8b55061066f011b3e38188788f65", "Senior", "Industrial Design", "(585) 398-2245", "2022-09-06"),
+(10, "James", "Rivera", "jr4631@rit.edu", "119c9ae6f9ca741bd0a76f87fba0b22cab5413187afb2906aa2875c38e213603", "Sophomore", "Civil Engineering Technology", "(585) 645-7093", "2024-08-26");
 
 
 -- TABLE TUTOR
 CREATE TABLE tutor (
     id INT NOT NULL AUTO_INCREMENT,
+    type VARCHAR(10) NOT NULL DEFAULT "tutor",
     first_name VARCHAR(100) NOT NULL,
     last_name VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL,
@@ -43,17 +45,17 @@ CREATE TABLE tutor (
     PRIMARY KEY (id)
 );
 
-INSERT INTO tutor VALUES
-(1, "Olivia", "Martinez", "omartinez@rit.edu", "b2471d941bf888366cf43813752ea2ebfef08254773cf116187cdd6d0463a50a", "2021-08-15", "Active"),
-(2, "Ethan", "Walker", "ewalker@rit.edu", "7b8bd6c0abf53d22888beafc48830e1156907dd4ec7e6ea31e55a0dd6dc5a969", "2022-01-10", "Active"),
-(3, "Harper", "Davis", "hdavis@rit.edu", "eaef53d9b579688e06f0ffda25b907cf7a2a08dd98d34debf9ad3d1a9e2514ea", "2020-09-07", "Inactive"),
-(4, "Mason", "Lewis", "mlewis@rit.edu", "162094c4d87101ff5aca2e655c39a40744052b4e1deb3f100391d45946db0bec", "2023-02-20", "Active"),
-(5, "Charlotte", "Kim", "ckim@rit.edu", "4a2b5e1822ca11588586eb912320817f3cf0c11cd5ec8937e78a8209505f4e84", "2021-05-30", "Active"),
-(6, "Benjamin", "Adams", "badams@rit.edu", "8ee9938e4b960a50540f1ca9299facc5a5f342d0848b402c322fd14592e4bc32", "2022-08-22", "Inactive"),
-(7, "Amelia", "Scott", "ascott@rit.edu", "f0d9991c5e47e0d26a350c1618bd3154cd0f9f2461d3df671a753c393fe7a6a7", "2020-11-16", "Inactive"),
-(8, "Lucas", "Perez", "lperez@rit.edu", "7cadab457ad8d811f134612436daaa5e5914b20dc2502865f714035b0f267680", "2023-09-01", "Active"),
-(9, "Evelyn", "Ross", "eross@rit.edu", "44e5bf55761da5636a92efd9e8cafe3cf3454d9799b09826406cbf7718ed2676", "2021-03-18", "Active"),
-(10, "Elijah", "Turner", "eturner@rit.edu", "288aa2a8991efe00897f54273cb879b651ae3dd13a1861feafb21b0ef2a5ca19", "2024-01-29", "Active");
+INSERT INTO tutor (id, first_name, last_name, email, password, date_hired, status) VALUES
+(1, "Olivia", "Martinez", "om4614@rit.edu", "b2471d941bf888366cf43813752ea2ebfef08254773cf116187cdd6d0463a50a", "2021-08-15", "Active"),
+(2, "Ethan", "Walker", "ew6813@rit.edu", "7b8bd6c0abf53d22888beafc48830e1156907dd4ec7e6ea31e55a0dd6dc5a969", "2022-01-10", "Active"),
+(3, "Harper", "Davis", "hd7645@rit.edu", "eaef53d9b579688e06f0ffda25b907cf7a2a08dd98d34debf9ad3d1a9e2514ea", "2020-09-07", "Inactive"),
+(4, "Mason", "Lewis", "ml3412@rit.edu", "162094c4d87101ff5aca2e655c39a40744052b4e1deb3f100391d45946db0bec", "2023-02-20", "Active"),
+(5, "Charlotte", "Kim", "ck4341@rit.edu", "4a2b5e1822ca11588586eb912320817f3cf0c11cd5ec8937e78a8209505f4e84", "2021-05-30", "Active"),
+(6, "Benjamin", "Adams", "ba9056@rit.edu", "8ee9938e4b960a50540f1ca9299facc5a5f342d0848b402c322fd14592e4bc32", "2022-08-22", "Inactive"),
+(7, "Amelia", "Scott", "as2341@rit.edu", "f0d9991c5e47e0d26a350c1618bd3154cd0f9f2461d3df671a753c393fe7a6a7", "2020-11-16", "Inactive"),
+(8, "Lucas", "Perez", "lp5646@rit.edu", "7cadab457ad8d811f134612436daaa5e5914b20dc2502865f714035b0f267680", "2023-09-01", "Active"),
+(9, "Evelyn", "Ross", "er8692@rit.edu", "44e5bf55761da5636a92efd9e8cafe3cf3454d9799b09826406cbf7718ed2676", "2021-03-18", "Active"),
+(10, "Elijah", "Turner", "et0962@rit.edu", "288aa2a8991efe00897f54273cb879b651ae3dd13a1861feafb21b0ef2a5ca19", "2024-01-29", "Active");
 
 
 -- TABLE SUBJECT
