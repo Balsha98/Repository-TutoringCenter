@@ -40,7 +40,7 @@ class Router
             return JSON::encode(['error' => $e->getMessage()]);
         }
 
-        return JSON::encode(['success' => $response]);
+        return JSON::encode($response);
     }
 
     private static function handleRequest()
