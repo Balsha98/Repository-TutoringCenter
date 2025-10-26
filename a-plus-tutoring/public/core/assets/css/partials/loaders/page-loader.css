@@ -1,14 +1,16 @@
 /* PAGE LOADER CONTAINER */
 .div-page-loader-container {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100vw;
     height: 100vh;
     background-color: var(--primary-tint);
+    transition: all 1s ease-in-out;
     z-index: 9999;
 }
 
@@ -17,21 +19,74 @@
     z-index: -1;
 }
 
+/* PAGE LOADER MODAL */
+.div-page-loader-modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: -6.4rem;
+}
+
 /* PAGE LOADER CONTAINER LOGO */
 .div-page-loader-container img {
-    width: 12rem;
-    animation-name: blinking;
+    width: 24rem;
+}
+
+/* LINES LOADER CONTAINER */
+.div-lines-loader-container {
+    position: relative;
+    width: calc((5 * 0.4rem) + (4 * 1.2rem));
+    height: 6.4rem;
+    margin-top: -1.2rem;
+}
+
+/* LINE LOADER */
+.div-lines-loader-line-item {
+    position: absolute;
+    top: 50%;
+    left: attr(data-left rem);
+    width: 0.4rem;
+    height: 100%;
+    background-color: var(--white);
+    transform: translateY(-50%);
+}
+
+.div-lines-loader-line-item:nth-child(odd),
+.div-lines-loader-line-item:nth-child(even) {
     animation-direction: alternate-reverse;
     animation-iteration-count: infinite;
     animation-duration: 0.4s;
 }
 
-@keyframes blinking {
+/* LINE LOADER ODD */
+.div-lines-loader-line-item:nth-child(odd) {
+    background-color: var(--primary);
+    animation-name: odd-extension;
+}
+
+@keyframes odd-extension {
     0% {
-        opacity: 0.4;
+        height: 6.4rem;
     }
 
     100% {
-        opacity: 1;
+        height: 2.4rem;
+    }
+}
+
+/* LINE LOADER EVEN */
+.div-lines-loader-line-item:nth-child(even) {
+    background-color: var(--white);
+    animation-name: even-extension;
+}
+
+@keyframes even-extension {
+    0% {
+        height: 2.4rem;
+    }
+
+    100% {
+        height: 6.4rem;
     }
 }
