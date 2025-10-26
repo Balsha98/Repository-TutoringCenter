@@ -15,5 +15,14 @@ class Template
         return '<!-- END - IMPORTED CSS STYLESHEETS -->';
     }
 
-    public static function importViewModules(string $path) {}
+    public static function importViewModules(string $path)
+    {
+        $relativePath = '/core/assets/javascript/controllers/' . $path . 'Controller.js';
+
+        if (file_exists(LOCAL_PATH . $relativePath)) {
+            return '<script type="module" src="' . SERVER_PATH . $relativePath . '"></script>';
+        }
+
+        return '<!-- END - IMPORTED JS MODULES -->';
+    }
 }
