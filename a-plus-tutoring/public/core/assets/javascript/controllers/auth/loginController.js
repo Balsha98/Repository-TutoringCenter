@@ -1,5 +1,6 @@
 // IMPORTED MODULES
 import requestHandler from "../../requestHandler.js";
+import * as pageLoaderController from "../partials/loaders/pageLoaderController.js";
 import loginView from "../../views/auth/loginView.js";
 
 const handleUserLogin = function (e) {
@@ -16,6 +17,8 @@ const handleUserLogin = function (e) {
 };
 
 const initController = function () {
+    pageLoaderController.controlHidePageLoader(3);
+
     loginView.handleUserLogin(handleUserLogin);
 };
 
