@@ -1,0 +1,14 @@
+[
+    {
+        "auth/login": {
+            "css": ["/core/assets/css/partials/loaders/page-loader"],
+            "js": []
+        }
+    },
+    {
+        "auth/signup": {
+            "css": [],
+            "js": []
+        }
+    }
+]
