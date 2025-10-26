@@ -1,6 +1,6 @@
 <?php
 
-define('FOLDER_PATH', __DIR__ . '/../public');
+define('LOCAL_PATH', __DIR__ . '/../public');
 define('SERVER_PATH', $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['SERVER_NAME']);
 
 define('DB_NAME', 'aplus_tutoring_center');
