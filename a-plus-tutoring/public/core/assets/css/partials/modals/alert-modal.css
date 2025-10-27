@@ -89,11 +89,3 @@
 .div-alert-modal-data-container button {
     width: 32rem;
 }
-
-.alert-modal-success button {
-    background-color: var(--success);
-}
-
-.alert-modal-failure button {
-    background-color: var(--failure);
-}

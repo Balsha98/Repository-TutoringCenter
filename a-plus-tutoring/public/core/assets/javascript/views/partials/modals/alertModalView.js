@@ -12,12 +12,14 @@ class AlertModalView {
         const isResponseValid = response["success"] !== undefined;
         const responseData = response[isResponseValid ? "success" : "error"];
 
+        this.#alertModalData.removeClass(`alert-modal-${isResponseValid ? "failure" : "success"}`);
         this.#alertModalData.addClass(`alert-modal-${isResponseValid ? "success" : "failure"}`);
 
         this.#alertModalHeading.text(responseData["title"]);
         this.#alertModalText.text(responseData["message"]);
 
         this.#btnConfirmModal.text(isResponseValid ? "Confirm" : "Close");
+        this.#btnConfirmModal.removeClass(`btn-${isResponseValid ? "failure" : "success"}`);
         this.#btnConfirmModal.addClass(`btn-${isResponseValid ? "success" : "failure"}`);
 
         setTimeout(() => this.#redirectUserToView(responseData["next-route"]), seconds * 1000);
