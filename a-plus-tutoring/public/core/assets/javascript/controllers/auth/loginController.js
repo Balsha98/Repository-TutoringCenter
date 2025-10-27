@@ -17,7 +17,7 @@ const handleUserLogin = function (e) {
 };
 
 const initController = function () {
-    pageLoaderController.controlHidePageLoader(3);
+    pageLoaderController.controlHidePageLoader(0.001);
 
     loginView.handleUserLogin(handleUserLogin);
 };

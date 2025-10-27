@@ -1,5 +1,7 @@
+    <?php require_once __DIR__ . '/../../partials/modals/alert-modal.php'; ?>
     <?php require_once __DIR__ . '/../../partials/loaders/page-loader.php'; ?>
 
+    <!-- LOGIN VIEW CONTAINER -->
     <div class="div-login-view-container">
         <div class="div-login-view-logo-container">
             <img src="<?php echo IMAGES_PATH . '/site-logo-inverted.png' ?>" alt="Inverted Website Logo">
