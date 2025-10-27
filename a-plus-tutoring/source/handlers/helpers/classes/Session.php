@@ -13,6 +13,18 @@ class Session
         }
     }
 
+    public static function destroy()
+    {
+        if (PHP_SESSION_ACTIVE) {
+            session_destroy();
+
+            // Clear entire session storage.
+            foreach (array_keys($_SESSION) as $key) {
+                unset($_SESSION[$key]);
+            }
+        }
+    }
+
     public static function get(string $key)
     {
         return $_SESSION[$key];
