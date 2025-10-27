@@ -1,3 +1,5 @@
+    <?php require_once LOCAL_PATH . '/core/partials/loaders/page-loader.php'; ?>
+
     <!-- SIGNUP VIEW CONTAINER -->
     <div class="div-signup-view-container">
         <div class="div-signup-view-logo-container">
@@ -71,6 +73,6 @@
             </div>
         </form>
         <footer class="footer-signup-view-container">
-            <p>Already have an account? <a class="link link-primary" href="/login">Log In!</a></p>
+            <p>Already have an account? <a href="/login">Log In!</a></p>
         </footer>
     </div>
