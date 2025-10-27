@@ -36,9 +36,8 @@ input::placeholder,
 textarea::placeholder {
     position: absolute;
     top: 50%;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: var(--white);
-    text-transform: uppercase;
     transform: translateY(-50%);
 }
 

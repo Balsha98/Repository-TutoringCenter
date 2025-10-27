@@ -71,16 +71,29 @@
     align-items: center;
     justify-content: center;
     gap: 0.4rem;
-    width: 100%;
     padding: 0.8rem;
     font-size: 1.4rem;
-    background-color: var(--white);
     border: none;
     cursor: pointer;
 }
 
 .btn span,
 .btn ion-icon {
+    color: inherit;
+}
+
+/* BUTTON ICON */
+.btn-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1 / 1;
+    font-size: 1.4rem;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-icon ion-icon {
     color: inherit;
 }
 
@@ -102,4 +115,22 @@
 .btn-secondary:hover {
     color: var(--white);
     background-color: var(--primary);
+}
+
+.btn-success {
+    color: var(--white);
+    background-color: var(--success);
+}
+
+.btn-success:hover {
+    background-color: var(--success-shade);
+}
+
+.btn-failure {
+    color: var(--white);
+    background-color: var(--failure);
+}
+
+.btn-failure:hover {
+    background-color: var(--failure-shade);
 }

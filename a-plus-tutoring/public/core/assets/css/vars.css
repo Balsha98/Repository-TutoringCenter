@@ -5,4 +5,15 @@
     --primary: #ff922b;
     --primary-shade: #f76707;
     --primary-tint: #ffc078;
+
+    --success: #51cf66;
+    --success-shade: #37b24d;
+
+    --failure: #ff6b6b;
+    --failure-shade: #f03e3e;
+
+    --opaque-shadow-sm: rgba(33, 37, 41, 0.1);
+    --opaque-shadow-md: rgba(33, 37, 41, 0.3);
+    --opaque-shadow-lg: rgba(33, 37, 41, 0.5);
+    --opaque-shadow-xl: rgba(33, 37, 41, 0.7);
 }
