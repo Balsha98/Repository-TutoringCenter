@@ -38,6 +38,11 @@
     width: 2.4rem;
 }
 
+.div-alert-modal > button:hover {
+    transform: scale(1.1);
+}
+
+/* BUTTON MODAL DATA CONTAINER */
 .div-alert-modal-data-container {
     display: flex;
     flex-direction: column;
