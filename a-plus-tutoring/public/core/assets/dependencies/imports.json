@@ -10,5 +10,17 @@
             "css": ["/core/assets/css/partials/modals/alert-modal", "/core/assets/css/partials/loaders/page-loader"],
             "js": []
         }
+    },
+    {
+        "dashboard/student": {
+            "css": ["/core/assets/css/partials/loaders/page-loader"],
+            "js": []
+        }
+    },
+    {
+        "dashboard/tutor": {
+            "css": ["/core/assets/css/partials/loaders/page-loader"],
+            "js": []
+        }
     }
 ]
