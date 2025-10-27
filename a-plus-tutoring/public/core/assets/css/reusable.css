@@ -65,72 +65,93 @@
     width: 100%;
 }
 
-/* BUTTON */
-.btn {
+/* BUTTON/LINK */
+.btn,
+.link:link {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.4rem;
-    padding: 0.8rem;
+    padding: 0.8rem 1.2rem;
     font-size: 1.4rem;
+    background-color: transparent;
     border: none;
     cursor: pointer;
 }
 
 .btn span,
-.btn ion-icon {
+.btn ion-icon,
+.link:link span,
+.link:visited span,
+.link:link ion-icon,
+.link:visited ion-icon {
     color: inherit;
 }
 
-/* BUTTON ICON */
-.btn-icon {
+/* BUTTON/LINK ICON */
+.btn-icon,
+.link-icon:link {
     display: flex;
     align-items: center;
     justify-content: center;
     aspect-ratio: 1 / 1;
+    padding: 0;
     font-size: 1.4rem;
     border: none;
     cursor: pointer;
 }
 
-.btn-icon ion-icon {
+.btn-icon ion-icon,
+.link-icon:link ion-icon {
     color: inherit;
 }
 
 /* BUTTON STYLES */
-.btn-primary {
+.btn-primary,
+.link-primary:link,
+.link-primary:visited {
     color: var(--white);
     background-color: var(--primary);
 }
 
-.btn-primary:hover {
+.btn-primary:hover,
+.link-primary:hover {
     background-color: var(--primary-shade);
 }
 
-.btn-secondary {
+.btn-secondary,
+.link-secondary:link,
+.link-secondary:visited {
     color: var(--primary);
     box-shadow: inset 0 0 0 0.2rem var(--primary);
 }
 
-.btn-secondary:hover {
+.btn-secondary:hover,
+.link-secondary:hover {
     color: var(--white);
     background-color: var(--primary);
 }
 
-.btn-success {
+.btn-success,
+.link-success:link,
+.link-success:visited {
     color: var(--white);
     background-color: var(--success);
 }
 
-.btn-success:hover {
+.btn-success:hover,
+.link-success:hover {
     background-color: var(--success-shade);
 }
 
-.btn-failure {
+.btn-failure,
+.link-failure:link,
+.link-failure:visited {
     color: var(--white);
     background-color: var(--failure);
 }
 
-.btn-failure:hover {
+.btn-failure:hover,
+.link-failure:hover {
     background-color: var(--failure-shade);
 }
