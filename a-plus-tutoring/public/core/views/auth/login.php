@@ -1,5 +1,5 @@
-    <?php require_once __DIR__ . '/../../partials/modals/alert-modal.php'; ?>
-    <?php require_once __DIR__ . '/../../partials/loaders/page-loader.php'; ?>
+    <?php require_once LOCAL_PATH . '/core/partials/modals/alert-modal.php'; ?>
+    <?php require_once LOCAL_PATH . '/core/partials/loaders/page-loader.php'; ?>
 
     <!-- LOGIN VIEW CONTAINER -->
     <div class="div-login-view-container">
@@ -30,6 +30,6 @@
             </div>
         </form>
         <footer class="footer-login-view-container">
-            <p>Don't have an account? <a class="link link-primary" href="/signup">Sign Up!</a></p>
+            <p>Don't have an account? <a href="/signup">Sign Up!</a></p>
         </footer>
     </div>
