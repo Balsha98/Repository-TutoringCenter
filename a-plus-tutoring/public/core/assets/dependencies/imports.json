@@ -1,13 +1,13 @@
 [
     {
         "auth/login": {
-            "css": ["/core/assets/css/partials/loaders/page-loader"],
+            "css": ["/core/assets/css/partials/modals/alert-modal", "/core/assets/css/partials/loaders/page-loader"],
             "js": []
         }
     },
     {
         "auth/signup": {
-            "css": [],
+            "css": ["/core/assets/css/partials/modals/alert-modal", "/core/assets/css/partials/loaders/page-loader"],
             "js": []
         }
     }
