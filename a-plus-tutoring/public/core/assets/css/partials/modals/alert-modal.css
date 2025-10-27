@@ -1,0 +1,94 @@
+/* ALERT MODAL CONTAINER */
+.div-alert-modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--opaque-shadow-md);
+    transition: all 0.5s ease-in-out;
+    z-index: 9999;
+}
+
+.hide-alert-modal {
+    opacity: 0;
+    z-index: -1;
+}
+
+/* ALERT MODAL */
+.div-alert-modal {
+    position: relative;
+    width: 80%;
+    max-width: 64rem;
+    height: 32rem;
+    padding: 2.4rem 4.8rem;
+    background-color: var(--white);
+    box-shadow: 0 0.4rem 1.2rem var(--opaque-shadow-sm);
+}
+
+/* BUTTON MODAL CLOSE */
+.div-alert-modal > button {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.2rem;
+    width: 2.4rem;
+}
+
+.div-alert-modal-data-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3.2rem;
+    height: 100%;
+}
+
+/* ALERT MODAL HEADER */
+.header-alert-modal {
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+.header-alert-modal::after {
+    content: "";
+    position: absolute;
+    bottom: -1.6rem;
+    left: 50%;
+    width: 100%;
+    height: 0.2rem;
+    transform: translate(-50%, 50%);
+}
+
+.alert-modal-success header::after {
+    background-color: var(--success);
+}
+
+.alert-modal-failure header::after {
+    background-color: var(--failure);
+}
+
+.header-alert-modal h2 {
+    font-size: 2.4rem;
+}
+
+.header-alert-modal p {
+    font-size: 1.6rem;
+}
+
+/* ALERT MODAL CONFIRMATION BUTTON */
+.div-alert-modal-data-container button {
+    width: 32rem;
+}
+
+.alert-modal-success button {
+    background-color: var(--success);
+}
+
+.alert-modal-failure button {
+    background-color: var(--failure);
+}
