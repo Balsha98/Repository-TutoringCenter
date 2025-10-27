@@ -1,3 +1,4 @@
+    <!-- PAGE LOADER CONTAINER -->
     <div class="div-page-loader-container">
         <div class="div-page-loader-modal">
             <img src="<?php echo IMAGES_PATH . '/site-logo-inverted.png'; ?>" alt="Inverted Website Logo">

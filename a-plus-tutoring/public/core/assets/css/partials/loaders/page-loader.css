@@ -9,7 +9,7 @@
     justify-content: center;
     width: 100vw;
     height: 100vh;
-    background-color: var(--primary-tint);
+    background-color: var(--primary);
     transition: all 1s ease-in-out;
     z-index: 9999;
 }
@@ -61,7 +61,7 @@
 
 /* LINE LOADER ODD */
 .div-lines-loader-line-item:nth-child(odd) {
-    background-color: var(--primary);
+    background-color: var(--primary-shade);
     animation-name: odd-extension;
 }
 
