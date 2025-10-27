@@ -14,13 +14,21 @@ class Router
         $baseUri = $uri === '/' ? $uri . 'login' : $uri;
         $uriParts = explode('/', $baseUri);
         $pathData = Routes::fetchRouteData($uriParts[1]);
+        $pathParts = explode('/', $pathData['path']);
 
-        if ($pathData['path'] !== 'invalid/404') {
-            if (Session::is('account-active')) {
-                if ($uriParts[1] !== 'login' && $uriParts[1] !== 'signup') {
-                    $pathData['path'] .= Session::get('account-type');
-                } else if ($uriParts[1] === 'login' || $uriParts[1] === 'signup') {
-                    header('Location: /dashboard');
+        // Process dynamic routing.
+        if ($pathData['path'] !== 'auth/logout') {
+            if ($pathData['path'] !== 'invalid/404') {
+                if (Session::is('account-active')) {
+                    if ($pathParts[0] !== 'auth') {
+                        $pathData['path'] .= Session::get('account-type');
+                    } else if ($pathParts[0] === 'auth') {
+                        if ($pathParts[1] !== 'logout') {
+                            self::redirectTo('dashboard');
+                        }
+                    }
+                } else if ($pathParts[0] !== 'auth') {
+                    self::redirectTo('login');
                 }
             }
         }
@@ -40,5 +48,10 @@ class Router
         require_once __DIR__ . '/../../../../public/core/partials/footer.php';
 
         return ob_get_clean();
+    }
+
+    public static function redirectTo(string $route)
+    {
+        header('Location: /' . $route);
     }
 }

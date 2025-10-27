@@ -17,6 +17,10 @@ class Routes
             'path' => 'auth/login',
             'title' => 'Login'
         ],
+        'logout' => [
+            'path' => 'auth/logout',
+            'title' => 'Logout'
+        ],
         'signup' => [
             'path' => 'auth/signup',
             'title' => 'Signup'
