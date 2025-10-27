@@ -8,7 +8,7 @@ class Session
 {
     public static function start()
     {
-        if (!PHP_SESSION_ACTIVE) {
+        if (PHP_SESSION_NONE) {
             session_start();
         }
     }

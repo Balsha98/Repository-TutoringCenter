@@ -11,8 +11,19 @@ class Router
         Session::start();
 
         $uri = $_SERVER['REQUEST_URI'];
-        $uriParts = $uri !== '/' ? explode('/', $uri) : [];
-        $pathData = Routes::fetchRouteData(empty($uriParts) ? $uri : $uriParts[1]);
+        $baseUri = $uri === '/' ? $uri . 'login' : $uri;
+        $uriParts = explode('/', $baseUri);
+        $pathData = Routes::fetchRouteData($uriParts[1]);
+
+        if ($pathData['path'] !== 'invalid/404') {
+            if (Session::is('account-active')) {
+                if ($uriParts[1] !== 'login' && $uriParts[1] !== 'signup') {
+                    $pathData['path'] .= Session::get('account-type');
+                } else if ($uriParts[1] === 'login' || $uriParts[1] === 'signup') {
+                    header('Location: /dashboard');
+                }
+            }
+        }
 
         return self::requireView($uriParts, $pathData);
     }
