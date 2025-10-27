@@ -1,3 +1,4 @@
+    <!-- SIGNUP VIEW CONTAINER -->
     <div class="div-signup-view-container">
         <div class="div-signup-view-logo-container">
             <img src="<?php echo IMAGES_PATH . '/site-logo-inverted.png' ?>" alt="Website Logo">
