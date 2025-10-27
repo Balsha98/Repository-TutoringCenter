@@ -15,6 +15,8 @@ class Router
 
     public static function processRequest()
     {
+        Session::start();
+
         header('Content-Type: application/json');
 
         try {

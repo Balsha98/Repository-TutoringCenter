@@ -33,13 +33,14 @@ class LoginApiController extends AbstractApiController
                 'error' => [
                     'title' => 'Invalid Credentials',
                     'message' => 'Make sure you are providing valid credentials.',
-                    'next-route' => 'reload'
+                    'next-route' => 'wait'
                 ]
             ];
         }
 
-        Session::set('id', $account['id']);
-        Session::set('type', $account['type']);
+        Session::set('account-id', $account['id']);
+        Session::set('account-type', $account['type']);
+        Session::set('account-active', 1);
 
         return [
             'success' => [
