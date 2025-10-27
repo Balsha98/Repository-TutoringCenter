@@ -1,3 +1,6 @@
+// IMPORTED MODULES
+import * as alertModalController from "./controllers/partials/modals/alertModalController.js";
+
 class RequestHandler {
     handleRequest(url, method, data) {
         $.ajax({
@@ -5,7 +8,7 @@ class RequestHandler {
             method: method,
             data: JSON.stringify(data),
             success: function (response) {
-                console.log(response);
+                alertModalController.controlShowAlertModal(response);
             },
         });
     }
