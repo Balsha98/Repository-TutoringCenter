@@ -28,6 +28,10 @@ class Routes
         'dashboard' => [
             'path' => 'dashboard/',
             'title' => 'Dashboard'
+        ],
+        'reports' => [
+            'path' => 'reports/',
+            'title' => 'Reports'
         ]
     ];
 
