@@ -17,7 +17,7 @@ class Template
 
     public static function importViewModule(string $path)
     {
-        $relativePath = '/core/assets/javascript/controllers/' . $path . 'Controller.js';
+        $relativePath = '/core/assets/javascript/controllers/views/' . $path . 'Controller.js';
 
         if (file_exists(LOCAL_PATH . $relativePath)) {
             return '<script type="module" src="' . SERVER_PATH . $relativePath . '"></script>';
