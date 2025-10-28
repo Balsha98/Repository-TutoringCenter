@@ -12,6 +12,20 @@ class RequestHandler {
             },
         });
     }
+
+    checkForEmptyInputs(data) {
+        const validations = [];
+
+        for (const [key, value] of Object.entries(data)) {
+            if (!value) {
+                $(`#${key}`).closest("div").addClass("div-invalid-input-container");
+
+                validations.push(key);
+            }
+        }
+
+        return validations.length;
+    }
 }
 
 export default new RequestHandler();
