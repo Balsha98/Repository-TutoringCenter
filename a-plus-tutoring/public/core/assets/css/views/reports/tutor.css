@@ -1,5 +1,5 @@
-/* TUTOR DASHBOARD VIEW CONTAINER */
-.div-tutor-dashboard-view-container {
+/* TUTOR REPORTS VIEW CONTAINER */
+.div-tutor-reports-view-container {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -12,44 +12,44 @@
     z-index: 1;
 }
 
-/* TUTOR DASHBOARD VIEW CONTAINER */
-.header-tutor-dashboard-view-container {
+/* TUTOR REPORTS VIEW CONTAINER */
+.header-tutor-reports-view-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 1.2rem 2.4rem;
 }
 
-.header-tutor-dashboard-view-container p {
+.header-tutor-reports-view-container p {
     font-size: 1.6rem;
 }
 
-/* TUTOR DASHBOARD VIEW CONTAINER NAV LIST */
-.nav-tutor-dashboard-view-container-list {
+/* TUTOR REPORTS VIEW CONTAINER NAV LIST */
+.nav-tutor-reports-view-container-list {
     display: flex;
     align-items: center;
     gap: 1.6rem;
 }
 
-/* TUTOR DASHBOARD VIEW CONTAINER NAV LIST ITEM */
-.nav-tutor-dashboard-view-container-list-item a:link {
+/* TUTOR REPORTS VIEW CONTAINER NAV LIST ITEM */
+.nav-tutor-reports-view-container-list-item a:link {
     font-size: 1.8rem;
     color: var(--primary);
 }
 
-.nav-tutor-dashboard-view-container-list-item a:hover,
-.nav-tutor-dashboard-view-container-list-item .active-link:link {
+.nav-tutor-reports-view-container-list-item a:hover,
+.nav-tutor-reports-view-container-list-item .active-link:link {
     color: var(--primary-shade);
     transform: scale(1.1);
 }
 
-/* TUTOR DASHBOARD VIEW OVERVIEW CONTAINER */
-.div-tutor-dashboard-view-overview-container {
+/* TUTOR REPORTS VIEW OVERVIEW CONTAINER */
+.div-tutor-reports-view-overview-container {
     display: grid;
 }
 
-/* TUTOR DASHBOARD VIEW OVERVIEW BRAND */
-.div-tutor-dashboard-view-overview-brand {
+/* TUTOR REPORTS VIEW OVERVIEW BRAND */
+.div-tutor-reports-view-overview-brand {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -57,12 +57,12 @@
     background-color: var(--primary);
 }
 
-.div-tutor-dashboard-view-overview-brand img {
+.div-tutor-reports-view-overview-brand img {
     width: 32rem;
 }
 
-/* TUTOR DASHBOARD VIEW OVERVIEW CONTROLS */
-.div-tutor-dashboard-view-overview-controls {
+/* TUTOR REPORTS VIEW OVERVIEW CONTROLS */
+.div-tutor-reports-view-overview-controls {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -71,7 +71,7 @@
     padding: 2.4rem;
 }
 
-.div-tutor-dashboard-view-overview-controls::before {
+.div-tutor-reports-view-overview-controls::before {
     content: "";
     position: absolute;
     top: 0;
@@ -81,17 +81,17 @@
     background-color: var(--primary);
 }
 
-.div-tutor-dashboard-view-overview-controls > p {
+.div-tutor-reports-view-overview-controls > p {
     font-size: 1.4rem;
     text-align: center;
 }
 
-.div-tutor-dashboard-view-overview-controls > p span {
+.div-tutor-reports-view-overview-controls > p span {
     color: var(--primary);
 }
 
-/* TUTOR DASHBOARD VIEW OVERVIEW NAV CONTROLS LIST */
-.nav-tutor-dashboard-view-overview-controls-list {
+/* TUTOR REPORTS VIEW OVERVIEW NAV CONTROLS LIST */
+.nav-tutor-reports-view-overview-controls-list {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -99,12 +99,12 @@
     height: 100%;
 }
 
-/* TUTOR DASHBOARD VIEW OVERVIEW NAV CONTROLS LIST ITEM */
-.nav-tutor-dashboard-view-overview-controls-list-item a:link {
+/* TUTOR REPORTS VIEW OVERVIEW NAV CONTROLS LIST ITEM */
+.nav-tutor-reports-view-overview-controls-list-item a:link {
     justify-content: space-between;
     width: 100%;
 }
 
-.nav-tutor-dashboard-view-overview-controls-list-item a:hover ion-icon {
+.nav-tutor-reports-view-overview-controls-list-item a:hover ion-icon {
     transform: translateX(0.2rem);
 }

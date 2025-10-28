@@ -7,6 +7,16 @@
             <nav class="nav-tutor-dashboard-view-container">
                 <ul class="nav-tutor-dashboard-view-container-list">
                     <li class="nav-tutor-dashboard-view-container-list-item">
+                        <a class="link link-icon active-link" href="/dashboard">
+                            <ion-icon src="<?php echo ICONS_PATH . '/grid.svg'; ?>"></ion-icon>
+                        </a>
+                    </li>
+                    <li class="nav-tutor-dashboard-view-container-list-item">
+                        <a class="link link-icon" href="/reports">
+                            <ion-icon src="<?php echo ICONS_PATH . '/book.svg'; ?>"></ion-icon>
+                        </a>
+                    </li>
+                    <li class="nav-tutor-dashboard-view-container-list-item">
                         <a class="link link-icon" href="/logout">
                             <ion-icon src="<?php echo ICONS_PATH . '/log-out.svg'; ?>"></ion-icon>
                         </a>
@@ -23,14 +33,14 @@
                 <nav class="nav-tutor-dashboard-view-overview-controls">
                     <ul class="nav-tutor-dashboard-view-overview-controls-list">
                         <li class="nav-tutor-dashboard-view-overview-controls-list-item">
-                            <a class="link link-primary" href="/sessions">
-                                <span>Sessions</span>
+                            <a class="link link-primary" href="/reports">
+                                <span>Reports</span>
                                 <ion-icon src="<?php echo ICONS_PATH . '/chevron-right.svg'; ?>"></ion-icon>
                             </a>
                         </li>
                         <li class="nav-tutor-dashboard-view-overview-controls-list-item">
-                            <a class="link link-primary" href="/reports">
-                                <span>Reports</span>
+                            <a class="link link-primary" href="/sessions">
+                                <span>Sessions</span>
                                 <ion-icon src="<?php echo ICONS_PATH . '/chevron-right.svg'; ?>"></ion-icon>
                             </a>
                         </li>

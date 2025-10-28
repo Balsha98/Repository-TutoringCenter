@@ -7,6 +7,11 @@
             <nav class="nav-student-dashboard-view-container">
                 <ul class="nav-student-dashboard-view-container-list">
                     <li class="nav-student-dashboard-view-container-list-item">
+                        <a class="link link-icon" href="/dashboard">
+                            <ion-icon src="<?php echo ICONS_PATH . '/grid.svg'; ?>"></ion-icon>
+                        </a>
+                    </li>
+                    <li class="nav-student-dashboard-view-container-list-item">
                         <a class="link link-icon" href="/logout">
                             <ion-icon src="<?php echo ICONS_PATH . '/log-out.svg'; ?>"></ion-icon>
                         </a>

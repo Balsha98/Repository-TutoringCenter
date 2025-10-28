@@ -22,5 +22,11 @@
             "css": ["/core/assets/css/partials/loaders/page-loader"],
             "js": []
         }
+    },
+    {
+        "reports/tutor": {
+            "css": ["/core/assets/css/partials/loaders/page-loader"],
+            "js": []
+        }
     }
 ]
