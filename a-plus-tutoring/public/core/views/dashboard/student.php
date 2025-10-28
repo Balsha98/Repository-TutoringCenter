@@ -3,7 +3,9 @@
     <!-- STUDENT DASHBOARD VIEW CONTAINER -->
     <div class="div-student-dashboard-view-container">
         <header class="header-student-dashboard-view-container">
-            <p>Welcome, User.</p>
+            <?php $dbInstance = Source\Handlers\Helpers\Classes\Session::getDb(); ?>
+            <?php $student = new Source\Handlers\Core\Models\Student($dbInstance); ?>
+            <p>Welcome, <?php echo $student->getFirstName(); ?>.</p>
             <nav class="nav-student-dashboard-view-container">
                 <ul class="nav-student-dashboard-view-container-list">
                     <li class="nav-student-dashboard-view-container-list-item">

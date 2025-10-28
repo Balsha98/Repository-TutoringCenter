@@ -3,7 +3,8 @@
 return [
     'Api\Assets\Routing',
     'Api\Assets\Controllers',
-    'Handlers\Core\Routing',
     'Handlers\Core\Database',
+    'Handlers\Core\Models',
+    'Handlers\Core\Routing',
     'Handlers\Helpers\Classes'
 ];
