@@ -24,6 +24,10 @@
     font-size: 1.6rem;
 }
 
+.header-tutor-dashboard-view-container span {
+    color: var(--primary);
+}
+
 /* TUTOR DASHBOARD VIEW CONTAINER NAV LIST */
 .nav-tutor-dashboard-view-container-list {
     display: flex;

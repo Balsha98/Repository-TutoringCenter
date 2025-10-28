@@ -24,6 +24,10 @@
     font-size: 1.6rem;
 }
 
+.header-student-dashboard-view-container span {
+    color: var(--primary);
+}
+
 /* STUDENT DASHBOARD VIEW CONTAINER NAV LIST */
 .nav-student-dashboard-view-container-list {
     display: flex;
@@ -37,7 +41,8 @@
     color: var(--primary);
 }
 
-.nav-student-dashboard-view-container-list-item a:hover {
+.nav-student-dashboard-view-container-list-item a:hover,
+.nav-student-dashboard-view-container-list-item .active-link:link {
     color: var(--primary-shade);
     transform: scale(1.1);
 }

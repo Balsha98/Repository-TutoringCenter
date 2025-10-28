@@ -24,6 +24,10 @@
     font-size: 1.6rem;
 }
 
+.header-tutor-reports-view-container span {
+    color: var(--primary);
+}
+
 /* TUTOR REPORTS VIEW CONTAINER NAV LIST */
 .nav-tutor-reports-view-container-list {
     display: flex;

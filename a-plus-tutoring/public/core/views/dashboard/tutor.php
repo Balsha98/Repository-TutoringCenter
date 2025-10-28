@@ -3,7 +3,9 @@
     <!-- TUTOR DASHBOARD VIEW CONTAINER -->
     <div class="div-tutor-dashboard-view-container">
         <header class="header-tutor-dashboard-view-container">
-            <p>Welcome, User.</p>
+            <?php $dbInstance = Source\Handlers\Helpers\Classes\Session::getDb(); ?>
+            <?php $tutor = new Source\Handlers\Core\Models\Tutor($dbInstance); ?>
+            <p>Welcome, <span><?php echo $tutor->getFirstName(); ?></span>!</p>
             <nav class="nav-tutor-dashboard-view-container">
                 <ul class="nav-tutor-dashboard-view-container-list">
                     <li class="nav-tutor-dashboard-view-container-list-item">

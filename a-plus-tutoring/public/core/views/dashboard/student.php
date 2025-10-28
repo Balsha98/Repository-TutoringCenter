@@ -5,11 +5,11 @@
         <header class="header-student-dashboard-view-container">
             <?php $dbInstance = Source\Handlers\Helpers\Classes\Session::getDb(); ?>
             <?php $student = new Source\Handlers\Core\Models\Student($dbInstance); ?>
-            <p>Welcome, <?php echo $student->getFirstName(); ?>.</p>
+            <p>Welcome, <span><?php echo $student->getFirstName(); ?></span>!</p>
             <nav class="nav-student-dashboard-view-container">
                 <ul class="nav-student-dashboard-view-container-list">
                     <li class="nav-student-dashboard-view-container-list-item">
-                        <a class="link link-icon" href="/dashboard">
+                        <a class="link link-icon active-link" href="/dashboard">
                             <ion-icon src="<?php echo ICONS_PATH . '/grid.svg'; ?>"></ion-icon>
                         </a>
                     </li>
