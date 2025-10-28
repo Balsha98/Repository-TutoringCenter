@@ -24,7 +24,7 @@
                 </label>
             </div>
             <div class="div-form-control-btns-container">
-                <button class="btn btn-primary" type="button">
+                <button class="btn btn-primary">
                     <span>Login</span>
                 </button>
             </div>

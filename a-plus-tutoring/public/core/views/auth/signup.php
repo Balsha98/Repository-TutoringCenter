@@ -66,7 +66,7 @@
                     <button class="btn btn-secondary" type="button" data-step="1">
                         <span>Previous</span>
                     </button>
-                    <button class="btn btn-primary" type="button">
+                    <button class="btn btn-primary">
                         <span>Signup</span>
                     </button>
                 </div>
