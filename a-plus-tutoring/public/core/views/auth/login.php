@@ -12,19 +12,19 @@
         </header>
         <form class="form-login-view" action="/api/login" method="POST">
             <div class="div-input-container">
-                <input id="email" type="email" name="email" placeholder="Email Address">
+                <input id="email" class="form-input" type="email" name="email" placeholder="Email Address">
                 <label for="email">
                     <ion-icon src="<?php echo ICONS_PATH . '/mail.svg'; ?>"></ion-icon>
                 </label>
             </div>
             <div class="div-input-container">
-                <input id="password" type="password" name="password" placeholder="Password">
+                <input id="password" class="form-input" type="password" name="password" placeholder="Password">
                 <label for="password">
                     <ion-icon src="<?php echo ICONS_PATH . '/lock.svg'; ?>"></ion-icon>
                 </label>
             </div>
             <div class="div-form-control-btns-container">
-                <button class="btn btn-primary">
+                <button class="btn btn-primary btn-login">
                     <span>Login</span>
                 </button>
             </div>

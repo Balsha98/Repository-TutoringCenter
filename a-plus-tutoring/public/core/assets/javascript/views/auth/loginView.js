@@ -1,6 +1,6 @@
 class LoginView {
     #loginForm = $(".form-login-view");
-    #btnLogin = $(".form-login-view button");
+    #btnLogin = $(".btn-login");
 
     handleUserLogin(handler) {
         this.#btnLogin.click(handler);
