@@ -6,6 +6,16 @@ import signupView from "../../../views/auth/signupView.js";
 const handleFormSteps = function () {
     const btnStep = +$(this).data("step");
 
+    if (btnStep === 2) {
+        const requestData = {};
+        requestData["first-name"] = $("#first-name").val();
+        requestData["last-name"] = $("#last-name").val();
+        requestData["major"] = $("#major").val();
+
+        // Guard clause.
+        if (requestHandler.checkForEmptyInputs(requestData)) return;
+    }
+
     signupView.getSignupFormStepItems().each((_, item) => {
         const itemStep = +$(item).data("step");
 
@@ -28,13 +38,14 @@ const handleUserSignup = function (e) {
     requestData["email"] = $("#email").val();
     requestData["password"] = $("#password").val();
 
+    // Guard clause.
     if (requestHandler.checkForEmptyInputs(requestData)) return;
 
     requestHandler.handleRequest(url, method, requestData);
 };
 
 const initController = function () {
-    pageLoaderController.controlHidePageLoader(2);
+    pageLoaderController.controlHidePageLoader(0.1);
 
     signupView.handleFormSteps(handleFormSteps);
     signupView.handleUserSignup(handleUserSignup);

@@ -9,7 +9,7 @@
             <h2>Welcome to A<sup>+</sup> Tutoring!</h2>
             <p>Fill out the form fields with <span>valid</span> credentials.</p>
         </header>
-        <form class="form-signup-view" action="/api/signup" method="POST">
+        <form class="form-signup-view" action="/api/auth/signup" method="POST">
             <div class="div-form-signup-view-step-item-container" data-step="1">
                 <div class="div-multi-input-containers grid-2-columns">
                     <div class="div-input-container">
