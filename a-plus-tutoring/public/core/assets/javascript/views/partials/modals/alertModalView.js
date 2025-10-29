@@ -9,8 +9,8 @@ class AlertModalView {
 
     // HANDLER METHODS
     handleShowAlertModal(response, seconds = 3) {
-        const isResponseValid = response["success"] !== undefined;
-        const responseData = response[isResponseValid ? "success" : "error"];
+        const isResponseValid = response["status"] === "success";
+        const responseData = response["response"];
 
         this.#alertModalData.removeClass(`alert-modal-${isResponseValid ? "failure" : "success"}`);
         this.#alertModalData.addClass(`alert-modal-${isResponseValid ? "success" : "failure"}`);
