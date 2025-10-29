@@ -1,7 +1,8 @@
 <?php
 
-namespace Api\Assets\Controllers;
+namespace Api\Assets\Controllers\Auth;
 
+use Api\Assets\Controllers\AbstractApiController;
 use Source\Handlers\Helpers\Classes\Session;
 
 class LoginApiController extends AbstractApiController
@@ -16,7 +17,8 @@ class LoginApiController extends AbstractApiController
         // Guard clause: account does not exist.
         if (empty($account)) {
             return [
-                'error' => [
+                'status' => 'error',
+                'response' => [
                     'title' => 'Invalid Credentials',
                     'message' => 'No active account with the given email.',
                     'next-route' => 'wait'
@@ -30,7 +32,8 @@ class LoginApiController extends AbstractApiController
         // Guard clause: password does not match.
         if (!hash_equals($storedHash, $hash)) {
             return [
-                'error' => [
+                'status' => 'error',
+                'response' => [
                     'title' => 'Invalid Credentials',
                     'message' => 'Make sure you are providing valid credentials.',
                     'next-route' => 'wait'
@@ -43,7 +46,8 @@ class LoginApiController extends AbstractApiController
         Session::set('account-active', 1);
 
         return [
-            'success' => [
+            'status' => 'success',
+            'response' => [
                 'title' => 'Successful Login',
                 'message' => 'You have successfully been logged in.',
                 'next-route' => '/dashboard'

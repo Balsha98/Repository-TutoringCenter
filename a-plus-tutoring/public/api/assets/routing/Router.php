@@ -22,9 +22,9 @@ class Router
         try {
             $uri = $_SERVER['REQUEST_URI'];
             $uriParts = explode('/', $uri);
-            $requestView = $uriParts[2];
+            $requestView = $uriParts[2] . '/' . $uriParts[3];
 
-            self::$id = (int) ($uriParts[3] ?? 0);
+            self::$id = (int) ($uriParts[4] ?? 0);
             self::$method = $_SERVER['REQUEST_METHOD'];
             self::$data = JSON::decode(file_get_contents('php://input')) ?? [];
 
@@ -33,13 +33,19 @@ class Router
                 throw new Exception('Error accessing missing API route.');
             }
 
-            $namespace = 'Api\\Assets\\Controllers\\';
-            $classPath = $namespace . ucfirst($requestView) . 'ApiController';
+            $namespace = 'Api\\Assets\\Controllers\\' . ucfirst($uriParts[2]) . '\\';
+            $classPath = $namespace . ucfirst($uriParts[3]) . 'ApiController';
             self::$controller = new $classPath();
 
             $response = self::handleRequest();
         } catch (Exception $e) {
-            return JSON::encode(['error' => $e->getMessage()]);
+            return JSON::encode([
+                'status' => 'error',
+                'response' => [
+                    'title' => 'Unexpected API Error',
+                    'message' => $e->getMessage()
+                ]
+            ]);
         }
 
         return JSON::encode($response);
