@@ -10,7 +10,7 @@
             <h2>Welcome to A<sup>+</sup> Tutoring!</h2>
             <p>Provide your <span>credentials</span> in order to proceed.</p>
         </header>
-        <form class="form-login-view" action="/api/login" method="POST">
+        <form class="form-login-view" action="/api/auth/login" method="POST">
             <div class="div-input-container">
                 <input id="email" class="form-input" type="email" name="email" placeholder="Email Address">
                 <label for="email">
