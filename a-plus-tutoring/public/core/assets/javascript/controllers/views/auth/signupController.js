@@ -13,7 +13,7 @@ const handleFormSteps = function () {
         requestData["major"] = $("#major").val();
 
         // Guard clause.
-        if (requestHandler.checkForEmptyInputs(requestData)) return;
+        if (requestHandler.traverseForInvalidInputs(requestData)) return;
     }
 
     signupView.getSignupFormStepItems().each((_, item) => {
@@ -39,7 +39,7 @@ const handleUserSignup = function (e) {
     requestData["password"] = $("#password").val();
 
     // Guard clause.
-    if (requestHandler.checkForEmptyInputs(requestData)) return;
+    if (requestHandler.traverseForInvalidInputs(requestData)) return;
 
     requestHandler.handleRequest(url, method, requestData);
 };

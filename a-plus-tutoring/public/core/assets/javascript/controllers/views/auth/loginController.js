@@ -13,7 +13,7 @@ const handleUserLogin = function (e) {
     requestData["email"] = $("#email").val();
     requestData["password"] = $("#password").val();
 
-    if (requestHandler.checkForEmptyInputs(requestData)) return;
+    if (requestHandler.traverseForInvalidInputs(requestData)) return;
 
     requestHandler.handleRequest(url, method, requestData);
 };
