@@ -34,7 +34,7 @@ class Router
             }
 
             $namespace = 'Api\\Assets\\Controllers\\' . ucfirst($uriParts[2]) . '\\';
-            $classPath = $namespace . ucfirst($uriParts[3]) . 'ApiController';
+            $classPath = $namespace . ucfirst($uriParts[3]) . 'Controller';
             self::$controller = new $classPath();
 
             $response = self::handleRequest();
