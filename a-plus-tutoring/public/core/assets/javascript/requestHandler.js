@@ -20,8 +20,9 @@ class RequestHandler {
         const validations = [];
 
         for (const [key, value] of Object.entries(data)) {
-            if (!value) validations.push($(`#${key}`).closest("div").addClass("div-invalid-input-container"));
-            else $(`#${key}`).closest("div").removeClass("div-invalid-input-container");
+            const parent = $(`#${key}`).closest("div");
+            if (!value) validations.push(parent.addClass("div-invalid-input-container"));
+            else parent.removeClass("div-invalid-input-container");
         }
 
         return validations.length;
