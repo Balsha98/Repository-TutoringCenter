@@ -4,7 +4,7 @@ namespace Api\Assets\Controllers;
 
 use Source\Handlers\Core\Database\Database;
 
-abstract class AbstractApiController
+abstract class AbstractController
 {
     private int $id;
     private array $data;

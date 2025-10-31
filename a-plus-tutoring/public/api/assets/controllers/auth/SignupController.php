@@ -3,10 +3,10 @@
 namespace Api\Assets\Controllers\Auth;
 
 use Api\Assets\Constraints\Auth\SignupConstraints;
-use Api\Assets\Controllers\AbstractApiController;
+use Api\Assets\Controllers\AbstractController;
 use Source\Handlers\Helpers\Classes\Validation;
 
-class SignupApiController extends AbstractApiController
+class SignupApiController extends AbstractController
 {
     public function post()
     {

@@ -2,10 +2,10 @@
 
 namespace Api\Assets\Controllers\Auth;
 
-use Api\Assets\Controllers\AbstractApiController;
+use Api\Assets\Controllers\AbstractController;
 use Source\Handlers\Helpers\Classes\Session;
 
-class LoginApiController extends AbstractApiController
+class LoginApiController extends AbstractController
 {
     public function post()
     {
