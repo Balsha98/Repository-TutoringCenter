@@ -13,7 +13,10 @@ class SignupApiController extends AbstractApiController
         Validation::setData($this->getData());
         Validation::setRules(SignupValidation::getRules());
 
-        if (!Validation::validate()) {
+        if (!empty(Validation::validate())) {
+            return Validation::getResponse();
         }
+
+        // TODO: Validate inputs...
     }
 }

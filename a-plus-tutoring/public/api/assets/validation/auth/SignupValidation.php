@@ -9,7 +9,7 @@ class SignupValidation implements IValidation
     private static array $rules = [
         'first-name' => [
             'null' => false,
-            'type' => 'string',
+            'type' => 'text',
             'pattern' => 'only-letters',
             'length' => [
                 'min' => 3,
@@ -18,7 +18,7 @@ class SignupValidation implements IValidation
         ],
         'last-name' => [
             'null' => false,
-            'type' => 'string',
+            'type' => 'text',
             'pattern' => 'only-letters',
             'length' => [
                 'min' => 3,
@@ -27,25 +27,20 @@ class SignupValidation implements IValidation
         ],
         'major' => [
             'null' => false,
-            'type' => 'string',
-            'pattern' => 'special-cases',
-            'length' => [
-                'min' => 10,
-                'max' => 50
-            ],
+            'type' => 'select'
         ],
         'role' => [
             'null' => false,
-            'type' => 'string',
-            'pattern' => 'only-letters',
+            'type' => 'select'
         ],
         'email' => [
+            'null' => false,
             'type' => 'email'
         ],
         'password' => [
             'null' => false,
-            'type' => 'string',
-            'pattern' => 'special-cases',
+            'type' => 'text',
+            'pattern' => 'certain-symbols',
             'length' => [
                 'min' => 8,
                 'max' => 20
