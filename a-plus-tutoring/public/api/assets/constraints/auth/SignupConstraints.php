@@ -1,14 +1,13 @@
 <?php
 
-namespace Api\Assets\Validation\Auth;
+namespace Api\Assets\Constraints\Auth;
 
-use Api\Assets\Validation\IValidation;
+use Api\Assets\Constraints\IConstraints;
 
-class SignupValidation implements IValidation
+class SignupConstraints implements IConstraints
 {
-    private static array $rules = [
+    private static array $constraints = [
         'first-name' => [
-            'null' => false,
             'type' => 'text',
             'pattern' => 'only-letters',
             'length' => [
@@ -17,7 +16,6 @@ class SignupValidation implements IValidation
             ],
         ],
         'last-name' => [
-            'null' => false,
             'type' => 'text',
             'pattern' => 'only-letters',
             'length' => [
@@ -25,20 +23,10 @@ class SignupValidation implements IValidation
                 'max' => 25
             ],
         ],
-        'major' => [
-            'null' => false,
-            'type' => 'select'
-        ],
-        'role' => [
-            'null' => false,
-            'type' => 'select'
-        ],
-        'email' => [
-            'null' => false,
+        'email-address' => [
             'type' => 'email'
         ],
         'password' => [
-            'null' => false,
             'type' => 'text',
             'pattern' => 'certain-symbols',
             'length' => [
@@ -48,8 +36,8 @@ class SignupValidation implements IValidation
         ]
     ];
 
-    public static function getRules()
+    public static function getConstraints()
     {
-        return self::$rules;
+        return self::$constraints;
     }
 }
