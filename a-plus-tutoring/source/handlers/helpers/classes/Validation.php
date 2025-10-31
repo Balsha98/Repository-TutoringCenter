@@ -5,72 +5,15 @@ namespace Source\Handlers\Helpers\Classes;
 class Validation
 {
     private static array $data;
-    private static array $rules;
+    private static array $constraints;
 
     private static array $patterns = [
         'only-letters' => '#[^a-zA-Z]#',
         'certain-symbols' => '#[^a-zA-Z0-9.,!&? ]#',
-        'none-symbols' => '#[^a-zA-Z0-9- ]#',
+        'none-symbols' => '#[^a-zA-Z0-9- ]#'
     ];
 
     private static array $response = [];
-
-    public static function validate()
-    {
-        if (!empty(self::$data)) {
-            foreach (self::$data as $key => $value) {
-                if (self::$rules[$key]) {
-                    $rules = self::$rules[$key];
-                    $type = $rules['type'];
-
-                    // Check if null.
-                    if (!$rules['null'] && empty($value)) {
-                        return self::buildError($key, $type);
-                    }
-
-                    // Check text.
-                    if ($type === 'text') {
-                        $pattern = self::$patterns[$rules['pattern']];
-
-                        if (preg_match($pattern, $value)) {
-                            [$min, $max] = $rules['length'];
-                            $strLen = strlen($value);
-
-                            if ($strLen < $min || $strLen > $max) {
-                                return self::buildError($key, $type, 'length');
-                            }
-
-                            return self::buildError($key, $type, 'pattern');
-                        }
-
-                        continue;
-                    }
-
-                    // Check email.
-                    if ($type === 'email') {
-                        if (!filter_var($value, FILTER_VALIDATE_EMAIL)) {
-                            return self::buildError($key, $type);
-                        }
-
-                        continue;
-                    }
-
-                    // Check number.
-                    if ($type === 'number') {
-                        [$min, $max] = $rules['length'];
-
-                        if ((int) $value < $min || (int) $value > $max) {
-                            return self::buildError($key, $type);
-                        }
-
-                        continue;
-                    }
-                }
-            }
-        }
-
-        return [];
-    }
 
     // GETTERS
 
@@ -86,17 +29,58 @@ class Validation
         self::$data = $data;
     }
 
-    public static function setRules(array $rules)
+    public static function setConstraints(array $constraints)
     {
-        self::$rules = $rules;
+        self::$constraints = $constraints;
+    }
+
+    // HANDLERS
+
+    public static function validate()
+    {
+        if (!empty(self::$data)) {
+            foreach (self::$data as $key => $value) {
+                if (array_key_exists($key, self::$constraints)) {
+                    $apiConstraints = self::$constraints[$key];
+                    $columnType = $apiConstraints['type'];
+
+                    // Data integrity.
+                    if ($columnType === 'text') {
+                        $pattern = self::$patterns[$apiConstraints['pattern']];
+
+                        if (preg_match($pattern, $value)) {
+                            return self::buildErrorMessage($key, $columnType, 'pattern');
+                        }
+
+                        ['min' => $min, 'max' => $max] = $apiConstraints['length'];
+
+                        if (strlen($value) < $min || strlen($value) > $max) {
+                            return self::buildErrorMessage($key, $columnType, 'length');
+                        }
+
+                        continue;
+                    } else if ($columnType === 'email' && !filter_var($value, FILTER_VALIDATE_EMAIL)) {
+                        return self::buildErrorMessage($key, $columnType);
+                    } else if ($columnType === 'number') {
+                        ['min' => $min, 'max' => $max] = $apiConstraints['length'];
+
+                        if ((int) $value < $min || (int) $value > $max) {
+                            return self::buildErrorMessage($key, $columnType);
+                        }
+                    }
+                }
+            }
+        }
+
+        return [];
     }
 
     // HELPERS
 
-    private static function buildError(string $key, string $type, string $reason = '')
+    private static function buildErrorMessage(string $key, string $type, string $reason = '')
     {
         $capitalizedKey = self::capitalize($key);
-        $length = self::$data[$key]['length'] ?? [];
+        $length = self::$constraints[$key]['length'] ?? [];
 
         return self::$response = [
             'status' => 'error',
@@ -105,11 +89,10 @@ class Validation
                 'message' => match ($type) {
                     'text' => match ($reason) {
                         'pattern' => $capitalizedKey . ' is of the wrong format.',
-                        'length' => $capitalizedKey . ' must be between ' . $length['min'] . ' and ' . $length['max'] . ', inclusively.'
+                        'length' => $capitalizedKey . ' must be between ' . $length['min'] . ' and ' . $length['max'] . ' chars, inclusively.'
                     },
-                    'email' => $capitalizedKey . ' Address is of the wrong format.',
-                    'select' => $capitalizedKey . ' cannot be empty.',
-                    'number' => $capitalizedKey . ' must be between ' . $length['min'] . ' and ' . $length['max'] . ', inclusively.'
+                    'email' => $capitalizedKey . ' is of the wrong format.',
+                    'number' => $capitalizedKey . ' must be between ' . $length['min'] . ' and ' . $length['max'] . ' chars, inclusively.'
                 },
             ],
             'input-id' => $key
