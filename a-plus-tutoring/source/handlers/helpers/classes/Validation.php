@@ -9,61 +9,74 @@ class Validation
 
     private static array $patterns = [
         'only-letters' => '#[^a-zA-Z]#',
-        'special-cases' => '#[^a-zA-Z0-9.,!&? ]#',
+        'certain-symbols' => '#[^a-zA-Z0-9.,!&? ]#',
         'none-symbols' => '#[^a-zA-Z0-9- ]#',
     ];
 
+    private static array $response = [];
+
     public static function validate()
     {
-        foreach (self::$data as $key => $value) {
-            if (self::$rules[$key]) {
-                $rules = self::$rules[$key];
+        if (!empty(self::$data)) {
+            foreach (self::$data as $key => $value) {
+                if (self::$rules[$key]) {
+                    $rules = self::$rules[$key];
+                    $type = $rules['type'];
 
-                // Check if value is required.
-                if (!$rules['null'] && empty($value)) {
-                    return self::buildError($key);
-                }
+                    // Check if null.
+                    if (!$rules['null'] && empty($value)) {
+                        return self::buildError($key, $type);
+                    }
 
-                // Check string structure.
-                if ($rules['type'] === 'string') {
-                    if (preg_match($rules['pattern'], $value)) {
-                        [$min, $max] = $rules['length'];
-                        $strLen = strlen($value);
+                    // Check text.
+                    if ($type === 'text') {
+                        $pattern = self::$patterns[$rules['pattern']];
 
-                        if ($strLen < $min || $strLen > $max) {
-                            return self::buildError($key);
+                        if (preg_match($pattern, $value)) {
+                            [$min, $max] = $rules['length'];
+                            $strLen = strlen($value);
+
+                            if ($strLen < $min || $strLen > $max) {
+                                return self::buildError($key, $type, 'length');
+                            }
+
+                            return self::buildError($key, $type, 'pattern');
                         }
 
-                        return self::buildError($key);
+                        continue;
                     }
 
-                    continue;
-                }
+                    // Check email.
+                    if ($type === 'email') {
+                        if (!filter_var($value, FILTER_VALIDATE_EMAIL)) {
+                            return self::buildError($key, $type);
+                        }
 
-                // Check email structure.
-                if ($rules['type'] === 'email') {
-                    if (!filter_var($value, FILTER_VALIDATE_EMAIL)) {
-                        return self::buildError($key);
+                        continue;
                     }
 
-                    continue;
-                }
+                    // Check number.
+                    if ($type === 'number') {
+                        [$min, $max] = $rules['length'];
 
-                // Check number value.
-                if ($rules['type'] === 'int') {
-                    [$min, $max] = $rules['length'];
-                    $casted = (int) $value;
+                        if ((int) $value < $min || (int) $value > $max) {
+                            return self::buildError($key, $type);
+                        }
 
-                    if ($casted < $min || $casted > $max) {
-                        return self::buildError($key);
+                        continue;
                     }
-
-                    continue;
                 }
             }
         }
 
         return [];
+    }
+
+    // GETTERS
+
+    public static function getResponse()
+    {
+        return self::$response;
     }
 
     // SETTERS
@@ -80,14 +93,38 @@ class Validation
 
     // HELPERS
 
-    private static function buildError(string $key)
+    private static function buildError(string $key, string $type, string $reason = '')
     {
-        return [
+        $capitalizedKey = self::capitalize($key);
+        $length = self::$data[$key]['length'] ?? [];
+
+        return self::$response = [
             'status' => 'error',
             'response' => [
-                'title' => '',
-                'message' => ''
-            ]
+                'title' => 'Invalid ' . $capitalizedKey,
+                'message' => match ($type) {
+                    'text' => match ($reason) {
+                        'pattern' => $capitalizedKey . ' is of the wrong format.',
+                        'length' => $capitalizedKey . ' must be between ' . $length['min'] . ' and ' . $length['max'] . ', inclusively.'
+                    },
+                    'email' => $capitalizedKey . ' Address is of the wrong format.',
+                    'select' => $capitalizedKey . ' cannot be empty.',
+                    'number' => $capitalizedKey . ' must be between ' . $length['min'] . ' and ' . $length['max'] . ', inclusively.'
+                },
+            ],
+            'input-id' => $key
         ];
+    }
+
+    private static function capitalize(string $string)
+    {
+        if (preg_match('#[-]#', $string)) {
+            return join(' ', array_map(
+                fn($part) => ucfirst($part),
+                explode('-', $string)
+            ));
+        }
+
+        return ucfirst($string);
     }
 }
