@@ -45,7 +45,7 @@ const handleUserSignup = function (e) {
 };
 
 const initController = function () {
-    pageLoaderController.controlHidePageLoader(0.1);
+    pageLoaderController.controlHidePageLoader(2);
 
     signupView.handleFormSteps(handleFormSteps);
     signupView.handleUserSignup(handleUserSignup);

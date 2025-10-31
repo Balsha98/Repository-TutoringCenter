@@ -14,7 +14,7 @@
             <div class="div-form-signup-view-step-item-container" data-step="1">
                 <div class="div-multi-input-containers grid-2-columns">
                     <div class="div-input-container">
-                        <input id="first-name" class="form-input" type="first-name" name="first-name" placeholder="First Name">
+                        <input id="first-name" class="form-input" type="first-name" name="first-name" placeholder="First Name" autofocus>
                         <label for="first-name">
                             <ion-icon src="<?php echo ICONS_PATH . '/user.svg'; ?>"></ion-icon>
                         </label>
