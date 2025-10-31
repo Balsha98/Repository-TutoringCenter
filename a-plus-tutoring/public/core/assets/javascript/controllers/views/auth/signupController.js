@@ -35,7 +35,7 @@ const handleUserSignup = function (e) {
     requestData["last-name"] = $("#last-name").val();
     requestData["major"] = $("#major").val();
     requestData["role"] = $("#role").val();
-    requestData["email"] = $("#email").val();
+    requestData["email-address"] = $("#email-address").val();
     requestData["password"] = $("#password").val();
 
     // Guard clause.

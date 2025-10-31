@@ -2,8 +2,8 @@
 
 namespace Api\Assets\Controllers\Auth;
 
+use Api\Assets\Constraints\Auth\SignupConstraints;
 use Api\Assets\Controllers\AbstractApiController;
-use Api\Assets\Validation\Auth\SignupValidation;
 use Source\Handlers\Helpers\Classes\Validation;
 
 class SignupApiController extends AbstractApiController
@@ -11,7 +11,7 @@ class SignupApiController extends AbstractApiController
     public function post()
     {
         Validation::setData($this->getData());
-        Validation::setRules(SignupValidation::getRules());
+        Validation::setConstraints(SignupConstraints::getConstraints());
 
         if (!empty(Validation::validate())) {
             return Validation::getResponse();
