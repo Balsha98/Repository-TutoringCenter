@@ -1,3 +1,4 @@
+    <?php require_once LOCAL_PATH . '/core/partials/modals/alert-modal.php'; ?>
     <?php require_once LOCAL_PATH . '/core/partials/loaders/page-loader.php'; ?>
 
     <!-- SIGNUP VIEW CONTAINER -->
