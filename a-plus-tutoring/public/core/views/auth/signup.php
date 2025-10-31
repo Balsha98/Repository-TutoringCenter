@@ -51,8 +51,8 @@
                         </label>
                     </div>
                     <div class="div-input-container">
-                        <input id="email" class="form-input" type="email" name="email" placeholder="Email Address">
-                        <label for="email">
+                        <input id="email-address" class="form-input" type="email" name="email-address" placeholder="Email Address">
+                        <label for="email-address">
                             <ion-icon src="<?php echo ICONS_PATH . '/mail.svg'; ?>"></ion-icon>
                         </label>
                     </div>
