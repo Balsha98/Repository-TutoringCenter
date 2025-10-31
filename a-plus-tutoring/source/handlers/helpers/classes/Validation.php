@@ -15,14 +15,10 @@ class Validation
 
     private static array $response = [];
 
-    // GETTERS
-
     public static function getResponse()
     {
         return self::$response;
     }
-
-    // SETTERS
 
     public static function setData(array $data)
     {
@@ -33,8 +29,6 @@ class Validation
     {
         self::$constraints = $constraints;
     }
-
-    // HANDLERS
 
     public static function validate()
     {
