@@ -2,7 +2,7 @@
 
 namespace Api\Assets\Routing;
 
-use Api\Assets\Controllers\AbstractApiController;
+use Api\Assets\Controllers\AbstractController;
 use Source\Handlers\Helpers\Classes\{JSON, Session};
 use Exception;
 
@@ -11,7 +11,7 @@ class Router
     private static int $id;
     private static string $method;
     private static array $data;
-    private static AbstractApiController $controller;
+    private static AbstractController $controller;
 
     public static function processRequest()
     {
