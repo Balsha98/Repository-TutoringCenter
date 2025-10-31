@@ -9,17 +9,22 @@ class RequestHandler {
             data: JSON.stringify(data),
         });
 
+        console.log(response);
+
         if (response["input-id"]) this.#highlightInvalidInput(response);
 
         alertModalController.controlShowAlertModal(response);
     }
 
     traverseForInvalidInputs(data) {
+        const validations = [];
+
         for (const [key, value] of Object.entries(data)) {
-            if (!value) $(`#${key}`).closest("div").addClass("div-invalid-input-container");
+            if (!value) validations.push($(`#${key}`).closest("div").addClass("div-invalid-input-container"));
+            else $(`#${key}`).closest("div").removeClass("div-invalid-input-container");
         }
 
-        return $(".div-invalid-input-container").length;
+        return validations.length;
     }
 
     #highlightInvalidInput(response) {
