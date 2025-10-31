@@ -12,7 +12,7 @@
         </header>
         <form class="form-login-view" action="/api/auth/login" method="POST">
             <div class="div-input-container">
-                <input id="email" class="form-input" type="email" name="email" placeholder="Email Address">
+                <input id="email" class="form-input" type="email" name="email" placeholder="Email Address" autofocus>
                 <label for="email">
                     <ion-icon src="<?php echo ICONS_PATH . '/mail.svg'; ?>"></ion-icon>
                 </label>
