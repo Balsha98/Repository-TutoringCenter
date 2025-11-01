@@ -10,7 +10,7 @@ const handleUserLogin = function (e) {
     const method = loginView.getLoginForm().attr("method");
 
     const requestData = {};
-    requestData["email"] = $("#email").val();
+    requestData["email_address"] = $("#email_address").val();
     requestData["password"] = $("#password").val();
 
     if (requestHandler.traverseForInvalidInputs(requestData)) return;

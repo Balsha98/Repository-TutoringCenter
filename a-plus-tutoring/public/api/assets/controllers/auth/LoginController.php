@@ -5,12 +5,12 @@ namespace Api\Assets\Controllers\Auth;
 use Api\Assets\Controllers\AbstractController;
 use Source\Handlers\Helpers\Classes\Session;
 
-class LoginApiController extends AbstractController
+class LoginController extends AbstractController
 {
     public function post()
     {
         $data = $this->getData();
-        $email = $data['email'];
+        $email = $data['email_address'];
 
         $account = $this->fetchAccount($email);
 
@@ -21,8 +21,8 @@ class LoginApiController extends AbstractController
                 'response' => [
                     'title' => 'Invalid Credentials',
                     'message' => 'No active account with the given email.',
-                    'next-route' => 'wait'
-                ]
+                ],
+                'route' => 'wait'
             ];
         }
 
@@ -36,35 +36,40 @@ class LoginApiController extends AbstractController
                 'response' => [
                     'title' => 'Invalid Credentials',
                     'message' => 'Make sure you are providing valid credentials.',
-                    'next-route' => 'wait'
-                ]
+                ],
+                'route' => 'wait'
             ];
         }
 
-        Session::set('account-id', $account['id']);
-        Session::set('account-type', $account['type']);
-        Session::set('account-active', 1);
+        Session::set('account_id', $account['id']);
+        Session::set('account_role', $account['role']);
+        Session::set('account_active', 1);
 
         return [
             'status' => 'success',
             'response' => [
                 'title' => 'Successful Login',
                 'message' => 'You have successfully been logged in.',
-                'next-route' => '/dashboard'
-            ]
+            ],
+            'route' => '/dashboard'
         ];
     }
 
     private function fetchAccount(string $email)
     {
-        $query = 'SELECT * FROM (
-            SELECT id, type, email, password FROM student 
-                UNION 
-            SELECT id, type, email, password FROM tutor 
-        ) AS accounts WHERE accounts.email = :email;';
+        foreach (['student', 'tutor'] as $table) {
+            $return = $this->getDbInstance()->executeQuery(
+                'SELECT * FROM ' . $table . ' WHERE email_address = :email_address;',
+                [':email_address' => $email]
+            )->getQueryResult(true);
 
-        return $this->getDbInstance()->executeQuery(
-            $query, [':email' => $email]
-        )->getQueryResult(true);
+            if (!empty($return)) {
+                $return['role'] = $table;
+
+                return $return;
+            }
+        }
+
+        return [];
     }
 }

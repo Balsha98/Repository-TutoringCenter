@@ -12,13 +12,13 @@
         </header>
         <form class="form-login-view" action="/api/auth/login" method="POST">
             <div class="div-input-container">
-                <input id="email" class="form-input" type="email" name="email" placeholder="Email Address" autofocus>
-                <label for="email">
+                <input id="email_address" type="email" name="email_address" placeholder="Email Address" autofocus>
+                <label for="email_address">
                     <ion-icon src="<?php echo ICONS_PATH . '/mail.svg'; ?>"></ion-icon>
                 </label>
             </div>
             <div class="div-input-container">
-                <input id="password" class="form-input" type="password" name="password" placeholder="Password">
+                <input id="password" type="password" name="password" placeholder="Password">
                 <label for="password">
                     <ion-icon src="<?php echo ICONS_PATH . '/lock.svg'; ?>"></ion-icon>
                 </label>
