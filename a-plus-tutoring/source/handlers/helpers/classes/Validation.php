@@ -41,18 +41,14 @@ class Validation
                     // Data integrity.
                     if ($columnType === 'text') {
                         $pattern = self::$patterns[$apiConstraints['pattern']];
-
                         if (preg_match($pattern, $value)) {
                             return self::buildErrorMessage($key, $columnType, 'pattern');
                         }
 
                         ['min' => $min, 'max' => $max] = $apiConstraints['length'];
-
                         if (strlen($value) < $min || strlen($value) > $max) {
                             return self::buildErrorMessage($key, $columnType, 'length');
                         }
-
-                        continue;
                     } else if ($columnType === 'email' && !filter_var($value, FILTER_VALIDATE_EMAIL)) {
                         return self::buildErrorMessage($key, $columnType);
                     } else if ($columnType === 'number') {
@@ -68,8 +64,6 @@ class Validation
 
         return [];
     }
-
-    // HELPERS
 
     private static function buildErrorMessage(string $key, string $type, string $reason = '')
     {
@@ -89,7 +83,7 @@ class Validation
                     'number' => $capitalizedKey . ' must be between ' . $length['min'] . ' and ' . $length['max'] . ' chars, inclusively.'
                 },
             ],
-            'input-id' => $key
+            'invalid-input-id' => $key
         ];
     }
 

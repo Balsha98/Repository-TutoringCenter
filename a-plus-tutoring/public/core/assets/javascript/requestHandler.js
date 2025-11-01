@@ -11,7 +11,7 @@ class RequestHandler {
 
         console.log(response);
 
-        if (response["input-id"]) this.#highlightInvalidInput(response);
+        if (response["invalid-input-id"]) this.#highlightInvalidInput(response);
 
         alertModalController.controlShowAlertModal(response);
     }
@@ -29,7 +29,7 @@ class RequestHandler {
     }
 
     #highlightInvalidInput(response) {
-        const parent = $(`#${response["input-id"]}`).closest("div");
+        const parent = $(`#${response["invalid-input-id"]}`).closest("div");
         $(parent).addClass("div-invalid-input-container");
     }
 }

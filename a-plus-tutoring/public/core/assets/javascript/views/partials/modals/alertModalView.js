@@ -22,7 +22,7 @@ class AlertModalView {
         this.#btnConfirmModal.removeClass(`btn-${isResponseValid ? "failure" : "success"}`);
         this.#btnConfirmModal.addClass(`btn-${isResponseValid ? "success" : "failure"}`);
 
-        setTimeout(() => this.#redirectUserToView(responseData["next-route"]), seconds * 1000);
+        setTimeout(() => this.#redirectUserToView(response["route"]), seconds * 1000);
     }
 
     handleHideAlertModal(handler) {
