@@ -14,22 +14,26 @@
             <div class="div-form-signup-view-step-item-container" data-step="1">
                 <div class="div-multi-input-containers grid-2-columns">
                     <div class="div-input-container">
-                        <input id="first-name" class="form-input" type="first-name" name="first-name" placeholder="First Name" autofocus>
-                        <label for="first-name">
+                        <input id="first_name" type="text" name="first_name" placeholder="First Name" autofocus>
+                        <label for="first_name">
                             <ion-icon src="<?php echo ICONS_PATH . '/user.svg'; ?>"></ion-icon>
                         </label>
                     </div>
                     <div class="div-input-container">
-                        <input id="last-name" class="form-input" type="last-name" name="last-name" placeholder="Last Name">
-                        <label for="last-name">
+                        <input id="last_name" type="text" name="last_name" placeholder="Last Name">
+                        <label for="last_name">
                             <ion-icon src="<?php echo ICONS_PATH . '/user.svg'; ?>"></ion-icon>
                         </label>
                     </div>
                 </div>
                 <div class="div-input-container">
-                    <input id="major" class="form-input" type="major" name="major" placeholder="Major">
-                    <label for="major">
-                        <ion-icon src="<?php echo ICONS_PATH . '/book.svg'; ?>"></ion-icon>
+                    <select id="role" name="role">
+                        <option value="">Role</option>
+                        <option value="student">Student</option>
+                        <option value="tutor">Tutor</option>
+                    </select>
+                    <label for="role">
+                        <ion-icon src="<?php echo ICONS_PATH . '/users.svg'; ?>"></ion-icon>
                     </label>
                 </div>
                 <div class="div-form-control-btns-container">
@@ -41,26 +45,22 @@
             <div class="div-form-signup-view-step-item-container" data-step="2">
                 <div class="div-multi-input-containers grid-2-columns">
                     <div class="div-input-container">
-                        <select id="role" class="form-input" name="role">
-                            <option value="">Role</option>
-                            <option value="student">Student</option>
-                            <option value="tutor">Tutor</option>
-                        </select>
-                        <label for="role">
-                            <ion-icon src="<?php echo ICONS_PATH . '/users.svg'; ?>"></ion-icon>
+                        <input id="email_address" type="email" name="email_address" placeholder="Email Address">
+                        <label for="email_address">
+                            <ion-icon src="<?php echo ICONS_PATH . '/mail.svg'; ?>"></ion-icon>
                         </label>
                     </div>
                     <div class="div-input-container">
-                        <input id="email-address" class="form-input" type="email" name="email-address" placeholder="Email Address">
-                        <label for="email-address">
-                            <ion-icon src="<?php echo ICONS_PATH . '/mail.svg'; ?>"></ion-icon>
+                        <input id="password" type="password" name="password" placeholder="Password">
+                        <label for="password">
+                            <ion-icon src="<?php echo ICONS_PATH . '/lock.svg'; ?>"></ion-icon>
                         </label>
                     </div>
                 </div>
                 <div class="div-input-container">
-                    <input id="password" class="form-input" type="password" name="password" placeholder="Password">
-                    <label for="password">
-                        <ion-icon src="<?php echo ICONS_PATH . '/lock.svg'; ?>"></ion-icon>
+                    <input id="phone" type="password" name="phone" placeholder="Phone Number">
+                    <label for="phone">
+                        <ion-icon src="<?php echo ICONS_PATH . '/phone.svg'; ?>"></ion-icon>
                     </label>
                 </div>
                 <div class="div-form-control-btns-container grid-2-columns">

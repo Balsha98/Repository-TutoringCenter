@@ -7,7 +7,7 @@ use Api\Assets\Constraints\IConstraints;
 class SignupConstraints implements IConstraints
 {
     private static array $constraints = [
-        'first-name' => [
+        'first_name' => [
             'type' => 'text',
             'pattern' => 'only-letters',
             'length' => [
@@ -15,7 +15,7 @@ class SignupConstraints implements IConstraints
                 'max' => 25
             ],
         ],
-        'last-name' => [
+        'last_name' => [
             'type' => 'text',
             'pattern' => 'only-letters',
             'length' => [
@@ -23,7 +23,7 @@ class SignupConstraints implements IConstraints
                 'max' => 25
             ],
         ],
-        'email-address' => [
+        'email_address' => [
             'type' => 'email'
         ],
         'password' => [

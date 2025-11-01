@@ -8,9 +8,9 @@ const handleFormSteps = function () {
 
     if (btnStep === 2) {
         const requestData = {};
-        requestData["first-name"] = $("#first-name").val();
-        requestData["last-name"] = $("#last-name").val();
-        requestData["major"] = $("#major").val();
+        requestData["first_name"] = $("#first_name").val();
+        requestData["last_name"] = $("#last_name").val();
+        requestData["role"] = $("#role").val();
 
         // Guard clause.
         if (requestHandler.traverseForInvalidInputs(requestData)) return;
@@ -31,12 +31,12 @@ const handleUserSignup = function (e) {
     const method = signupView.getSignupForm().attr("method");
 
     const requestData = {};
-    requestData["first-name"] = $("#first-name").val();
-    requestData["last-name"] = $("#last-name").val();
-    requestData["major"] = $("#major").val();
+    requestData["first_name"] = $("#first_name").val();
+    requestData["last_name"] = $("#last_name").val();
     requestData["role"] = $("#role").val();
-    requestData["email-address"] = $("#email-address").val();
+    requestData["email_address"] = $("#email_address").val();
     requestData["password"] = $("#password").val();
+    requestData["phone"] = $("#phone").val() || "NULL";
 
     // Guard clause.
     if (requestHandler.traverseForInvalidInputs(requestData)) return;
