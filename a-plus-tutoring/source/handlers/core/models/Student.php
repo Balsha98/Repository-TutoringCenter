@@ -8,21 +8,21 @@ use Source\Handlers\Helpers\Classes\Session;
 class Student
 {
     private int $id;
-    private string $type;
+    private string $role = 'student';
     private string $firstName;
     private string $lastName;
     private string $email;
     private string $grade;
     private string $major;
-    private string $phone;
     private string $dateEnrolled;
+    private string $phone;
     private Database $database;
 
     public function __construct(Database $database, int $id = 0)
     {
         $this->database = $database;
 
-        $this->id = $id === 0 ? (int) Session::get('account-id') : $id;
+        $this->id = $id === 0 ? (int) Session::get('account_id') : $id;
 
         $this->loadStudentData($this->id);
     }
@@ -35,14 +35,13 @@ class Student
 
         if (!empty($result)) {
             $this->id = $result['id'];
-            $this->type = $result['type'];
             $this->firstName = $result['first_name'];
             $this->lastName = $result['last_name'];
-            $this->email = $result['email'];
-            $this->grade = $result['grade'];
-            $this->major = $result['major'];
-            $this->phone = $result['phone'] ?? '';
+            $this->email = $result['email_address'];
+            $this->grade = $result['grade'] ?? '';
+            $this->major = $result['major'] ?? '';
             $this->dateEnrolled = $result['date_enrolled'];
+            $this->phone = $result['phone'] ?? '';
         }
     }
 
@@ -51,9 +50,9 @@ class Student
         return $this->id;
     }
 
-    public function getType()
+    public function getRole()
     {
-        return $this->type;
+        return $this->role;
     }
 
     public function getFirstName()
