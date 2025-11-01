@@ -19,9 +19,9 @@ class Router
         // Process dynamic routing.
         if ($pathData['path'] !== 'auth/logout') {
             if ($pathData['path'] !== 'invalid/404') {
-                if (Session::is('account-active')) {
+                if (Session::is('account_active')) {
                     if ($pathParts[0] !== 'auth') {
-                        $pathData['path'] .= Session::get('account-type');
+                        $pathData['path'] .= Session::get('account_role');
                     } else if ($pathParts[0] === 'auth') {
                         if ($pathParts[1] !== 'logout') {
                             self::redirectTo('dashboard');
