@@ -5,33 +5,45 @@ namespace Source\Handlers\Core\Routing;
 class Routes
 {
     private static array $routes = [
-        'invalid' => [
-            'path' => 'invalid/404',
-            'title' => 'Invalid Route'
-        ],
         '/' => [
             'path' => 'auth/login',
             'title' => 'Login'
         ],
-        'login' => [
-            'path' => 'auth/login',
-            'title' => 'Login'
-        ],
-        'logout' => [
-            'path' => 'auth/logout',
-            'title' => 'Logout'
-        ],
-        'signup' => [
-            'path' => 'auth/signup',
-            'title' => 'Signup'
-        ],
-        'dashboard' => [
+        '/dashboard' => [
             'path' => 'dashboard/',
             'title' => 'Dashboard'
         ],
-        'reports' => [
+        '/invalid' => [
+            'path' => 'invalid/404',
+            'title' => 'Invalid Route'
+        ],
+        '/login' => [
+            'path' => 'auth/login',
+            'title' => 'Login'
+        ],
+        '/logout' => [
+            'path' => 'auth/logout',
+            'title' => 'Logout'
+        ],
+        '/reports' => [
             'path' => 'reports/',
             'title' => 'Reports'
+        ],
+        '/reports/majors' => [
+            'path' => 'reports/majors/',
+            'title' => 'Majors Report'
+        ],
+        '/reports/ratings' => [
+            'path' => 'reports/ratings/',
+            'title' => 'Ratings Report'
+        ],
+        '/reports/subjects' => [
+            'path' => 'reports/subjects/',
+            'title' => 'Subjects Report'
+        ],
+        '/signup' => [
+            'path' => 'auth/signup',
+            'title' => 'Signup'
         ]
     ];
 
@@ -39,6 +51,6 @@ class Routes
     {
         return self::$routes[!array_key_exists(
             $route, self::$routes
-        ) ? 'invalid' : $route];
+        ) ? '/invalid' : $route];
     }
 }
