@@ -90,7 +90,7 @@ class Validation
     private static function capitalize(string $string)
     {
         if (preg_match('#[-]#', $string)) {
-            return join(' ', array_map(
+            return implode(' ', array_map(
                 fn($part) => ucfirst($part),
                 explode('-', $string)
             ));
