@@ -35,19 +35,19 @@
                 <nav class="nav-tutor-reports-view-overview-controls">
                     <ul class="nav-tutor-reports-view-overview-controls-list">
                         <li class="nav-tutor-reports-view-overview-controls-list-item">
-                            <a class="link link-primary" href="/reports/majors">
+                            <a class="link link-primary" href="/reports/majors/<?php echo $tutor->getID(); ?>">
                                 <span>Majors</span>
                                 <ion-icon src="<?php echo ICONS_PATH . '/chevron-right.svg'; ?>"></ion-icon>
                             </a>
                         </li>
                         <li class="nav-tutor-reports-view-overview-controls-list-item">
-                            <a class="link link-primary" href="/reports/subjects">
+                            <a class="link link-primary" href="/reports/subjects/<?php echo $tutor->getID(); ?>">
                                 <span>Subjects</span>
                                 <ion-icon src="<?php echo ICONS_PATH . '/chevron-right.svg'; ?>"></ion-icon>
                             </a>
                         </li>
                         <li class="nav-tutor-reports-view-overview-controls-list-item">
-                            <a class="link link-primary" href="/reports/ratings">
+                            <a class="link link-primary" href="/reports/ratings/<?php echo $tutor->getID(); ?>">
                                 <span>Ratings</span>
                                 <ion-icon src="<?php echo ICONS_PATH . '/chevron-right.svg'; ?>"></ion-icon>
                             </a>
