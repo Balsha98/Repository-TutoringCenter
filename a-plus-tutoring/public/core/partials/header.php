@@ -10,10 +10,10 @@
     <link rel="stylesheet" href="<?php echo SERVER_PATH . '/core/assets/css/vars.css'; ?>">
     <link rel="stylesheet" href="<?php echo SERVER_PATH . '/core/assets/css/general.css'; ?>">
     <link rel="stylesheet" href="<?php echo SERVER_PATH . '/core/assets/css/reusable.css'; ?>">
-    <?php echo Source\Handlers\Helpers\Classes\Template::importViewStyleSheet($viewData['path']); ?>
-    <?php echo Source\Handlers\Helpers\Classes\Template::importPartials($viewData['path'], 'css'); ?>
+    <?php echo Source\Handlers\Helpers\Classes\Template::importViewStyleSheet($route['data']['path']); ?>
+    <?php echo Source\Handlers\Helpers\Classes\Template::importPartials($route['data']['path'], 'css'); ?>
     <!-- WEBSITE TITLE -->
-    <title>A⁺ Tutoring | <?php echo $viewData['title']; ?></title>
+    <title>A⁺ Tutoring | <?php echo $route['data']['title']; ?></title>
 </head>
 
 <body>
