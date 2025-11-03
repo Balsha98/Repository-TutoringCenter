@@ -1,0 +1,152 @@
+/* TUTOR RATINGS REPORT VIEW CONTAINER */
+.div-tutor-ratings-report-view-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4.8rem;
+    padding: 4.8rem;
+}
+
+/* TUTOR RATINGS REPORT VIEW CONTAINER HEADER */
+.header-tutor-ratings-report-view-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 2.4rem;
+    box-shadow: 0 0.4rem 1.6rem var(--opaque-shadow-sm);
+}
+
+.header-tutor-ratings-report-view-container p {
+    font-size: 1.6rem;
+}
+
+.header-tutor-ratings-report-view-container span {
+    color: var(--primary);
+}
+
+/* TUTOR RATINGS REPORT VIEW CONTAINER NAV LIST */
+.nav-tutor-ratings-report-view-container-list {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+}
+
+/* TUTOR RATINGS REPORT VIEW CONTAINER NAV LIST ITEM */
+.nav-tutor-ratings-report-view-container-list-item a:link,
+.nav-tutor-ratings-report-view-container-list-item button {
+    font-size: 1.8rem;
+    color: var(--primary);
+}
+
+.nav-tutor-ratings-report-view-container-list-item a:hover,
+.nav-tutor-ratings-report-view-container-list-item button:hover {
+    color: var(--primary-shade);
+    transform: scale(1.1);
+}
+
+/* TUTOR RATINGS REPORT CONTAINER */
+.div-tutor-ratings-report-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+/* TUTOR RATINGS REPORT CONTAINER HEADER */
+.header-tutor-ratings-report-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2.4rem;
+    background-color: var(--primary);
+}
+
+.header-tutor-ratings-report-container h2 {
+    font-size: 2.4rem;
+    color: var(--white);
+}
+
+.header-tutor-ratings-report-container img {
+    width: 4.8rem;
+}
+
+/* TUTOR RATINGS REPORT CONTENT CONTAINER */
+.div-tutor-ratings-report-content-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+/* TUTOR RATINGS REPORT CONTENT CONTAINER HEADER */
+.header-tutor-ratings-report-content-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 6.4rem repeat(2, 1fr) repeat(2, 18rem);
+    column-gap: 2.4rem;
+    padding: 2.4rem;
+}
+
+.header-tutor-ratings-report-content-container::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.2rem;
+    background-color: var(--primary);
+    transform: translateY(50%);
+}
+
+.header-tutor-ratings-report-content-container p {
+    font-size: 1.6rem;
+}
+
+.header-tutor-ratings-report-content-container p:nth-child(2),
+.header-tutor-ratings-report-content-container p:nth-child(5),
+.header-tutor-ratings-report-content-container p:nth-child(6) {
+    text-align: right;
+}
+
+/* TUTOR RATINGS REPORT CONTENT ROWS LIST */
+.tutor-ratings-report-content-rows-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+/* TUTOR RATINGS REPORT CONTENT ROWS LIST ITEM */
+.tutor-ratings-report-content-rows-list-item {
+    display: grid;
+    grid-template-columns: 1fr 6.4rem repeat(2, 1fr) repeat(2, 18rem);
+    column-gap: 2.4rem;
+    padding: 2.4rem;
+}
+
+.tutor-ratings-report-content-rows-list-item:nth-child(odd) {
+    color: var(--white);
+    background-color: var(--primary-tint);
+}
+
+.tutor-ratings-report-content-rows-list-item p {
+    font-size: 1.6rem;
+    color: inherit;
+}
+
+.tutor-ratings-report-content-rows-list-item p:nth-child(2),
+.tutor-ratings-report-content-rows-list-item p:nth-child(5),
+.tutor-ratings-report-content-rows-list-item p:nth-child(6) {
+    text-align: right;
+}
+
+/* TUTOR RATINGS REPORT CONTAINER FOOTER */
+.footer-tutor-ratings-report-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4.8rem 2.4rem 2.4rem;
+    background-color: var(--primary);
+}
+
+.footer-tutor-ratings-report-container p {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--white);
+}
