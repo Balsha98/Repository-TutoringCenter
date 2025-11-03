@@ -173,7 +173,8 @@ INSERT INTO session VALUES
 CREATE TABLE rating (
     id INT NOT NULL AUTO_INCREMENT,
     session_id INT NOT NULL,
-    score VARCHAR(10) NOT NULL,
+    score_name VARCHAR(10) NOT NULL,
+    score_value INT NOT NULL,
     comment VARCHAR(250) NULL,
     date_rated DATETIME DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (id),
@@ -183,14 +184,14 @@ CREATE TABLE rating (
 );
 
 INSERT INTO rating VALUES
-(1, 1, "Great", "Excellent session — tutor explained concepts clearly and was very patient.", "2025-09-09"),
-(2, 2, "Great", "Helpful review before the midterm. Learned a lot about data structures.", "2025-09-11"),
-(3, 3, "Needs Work", NULL, "2025-09-12"),
-(4, 4, "Great", "Very interactive and hands-on, especially for game design exercises.", "2025-09-15"),
-(5, 5, "Sub-Par", NULL, "2025-09-17"),
-(6, 6, "Great", "Solid session on algorithms — clear explanations and good examples.", "2025-09-19"),
-(7, 7, "Great", "Tutor demonstrated strong understanding of biomedical systems.", "2025-09-22"),
-(8, 8, "Needs Work", "Session details were unclear; next time, more prep would help.", "2025-09-23"),
-(9, 9, "Great", NULL, "2025-09-25"),
-(10, 10, "Needs Work", "Session ended early; tutor seemed unprepared for cybersecurity material.", "2025-09-26");
+(1, 1, "Great", 5, "Excellent session — tutor explained concepts clearly and was very patient.", "2025-09-09"),
+(2, 2, "Great", 5, "Helpful review before the midterm. Learned a lot about data structures.", "2025-09-11"),
+(3, 3, "Needs Work", 3, NULL, "2025-09-12"),
+(4, 4, "Great", 5, "Very interactive and hands-on, especially for game design exercises.", "2025-09-15"),
+(5, 5, "Sub-Par", 1, NULL, "2025-09-17"),
+(6, 6, "Great", 5, "Solid session on algorithms — clear explanations and good examples.", "2025-09-19"),
+(7, 7, "Great", 5, "Tutor demonstrated strong understanding of biomedical systems.", "2025-09-22"),
+(8, 8, "Needs Work", 3, "Session details were unclear; next time, more prep would help.", "2025-09-23"),
+(9, 9, "Great", 5, NULL, "2025-09-25"),
+(10, 10, "Needs Work", 3, "Session ended early; tutor seemed unprepared for cybersecurity material.", "2025-09-26");
 
