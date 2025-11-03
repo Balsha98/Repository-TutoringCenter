@@ -28,5 +28,23 @@
             "css": ["/core/assets/css/partials/loaders/page-loader"],
             "js": []
         }
+    },
+    {
+        "reports/majors/tutor": {
+            "css": ["/core/assets/css/partials/loaders/page-loader"],
+            "js": []
+        }
+    },
+    {
+        "reports/ratings/tutor": {
+            "css": ["/core/assets/css/partials/loaders/page-loader"],
+            "js": []
+        }
+    },
+    {
+        "reports/subjects/tutor": {
+            "css": ["/core/assets/css/partials/loaders/page-loader"],
+            "js": []
+        }
     }
 ]
