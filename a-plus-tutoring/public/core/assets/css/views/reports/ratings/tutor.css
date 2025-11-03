@@ -139,14 +139,19 @@
 /* TUTOR RATINGS REPORT CONTAINER FOOTER */
 .footer-tutor-ratings-report-container {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
     padding: 4.8rem 2.4rem 2.4rem;
     background-color: var(--primary);
 }
 
-.footer-tutor-ratings-report-container p {
+.footer-tutor-ratings-report-container p,
+.div-footer-tutor-ratings-report-container-data p {
     font-size: 1.6rem;
     font-weight: bold;
     color: var(--white);
+}
+
+.div-footer-tutor-ratings-report-container-data p {
+    text-align: right;
 }

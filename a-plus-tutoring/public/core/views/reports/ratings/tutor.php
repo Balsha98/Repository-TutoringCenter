@@ -113,7 +113,7 @@
             </div>
             <footer class="footer-tutor-ratings-report-container">
                 <p><?php echo date('j F, Y'); ?></p>
-                <div>
+                <div class="div-footer-tutor-ratings-report-container-data">
                     <p>Total Records - <?php echo $totalRecords; ?></p>
                     <p>Overall Rating - <?php echo 3; ?></p>
                 </div>
