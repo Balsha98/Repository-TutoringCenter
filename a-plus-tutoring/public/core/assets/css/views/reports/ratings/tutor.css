@@ -106,6 +106,10 @@
     text-align: right;
 }
 
+.hide-major-sorting-key-label p:first-child {
+    visibility: hidden;
+}
+
 /* TUTOR RATINGS REPORT CONTENT ROWS LIST */
 .tutor-ratings-report-content-rows-list {
     display: flex;

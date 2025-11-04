@@ -80,7 +80,7 @@
 .header-tutor-majors-report-content-container {
     position: relative;
     display: grid;
-    grid-template-columns: 1fr 6.4rem repeat(2, 1fr) repeat(2, 18rem);
+    grid-template-columns: 1fr 6.4rem repeat(2, 1fr) 16rem;
     column-gap: 2.4rem;
     padding: 2.4rem;
 }
@@ -116,7 +116,7 @@
 /* TUTOR MAJORS REPORT CONTENT ROWS LIST ITEM */
 .tutor-majors-report-content-rows-list-item {
     display: grid;
-    grid-template-columns: 1fr 6.4rem repeat(2, 1fr) repeat(2, 18rem);
+    grid-template-columns: 1fr 6.4rem repeat(2, 1fr) 16rem;
     column-gap: 2.4rem;
     padding: 2.4rem;
 }
@@ -135,6 +135,10 @@
 .tutor-majors-report-content-rows-list-item p:nth-child(5),
 .tutor-majors-report-content-rows-list-item p:nth-child(6) {
     text-align: right;
+}
+
+.hide-major-sorting-key-label p:first-child {
+    visibility: hidden;
 }
 
 /* TUTOR MAJORS REPORT CONTAINER FOOTER */

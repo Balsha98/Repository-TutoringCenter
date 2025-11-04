@@ -59,8 +59,7 @@
                     $totalRecords = 0;
 
                     if (!empty($subjects)) {
-                        // A single student exists.
-                        if (isset($subjects['id'])) {
+                        if (isset($subjects['id'])) {  // A single student exists.
                             $totalRecords = 1;
 
                             echo '
@@ -73,8 +72,9 @@
                                     <p>' . $subjects['term'] . '</p>
                                 </li>
                             ';
-                        } else {
-                            // Multiple subjects exists.
+                        } else {  // Multiple subjects exists.
+                            $totalRecords = count($subjects);
+
                             foreach ($subjects as $subject) {
                                 echo '
                                     <li class="tutor-subjects-report-content-rows-list-item">
@@ -87,8 +87,6 @@
                                     </li>
                                 ';
                             }
-
-                            $totalRecords = count($subjects);
                         }
                     }
                     ?>

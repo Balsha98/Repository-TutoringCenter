@@ -31,79 +31,68 @@
                     <p>Student</p>
                     <p>Email Address</p>
                     <p>Year</p>
-                    <p>Enrollment</p>
                 </header>
                 <ul class="tutor-majors-report-content-rows-list">
                     <?php
-                    $query = 'SELECT DISTINCT major FROM student ORDER BY major ASC;';
+                    $query = '
+                        SELECT 
+                            student.id, 
+                            student.first_name, 
+                            student.last_name,
+                            student.email_address,
+                            student.grade, 
+                            student.major
+                        FROM
+                            session
+                        JOIN
+                            student ON session.student_id = student.id
+                        WHERE
+                            session.tutor_id = :tutor_id
+                        ORDER BY
+                            student.major ASC;
+                    ';
+
                     $dbInstance = Source\Handlers\Core\Database\Database::getInstance();
-                    $majors = $dbInstance->executeQuery($query)->getQueryResult(true);
+                    $students = $dbInstance->executeQuery($query, [':tutor_id' => $id])->getQueryResult(true);
+                    $columnNameCache = [];
 
                     $totalRecords = 0;
-                    if (!empty($majors)) {
-                        foreach ($majors as $data) {
-                            $query = '
-                                SELECT 
-                                    student.id, 
-                                    student.first_name, 
-                                    student.last_name,
-                                    student.email_address,
-                                    student.grade, 
-                                    student.major, 
-                                    student.date_enrolled 
-                                FROM
-                                    session
-                                JOIN
-                                    student ON session.student_id = student.id
-                                WHERE
-                                    session.tutor_id = :tutor_id
-                                AND
-                                    student.major = :major;
+
+                    if (!empty($students)) {
+                        if (isset($students['id'])) {  // A single student exists.
+                            $totalRecords = 1;
+
+                            echo '
+                                <li class="tutor-majors-report-content-rows-list-item ">
+                                    <p>' . $students['major'] . '</p>
+                                    <p>' . $students['id'] . '</p>
+                                    <p>' . $students['first_name'] . ' ' . $students['last_name'] . '</p>
+                                    <p>' . $students['email_address'] . '</p>
+                                    <p>' . $students['grade'] . '</p>
+                                </li>
                             ';
+                        } else {  // Multiple students exists.
+                            $totalRecords = count($students);
 
-                            $students = $dbInstance->executeQuery(
-                                $query, [':tutor_id' => $id, ':major' => $data['major']]
-                            )->getQueryResult(true);
+                            foreach ($students as $student) {
+                                $studentMajor = $student['major'];
 
-                            if (!empty($students)) {
-                                // A single student exists.
-                                if (isset($students['id'])) {
-                                    $dateObj = date_create($students['date_enrolled']);
-                                    $formattedDate = date_format($dateObj, 'j F, Y');
-                                    $totalRecords = 1;
-
-                                    echo '
-                                        <li class="tutor-majors-report-content-rows-list-item">
-                                            <p>' . $students['major'] . '</p>
-                                            <p>' . $students['id'] . '</p>
-                                            <p>' . $students['first_name'] . ' ' . $students['last_name'] . '</p>
-                                            <p>' . $students['email_address'] . '</p>
-                                            <p>' . $students['grade'] . '</p>
-                                            <p>' . $formattedDate . '</p>
-                                        </li>
-                                    ';
-
-                                    break;
+                                $listItemStyle = '';
+                                if (array_key_exists($studentMajor, $columnNameCache)) {
+                                    $listItemStyle = 'hide-major-sorting-key-label';
+                                } else {
+                                    $columnNameCache[$studentMajor] = 1;
                                 }
 
-                                // Multiple students exists.
-                                foreach ($students as $student) {
-                                    $dateObj = date_create($student['date_enrolled']);
-                                    $formattedDate = date_format($dateObj, 'j F, Y');
-
-                                    echo '
-                                        <li class="tutor-majors-report-content-rows-list-item">
-                                            <p>' . $student['major'] . '</p>
-                                            <p>' . $student['id'] . '</p>
-                                            <p>' . $student['first_name'] . ' ' . $student['last_name'] . '</p>
-                                            <p>' . $student['email_address'] . '</p>
-                                            <p>' . $student['grade'] . '</p>
-                                            <p>' . $formattedDate . '</p>
-                                        </li>
-                                    ';
-                                }
-
-                                $totalRecords = count($students);
+                                echo '
+                                    <li class="tutor-majors-report-content-rows-list-item ' . $listItemStyle . '">
+                                        <p>' . $studentMajor . '</p>
+                                        <p>' . $student['id'] . '</p>
+                                        <p>' . $student['first_name'] . ' ' . $student['last_name'] . '</p>
+                                        <p>' . $student['email_address'] . '</p>
+                                        <p>' . $student['grade'] . '</p>
+                                    </li>
+                                ';
                             }
                         }
                     }

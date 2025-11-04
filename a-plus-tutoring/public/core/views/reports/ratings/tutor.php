@@ -52,17 +52,25 @@
                         JOIN
                             student ON session.student_id = student.id
                         WHERE
-                            session.tutor_id = :tutor_id;
+                            session.tutor_id = :tutor_id
+                        ORDER BY
+                            rating.score_value DESC;
                     ';
 
                     $dbInstance = Source\Handlers\Core\Database\Database::getInstance();
                     $students = $dbInstance->executeQuery($query, [':tutor_id' => $id])->getQueryResult(true);
+                    $columnNameCache = [];
+
+                    $overallRating = 0;
+                    $totalRecords = 0;
 
                     if (!empty($students)) {
-                        // A single student exists.
-                        if (isset($students['id'])) {
+                        if (isset($students['id'])) {  // A single student exists.
+                            $totalRecords = 1;
+
                             $dateObj = date_create($students['date_rated']);
                             $formattedDate = date_format($dateObj, 'j F, Y');
+
                             $overallRating = (int) $students['score_value'];
 
                             echo '
@@ -75,18 +83,26 @@
                                     <p>' . $formattedDate . '</p>
                                 </li>
                             ';
+                        } else {  // Multiple students exists.
+                            $totalRecords = count($students);
 
-                            $totalRecords = 1;
-                        } else {
-                            // Multiple students exists.
                             foreach ($students as $student) {
                                 $dateObj = date_create($student['date_rated']);
                                 $formattedDate = date_format($dateObj, 'j F, Y');
+                                $ratingScoreName = $student['score_name'];
+
+                                $listItemStyle = '';
+                                if (array_key_exists($ratingScoreName, $columnNameCache)) {
+                                    $listItemStyle = 'hide-major-sorting-key-label';
+                                } else {
+                                    $columnNameCache[$ratingScoreName] = 1;
+                                }
+
                                 $overallRating += (int) $student['score_value'];
 
                                 echo '
-                                    <li class="tutor-ratings-report-content-rows-list-item">
-                                        <p>' . $student['score_name'] . '</p>
+                                    <li class="tutor-ratings-report-content-rows-list-item ' . $listItemStyle . '">
+                                        <p>' . $ratingScoreName . '</p>
                                         <p>' . $student['id'] . '</p>
                                         <p>' . $student['first_name'] . ' ' . $student['last_name'] . '</p>
                                         <p>' . $student['email_address'] . '</p>
@@ -96,7 +112,7 @@
                                 ';
                             }
 
-                            $totalRecords = count($students);
+                            $overallRating = round($overallRating / $totalRecords, 1);
                         }
                     }
                     ?>
@@ -106,7 +122,7 @@
                 <p><?php echo date('j F, Y'); ?></p>
                 <div class="div-footer-tutor-ratings-report-container-data">
                     <p>Total Records &mdash; <?php echo $totalRecords; ?></p>
-                    <p>Overall Rating &mdash; <?php echo round($overallRating / $totalRecords, 1); ?></p>
+                    <p>Overall Rating &mdash; <?php echo $overallRating; ?></p>
                 </div>
             </footer>
         </div>
