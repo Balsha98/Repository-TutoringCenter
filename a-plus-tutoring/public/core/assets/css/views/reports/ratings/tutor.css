@@ -19,7 +19,8 @@
     font-size: 1.6rem;
 }
 
-.header-tutor-ratings-report-view-container span {
+.header-tutor-ratings-report-view-container span,
+.header-tutor-majors-report-view-container sup {
     color: var(--primary);
 }
 

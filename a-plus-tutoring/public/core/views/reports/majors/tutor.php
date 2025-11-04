@@ -17,13 +17,11 @@
                     </li>
                 </ul>
             </nav>
-            <?php $dbInstance = Source\Handlers\Helpers\Classes\Session::getDb(); ?>
-            <?php $tutor = new Source\Handlers\Core\Models\Tutor($dbInstance); ?>
-            <p>Hello, <span><?php echo $tutor->getFirstName(); ?></span>.</p>
+            <p><span>A<sup>+</sup></span> Tutoring Center</p>
         </header>
         <div class="div-tutor-majors-report-container">
             <header class="header-tutor-majors-report-container">
-                <h2>Student Majors Report</h2>
+                <h2>Tutor Majors Report</h2>
                 <img src="<?php echo IMAGES_PATH . '/site-logo-inverted.png'; ?>" alt="Inverted Website Logo">
             </header>
             <div class="div-tutor-majors-report-content-container">
@@ -38,6 +36,7 @@
                 <ul class="tutor-majors-report-content-rows-list">
                     <?php
                     $query = 'SELECT DISTINCT major FROM student ORDER BY major ASC;';
+                    $dbInstance = Source\Handlers\Core\Database\Database::getInstance();
                     $majors = $dbInstance->executeQuery($query)->getQueryResult(true);
 
                     $totalRecords = 0;

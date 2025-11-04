@@ -17,13 +17,11 @@
                     </li>
                 </ul>
             </nav>
-            <?php $dbInstance = Source\Handlers\Helpers\Classes\Session::getDb(); ?>
-            <?php $tutor = new Source\Handlers\Core\Models\Tutor($dbInstance); ?>
-            <p>Hello, <span><?php echo $tutor->getFirstName(); ?></span>.</p>
+            <p><span>A<sup>+</sup></span> Tutoring Center</span>.</p>
         </header>
         <div class="div-tutor-ratings-report-container">
             <header class="header-tutor-ratings-report-container">
-                <h2>Student Ratings Report</h2>
+                <h2>Tutor Ratings Report</h2>
                 <img src="<?php echo IMAGES_PATH . '/site-logo-inverted.png'; ?>" alt="Inverted Website Logo">
             </header>
             <div class="div-tutor-ratings-report-content-container">
@@ -57,9 +55,8 @@
                             session.tutor_id = :tutor_id;
                     ';
 
-                    $students = $dbInstance->executeQuery(
-                        $query, [':tutor_id' => $id]
-                    )->getQueryResult(true);
+                    $dbInstance = Source\Handlers\Core\Database\Database::getInstance();
+                    $students = $dbInstance->executeQuery($query, [':tutor_id' => $id])->getQueryResult(true);
 
                     if (!empty($students)) {
                         // A single student exists.
