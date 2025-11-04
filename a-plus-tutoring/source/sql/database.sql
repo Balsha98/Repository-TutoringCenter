@@ -132,7 +132,7 @@ INSERT INTO room VALUES
 
 -- TABLE SESSION
 CREATE TABLE session (
-    session_id INT NOT NULL AUTO_INCREMENT,
+    id INT NOT NULL AUTO_INCREMENT,
     student_id INT NOT NULL,
     tutor_id INT NOT NULL,
     subject_id INT NOT NULL,
@@ -141,7 +141,7 @@ CREATE TABLE session (
     status VARCHAR(20) NOT NULL DEFAULT "TBA",
     time_start DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     time_end DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    PRIMARY KEY (session_id),
+    PRIMARY KEY (id),
     FOREIGN KEY (student_id) REFERENCES student (id)
         ON UPDATE CASCADE
         ON DELETE CASCADE,
@@ -178,7 +178,7 @@ CREATE TABLE rating (
     comment VARCHAR(250) NULL,
     date_rated DATETIME DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (id),
-    FOREIGN KEY (session_id) REFERENCES session (session_id)
+    FOREIGN KEY (session_id) REFERENCES session (id)
         ON UPDATE CASCADE
         ON DELETE CASCADE
 );
