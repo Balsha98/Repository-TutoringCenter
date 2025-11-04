@@ -30,7 +30,7 @@
                 <header class="header-tutor-majors-report-content-container">
                     <p>Major</p>
                     <p>#ID</p>
-                    <p>Full Name</p>
+                    <p>Student</p>
                     <p>Email Address</p>
                     <p>Year</p>
                     <p>Enrollment</p>
@@ -113,7 +113,7 @@
             </div>
             <footer class="footer-tutor-majors-report-container">
                 <p><?php echo date('j F, Y'); ?></p>
-                <p>Total Records - <?php echo $totalRecords; ?></p>
+                <p>Total Records &mdash; <?php echo $totalRecords; ?></p>
             </footer>
         </div>
     </div>

@@ -30,82 +30,76 @@
                 <header class="header-tutor-ratings-report-content-container">
                     <p>Rating</p>
                     <p>#ID</p>
-                    <p>Full Name</p>
+                    <p>Student</p>
                     <p>Email Address</p>
                     <p>Year</p>
-                    <p>Enrollment</p>
+                    <p>Rated</p>
                 </header>
                 <ul class="tutor-ratings-report-content-rows-list">
                     <?php
-                    $query = 'SELECT DISTINCT major FROM student ORDER BY major ASC;';
-                    $majors = $dbInstance->executeQuery($query)->getQueryResult(true);
+                    $query = '
+                        SELECT 
+                            student.id, 
+                            student.first_name, 
+                            student.last_name,
+                            student.email_address,
+                            student.grade,
+                            rating.score_name,
+                            rating.score_value,
+                            rating.date_rated
+                        FROM
+                            rating
+                        JOIN
+                            session ON rating.session_id = session.id
+                        JOIN
+                            student ON session.student_id = student.id
+                        WHERE
+                            session.tutor_id = :tutor_id;
+                    ';
 
-                    $totalRecords = 0;
-                    if (!empty($majors)) {
-                        foreach ($majors as $data) {
-                            $query = '
-                                SELECT 
-                                    student.id, 
-                                    student.first_name, 
-                                    student.last_name,
-                                    student.email_address,
-                                    student.grade, 
-                                    student.major, 
-                                    student.date_enrolled 
-                                FROM
-                                    session
-                                JOIN
-                                    student ON session.student_id = student.id
-                                WHERE
-                                    session.tutor_id = :tutor_id
-                                AND
-                                    student.major = :major;
+                    $students = $dbInstance->executeQuery(
+                        $query, [':tutor_id' => $id]
+                    )->getQueryResult(true);
+
+                    if (!empty($students)) {
+                        // A single student exists.
+                        if (isset($students['id'])) {
+                            $dateObj = date_create($students['date_rated']);
+                            $formattedDate = date_format($dateObj, 'j F, Y');
+                            $overallRating = (int) $students['score_value'];
+
+                            echo '
+                                <li class="tutor-ratings-report-content-rows-list-item">
+                                    <p>' . $students['score_name'] . '</p>
+                                    <p>' . $students['id'] . '</p>
+                                    <p>' . $students['first_name'] . ' ' . $students['last_name'] . '</p>
+                                    <p>' . $students['email_address'] . '</p>
+                                    <p>' . $students['grade'] . '</p>
+                                    <p>' . $formattedDate . '</p>
+                                </li>
                             ';
 
-                            $students = $dbInstance->executeQuery(
-                                $query, [':tutor_id' => $id, ':major' => $data['major']]
-                            )->getQueryResult(true);
+                            $totalRecords = 1;
+                        } else {
+                            // Multiple students exists.
+                            foreach ($students as $student) {
+                                $dateObj = date_create($student['date_rated']);
+                                $formattedDate = date_format($dateObj, 'j F, Y');
+                                $overallRating += (int) $student['score_value'];
 
-                            if (!empty($students)) {
-                                // A single student exists.
-                                if (isset($students['id'])) {
-                                    $dateObj = date_create($students['date_enrolled']);
-                                    $formattedDate = date_format($dateObj, 'j F, Y');
-                                    $totalRecords = 1;
-
-                                    echo '
-                                        <li class="tutor-ratings-report-content-rows-list-item">
-                                            <p>' . $students['major'] . '</p>
-                                            <p>' . $students['id'] . '</p>
-                                            <p>' . $students['first_name'] . ' ' . $students['last_name'] . '</p>
-                                            <p>' . $students['email_address'] . '</p>
-                                            <p>' . $students['grade'] . '</p>
-                                            <p>' . $formattedDate . '</p>
-                                        </li>
-                                    ';
-
-                                    break;
-                                }
-
-                                // Multiple students exists.
-                                foreach ($students as $student) {
-                                    $dateObj = date_create($student['date_enrolled']);
-                                    $formattedDate = date_format($dateObj, 'j F, Y');
-
-                                    echo '
-                                        <li class="tutor-ratings-report-content-rows-list-item">
-                                            <p>' . $student['major'] . '</p>
-                                            <p>' . $student['id'] . '</p>
-                                            <p>' . $student['first_name'] . ' ' . $student['last_name'] . '</p>
-                                            <p>' . $student['email_address'] . '</p>
-                                            <p>' . $student['grade'] . '</p>
-                                            <p>' . $formattedDate . '</p>
-                                        </li>
-                                    ';
-                                }
-
-                                $totalRecords = count($students);
+                                echo '
+                                    <li class="tutor-ratings-report-content-rows-list-item">
+                                        <p>' . $student['score_name'] . '</p>
+                                        <p>' . $student['id'] . '</p>
+                                        <p>' . $student['first_name'] . ' ' . $student['last_name'] . '</p>
+                                        <p>' . $student['email_address'] . '</p>
+                                        <p>' . $student['grade'] . '</p>
+                                        <p>' . $formattedDate . '</p>
+                                    </li>
+                                ';
                             }
+
+                            $totalRecords = count($students);
                         }
                     }
                     ?>
@@ -114,8 +108,8 @@
             <footer class="footer-tutor-ratings-report-container">
                 <p><?php echo date('j F, Y'); ?></p>
                 <div class="div-footer-tutor-ratings-report-container-data">
-                    <p>Total Records - <?php echo $totalRecords; ?></p>
-                    <p>Overall Rating - <?php echo 3; ?></p>
+                    <p>Total Records &mdash; <?php echo $totalRecords; ?></p>
+                    <p>Overall Rating &mdash; <?php echo round($overallRating / $totalRecords, 1); ?></p>
                 </div>
             </footer>
         </div>
