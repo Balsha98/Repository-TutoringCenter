@@ -1,6 +1,6 @@
 // IMPORTED MODULES
 import * as pageLoaderController from "../../../partials/loaders/pageLoaderController.js";
-import tutorView from "../../../../views/reports/subjects/tutorView.js";
+import tutorView from "../../../../views/reports/years/tutorView.js";
 
 const controlReportPrinting = function () {
     window.print();

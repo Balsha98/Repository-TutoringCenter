@@ -1,0 +1,189 @@
+/* TUTOR YEARS REPORT VIEW CONTAINER */
+.div-tutor-years-report-view-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4.8rem;
+    padding: 4.8rem;
+}
+
+/* TUTOR YEARS REPORT VIEW CONTAINER HEADER */
+.header-tutor-years-report-view-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 2.4rem;
+    box-shadow: 0 0.4rem 1.6rem var(--opaque-shadow-sm);
+}
+
+.header-tutor-years-report-view-container p {
+    font-size: 1.6rem;
+}
+
+.header-tutor-years-report-view-container span,
+.header-tutor-years-report-view-container sup {
+    color: var(--primary);
+}
+
+/* TUTOR YEARS REPORT VIEW CONTAINER NAV LIST */
+.nav-tutor-years-report-view-container-list {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+}
+
+/* TUTOR YEARS REPORT VIEW CONTAINER NAV LIST ITEM */
+.nav-tutor-years-report-view-container-list-item a:link,
+.nav-tutor-years-report-view-container-list-item button {
+    font-size: 1.8rem;
+    color: var(--primary);
+}
+
+.nav-tutor-years-report-view-container-list-item a:hover,
+.nav-tutor-years-report-view-container-list-item button:hover {
+    color: var(--primary-shade);
+    transform: scale(1.1);
+}
+
+/* TUTOR YEARS REPORT CONTAINER */
+.div-tutor-years-report-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+/* TUTOR YEARS REPORT CONTAINER HEADER */
+.header-tutor-years-report-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2.4rem;
+    background-color: var(--primary);
+}
+
+.header-tutor-years-report-container h2 {
+    font-size: 2.4rem;
+    color: var(--white);
+}
+
+.header-tutor-years-report-container img {
+    width: 4.8rem;
+}
+
+/* TUTOR YEARS REPORT CONTENT CONTAINER */
+.div-tutor-years-report-content-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+/* TUTOR YEARS REPORT CONTENT CONTAINER HEADER */
+.header-tutor-years-report-content-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 6.4rem repeat(2, 1fr) 18rem;
+    column-gap: 2.4rem;
+    padding: 2.4rem;
+}
+
+.header-tutor-years-report-content-container::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.2rem;
+    background-color: var(--primary);
+    transform: translateY(50%);
+}
+
+.header-tutor-years-report-content-container p {
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.header-tutor-years-report-content-container p:nth-child(2),
+.header-tutor-years-report-content-container p:nth-child(5),
+.header-tutor-years-report-content-container p:nth-child(6) {
+    text-align: right;
+}
+
+.hide-year-sorting-key-label p:first-child {
+    visibility: hidden;
+}
+
+/* TUTOR YEARS REPORT CONTENT ROWS LIST */
+.tutor-years-report-content-rows-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+/* TUTOR YEARS REPORT CONTENT ROWS LIST ITEM */
+.tutor-years-report-content-rows-list-item {
+    display: grid;
+    grid-template-columns: 1fr 6.4rem repeat(2, 1fr) 18rem;
+    column-gap: 2.4rem;
+    padding: 2.4rem;
+}
+
+.tutor-years-report-content-rows-list-item:nth-child(odd) {
+    color: var(--white);
+    background-color: var(--primary-tint);
+}
+
+.tutor-years-report-content-rows-list-item p {
+    font-size: 1.6rem;
+    color: inherit;
+}
+
+.tutor-years-report-content-rows-list-item p:nth-child(2),
+.tutor-years-report-content-rows-list-item p:nth-child(5),
+.tutor-years-report-content-rows-list-item p:nth-child(6) {
+    text-align: right;
+}
+
+/* TUTOR YEARS REPORT CONTAINER FOOTER */
+.footer-tutor-years-report-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4.8rem 2.4rem 2.4rem;
+    background-color: var(--primary);
+}
+
+.footer-tutor-years-report-container p {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--white);
+}
+
+/* FOOTER TUTOR YEARS REPORT VIEW */
+.footer-tutor-years-report-view {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 2.4rem 4.8rem;
+    text-align: center;
+}
+
+.footer-tutor-years-report-view::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0.2rem;
+    background-color: var(--primary);
+    transform: translateY(-50%);
+}
+
+.footer-tutor-years-report-view p {
+    font-size: 1.2rem;
+}
+
+.footer-tutor-years-report-view p span,
+.footer-tutor-years-report-view p span sup {
+    color: var(--primary);
+}
