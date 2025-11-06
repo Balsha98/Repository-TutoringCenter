@@ -37,9 +37,9 @@ class Routes
             'path' => 'reports/ratings/',
             'title' => 'Ratings Report'
         ],
-        '/reports/subjects' => [
-            'path' => 'reports/subjects/',
-            'title' => 'Subjects Report'
+        '/reports/years' => [
+            'path' => 'reports/years/',
+            'title' => 'Years Report'
         ],
         '/signup' => [
             'path' => 'auth/signup',
