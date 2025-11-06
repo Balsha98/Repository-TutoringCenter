@@ -41,14 +41,14 @@
                             </a>
                         </li>
                         <li class="nav-tutor-reports-view-overview-controls-list-item">
-                            <a class="link link-primary" href="/reports/subjects/<?php echo $tutor->getID(); ?>">
-                                <span>Subjects</span>
+                            <a class="link link-primary" href="/reports/ratings/<?php echo $tutor->getID(); ?>">
+                                <span>Ratings</span>
                                 <ion-icon src="<?php echo ICONS_PATH . '/chevron-right.svg'; ?>"></ion-icon>
                             </a>
                         </li>
                         <li class="nav-tutor-reports-view-overview-controls-list-item">
-                            <a class="link link-primary" href="/reports/ratings/<?php echo $tutor->getID(); ?>">
-                                <span>Ratings</span>
+                            <a class="link link-primary" href="/reports/years/<?php echo $tutor->getID(); ?>">
+                                <span>Years</span>
                                 <ion-icon src="<?php echo ICONS_PATH . '/chevron-right.svg'; ?>"></ion-icon>
                             </a>
                         </li>
