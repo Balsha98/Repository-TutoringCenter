@@ -17,7 +17,7 @@
                     </li>
                 </ul>
             </nav>
-            <p><span>A<sup>+</sup></span> Tutoring Center</span>.</p>
+            <p><span>A<sup>+</sup></span> Tutoring Center</span></p>
         </header>
         <div class="div-tutor-ratings-report-container">
             <header class="header-tutor-ratings-report-container">
@@ -41,7 +41,7 @@
                             student.first_name, 
                             student.last_name,
                             student.email_address,
-                            student.grade,
+                            student.grade_name,
                             rating.score_name,
                             rating.score_value,
                             rating.date_rated
@@ -54,7 +54,8 @@
                         WHERE
                             session.tutor_id = :tutor_id
                         ORDER BY
-                            rating.score_value DESC;
+                            rating.score_value DESC,
+                            student.grade_value ASC;
                     ';
 
                     $dbInstance = Source\Handlers\Core\Database\Database::getInstance();
@@ -79,7 +80,7 @@
                                     <p>' . $students['id'] . '</p>
                                     <p>' . $students['first_name'] . ' ' . $students['last_name'] . '</p>
                                     <p>' . $students['email_address'] . '</p>
-                                    <p>' . $students['grade'] . '</p>
+                                    <p>' . $students['grade_name'] . '</p>
                                     <p>' . $formattedDate . '</p>
                                 </li>
                             ';
@@ -106,7 +107,7 @@
                                         <p>' . $student['id'] . '</p>
                                         <p>' . $student['first_name'] . ' ' . $student['last_name'] . '</p>
                                         <p>' . $student['email_address'] . '</p>
-                                        <p>' . $student['grade'] . '</p>
+                                        <p>' . $student['grade_name'] . '</p>
                                         <p>' . $formattedDate . '</p>
                                     </li>
                                 ';
@@ -127,3 +128,9 @@
             </footer>
         </div>
     </div>
+
+    <!-- FOOTER TUTOR RATINGS REPORT VIEW -->
+    <footer class="footer-tutor-ratings-report-view">
+        <p>&copy; <?php echo date('Y'); ?> <span>A<sup>+</sup></span> Tutoring Center</p>
+        <p>All rights reserved.</p>
+    </footer>

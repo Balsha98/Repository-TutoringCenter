@@ -98,6 +98,7 @@
 
 .header-tutor-ratings-report-content-container p {
     font-size: 1.6rem;
+    font-weight: 700;
 }
 
 .header-tutor-ratings-report-content-container p:nth-child(2),
@@ -159,4 +160,35 @@
 
 .div-footer-tutor-ratings-report-container-data p {
     text-align: right;
+}
+
+/* FOOTER TUTOR RATINGS REPORT VIEW */
+.footer-tutor-ratings-report-view {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 2.4rem 4.8rem;
+    text-align: center;
+}
+
+.footer-tutor-ratings-report-view::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0.2rem;
+    background-color: var(--primary);
+    transform: translateY(-50%);
+}
+
+.footer-tutor-ratings-report-view p {
+    font-size: 1.2rem;
+}
+
+.footer-tutor-ratings-report-view p span,
+.footer-tutor-ratings-report-view p span sup {
+    color: var(--primary);
 }

@@ -40,7 +40,7 @@
                             student.first_name, 
                             student.last_name,
                             student.email_address,
-                            student.grade, 
+                            student.grade_name, 
                             student.major
                         FROM
                             session
@@ -49,7 +49,8 @@
                         WHERE
                             session.tutor_id = :tutor_id
                         ORDER BY
-                            student.major ASC;
+                            student.major ASC,
+                            student.grade_value ASC;
                     ';
 
                     $dbInstance = Source\Handlers\Core\Database\Database::getInstance();
@@ -68,7 +69,7 @@
                                     <p>' . $students['id'] . '</p>
                                     <p>' . $students['first_name'] . ' ' . $students['last_name'] . '</p>
                                     <p>' . $students['email_address'] . '</p>
-                                    <p>' . $students['grade'] . '</p>
+                                    <p>' . $students['grade_name'] . '</p>
                                 </li>
                             ';
                         } else {  // Multiple students exists.
@@ -90,7 +91,7 @@
                                         <p>' . $student['id'] . '</p>
                                         <p>' . $student['first_name'] . ' ' . $student['last_name'] . '</p>
                                         <p>' . $student['email_address'] . '</p>
-                                        <p>' . $student['grade'] . '</p>
+                                        <p>' . $student['grade_name'] . '</p>
                                     </li>
                                 ';
                             }
@@ -105,3 +106,9 @@
             </footer>
         </div>
     </div>
+
+    <!-- FOOTER TUTOR MAJORS REPORT VIEW -->
+    <footer class="footer-tutor-majors-report-view">
+        <p>&copy; <?php echo date('Y'); ?> <span>A<sup>+</sup></span> Tutoring Center</p>
+        <p>All rights reserved.</p>
+    </footer>
