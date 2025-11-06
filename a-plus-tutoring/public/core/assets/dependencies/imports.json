@@ -42,7 +42,7 @@
         }
     },
     {
-        "reports/subjects/tutor": {
+        "reports/years/tutor": {
             "css": ["/core/assets/css/partials/loaders/page-loader"],
             "js": []
         }
