@@ -106,3 +106,22 @@
 .footer-signup-view-container p a:visited {
     color: var(--primary);
 }
+
+/* FOOTER SIGNUP VIEW */
+.footer-signup-view {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2.4rem;
+    text-align: center;
+}
+
+.footer-signup-view p {
+    font-size: 1.2rem;
+}
+
+.footer-signup-view p span,
+.footer-signup-view p span sup {
+    color: var(--primary);
+}

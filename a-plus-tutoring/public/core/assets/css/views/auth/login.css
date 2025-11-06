@@ -98,3 +98,22 @@
 .footer-login-view-container p a:visited {
     color: var(--primary);
 }
+
+/* FOOTER LOGIN VIEW */
+.footer-login-view {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2.4rem;
+    text-align: center;
+}
+
+.footer-login-view p {
+    font-size: 1.2rem;
+}
+
+.footer-login-view p span,
+.footer-login-view p span sup {
+    color: var(--primary);
+}

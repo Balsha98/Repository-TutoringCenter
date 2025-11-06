@@ -33,3 +33,8 @@
             <p>Don't have an account? <a href="/signup">Sign Up!</a></p>
         </footer>
     </div>
+
+    <!-- FOOTER LOGIN VIEW -->
+    <footer class="footer-login-view">
+        <p>&copy; <?php echo date('Y'); ?> <span>A<sup>+</sup></span> Tutoring Center | All rights reserved. </p>
+    </footer>

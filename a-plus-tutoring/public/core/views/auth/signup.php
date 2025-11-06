@@ -77,3 +77,8 @@
             <p>Already have an account? <a href="/login">Log In!</a></p>
         </footer>
     </div>
+
+    <!-- FOOTER SIGNUP VIEW -->
+    <footer class="footer-signup-view">
+        <p>&copy; <?php echo date('Y'); ?> <span>A<sup>+</sup></span> Tutoring Center | All rights reserved. </p>
+    </footer>
