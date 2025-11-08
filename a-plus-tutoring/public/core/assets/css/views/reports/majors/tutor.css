@@ -123,13 +123,17 @@
 }
 
 .tutor-majors-report-content-rows-list-item:nth-child(odd) {
-    color: var(--white);
-    background-color: var(--primary-tint);
+    background-color: var(--gray);
 }
 
 .tutor-majors-report-content-rows-list-item p {
     font-size: 1.6rem;
-    color: inherit;
+    color: currentColor;
+}
+
+.tutor-majors-report-content-rows-list-item p:nth-child(1) {
+    font-weight: 700;
+    color: var(--primary);
 }
 
 .tutor-majors-report-content-rows-list-item p:nth-child(2),
@@ -153,7 +157,6 @@
 
 .footer-tutor-majors-report-container p {
     font-size: 1.6rem;
-    font-weight: bold;
     color: var(--white);
 }
 

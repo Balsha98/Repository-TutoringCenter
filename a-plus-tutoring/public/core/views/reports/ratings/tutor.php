@@ -94,7 +94,7 @@
 
                                 $listItemStyle = '';
                                 if (array_key_exists($ratingScoreName, $columnNameCache)) {
-                                    $listItemStyle = 'hide-major-sorting-key-label';
+                                    $listItemStyle = 'hide-rating-sorting-key-label';
                                 } else {
                                     $columnNameCache[$ratingScoreName] = 1;
                                 }

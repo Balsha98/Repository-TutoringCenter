@@ -107,10 +107,6 @@
     text-align: right;
 }
 
-.hide-year-sorting-key-label p:first-child {
-    visibility: hidden;
-}
-
 /* TUTOR YEARS REPORT CONTENT ROWS LIST */
 .tutor-years-report-content-rows-list {
     display: flex;
@@ -127,19 +123,27 @@
 }
 
 .tutor-years-report-content-rows-list-item:nth-child(odd) {
-    color: var(--white);
-    background-color: var(--primary-tint);
+    background-color: var(--gray);
 }
 
 .tutor-years-report-content-rows-list-item p {
     font-size: 1.6rem;
-    color: inherit;
+    color: currentColor;
+}
+
+.tutor-years-report-content-rows-list-item p:nth-child(1) {
+    font-weight: 700;
+    color: var(--primary);
 }
 
 .tutor-years-report-content-rows-list-item p:nth-child(2),
 .tutor-years-report-content-rows-list-item p:nth-child(5),
 .tutor-years-report-content-rows-list-item p:nth-child(6) {
     text-align: right;
+}
+
+.hide-year-sorting-key-label p:first-child {
+    visibility: hidden;
 }
 
 /* TUTOR YEARS REPORT CONTAINER FOOTER */
@@ -153,7 +157,6 @@
 
 .footer-tutor-years-report-container p {
     font-size: 1.6rem;
-    font-weight: bold;
     color: var(--white);
 }
 
