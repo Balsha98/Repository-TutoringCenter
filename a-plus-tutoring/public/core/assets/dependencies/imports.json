@@ -13,19 +13,19 @@
     },
     {
         "dashboard/student": {
-            "css": ["/core/assets/css/partials/loaders/page-loader"],
+            "css": ["/core/assets/css/partials/loaders/page-loader", "/core/assets/css/partials/modals/logout-modal"],
             "js": []
         }
     },
     {
         "dashboard/tutor": {
-            "css": ["/core/assets/css/partials/loaders/page-loader"],
+            "css": ["/core/assets/css/partials/loaders/page-loader", "/core/assets/css/partials/modals/logout-modal"],
             "js": []
         }
     },
     {
         "reports/tutor": {
-            "css": ["/core/assets/css/partials/loaders/page-loader"],
+            "css": ["/core/assets/css/partials/loaders/page-loader", "/core/assets/css/partials/modals/logout-modal"],
             "js": []
         }
     },
