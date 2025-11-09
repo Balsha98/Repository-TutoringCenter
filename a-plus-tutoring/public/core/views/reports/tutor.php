@@ -1,4 +1,5 @@
 `   <?php require_once LOCAL_PATH . '/core/partials/loaders/page-loader.php'; ?>
+`   <?php require_once LOCAL_PATH . '/core/partials/modals/logout-modal.php'; ?>
 
     <!-- TUTOR REPORTS VIEW CONTAINER -->
     <div class="div-tutor-reports-view-container">
@@ -19,9 +20,9 @@
                         </a>
                     </li>
                     <li class="nav-tutor-reports-view-container-list-item">
-                        <a class="link link-icon" href="/logout">
+                        <button class="btn btn-icon btn-logout-modal-toggle">
                             <ion-icon src="<?php echo ICONS_PATH . '/log-out.svg'; ?>"></ion-icon>
-                        </a>
+                        </button>
                     </li>
                 </ul>
             </nav>
