@@ -5,7 +5,7 @@ class AlertModalView {
     #alertModalData = $(".div-alert-modal-data-container");
     #alertModalHeading = $(".heading-alert-modal");
     #alertModalText = $(".message-alert-modal");
-    #btnConfirmModal = $(".btn-modal-confirm");
+    #btnConfirmAlertModal = $(".btn-alert-modal-confirm");
 
     // HANDLER METHODS
     handleShowAlertModal(response, seconds = 3) {
@@ -18,9 +18,9 @@ class AlertModalView {
         this.#alertModalHeading.text(responseData["title"]);
         this.#alertModalText.text(responseData["message"]);
 
-        this.#btnConfirmModal.text(isResponseValid ? "Confirm" : "Close");
-        this.#btnConfirmModal.removeClass(`btn-${isResponseValid ? "failure" : "success"}`);
-        this.#btnConfirmModal.addClass(`btn-${isResponseValid ? "success" : "failure"}`);
+        this.#btnConfirmAlertModal.text(isResponseValid ? "Confirm" : "Close");
+        this.#btnConfirmAlertModal.removeClass(`btn-${isResponseValid ? "failure" : "success"}`);
+        this.#btnConfirmAlertModal.addClass(`btn-${isResponseValid ? "success" : "failure"}`);
 
         setTimeout(() => this.#redirectUserToView(response["route"]), seconds * 1000);
     }
