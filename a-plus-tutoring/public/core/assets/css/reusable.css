@@ -78,6 +78,13 @@
     color: inherit;
 }
 
+/* MODAL CONTROL BUTTONS CONTAINER */
+.div-modal-control-btns-container {
+    display: grid;
+    column-gap: 1.2rem;
+    width: 32rem;
+}
+
 /* FORM CONTROL BUTTONS CONTAINER */
 .div-form-control-btns-container {
     display: grid;
