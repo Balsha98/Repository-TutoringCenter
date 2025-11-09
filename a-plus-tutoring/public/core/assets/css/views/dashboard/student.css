@@ -36,13 +36,16 @@
 }
 
 /* STUDENT DASHBOARD VIEW CONTAINER NAV LIST ITEM */
-.nav-student-dashboard-view-container-list-item a:link {
+.nav-student-dashboard-view-container-list-item a:link,
+.nav-student-dashboard-view-container-list-item button {
     font-size: 1.8rem;
     color: var(--primary);
 }
 
 .nav-student-dashboard-view-container-list-item a:hover,
-.nav-student-dashboard-view-container-list-item .active-link:link {
+.nav-student-dashboard-view-container-list-item .active-link:link,
+.nav-student-dashboard-view-container-list-item button:hover,
+.nav-student-dashboard-view-container-list-item .active-link {
     color: var(--primary-shade);
     transform: scale(1.1);
 }
