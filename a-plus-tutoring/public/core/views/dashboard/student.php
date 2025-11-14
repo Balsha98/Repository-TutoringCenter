@@ -14,6 +14,16 @@
                             <ion-icon src="<?php echo ICONS_PATH . '/grid.svg'; ?>"></ion-icon>
                         </a>
                     </li>
+                    <li class="nav-tutor-dashboard-view-container-list-item">
+                        <a class="link link-icon" href="/sessions">
+                            <ion-icon src="<?php echo ICONS_PATH . '/calendar.svg'; ?>"></ion-icon>
+                        </a>
+                    </li>
+                    <li class="nav-tutor-dashboard-view-container-list-item">
+                        <a class="link link-icon" href="/profile/<?php echo $student->getID(); ?>">
+                            <ion-icon src="<?php echo ICONS_PATH . '/user.svg'; ?>"></ion-icon>
+                        </a>
+                    </li>
                     <li class="nav-student-dashboard-view-container-list-item">
                         <button class="btn btn-icon btn-logout-modal-toggle">
                             <ion-icon src="<?php echo ICONS_PATH . '/log-out.svg'; ?>"></ion-icon>
