@@ -15,6 +15,7 @@ CREATE TABLE student (
     grade_value INT NOT NULL,
     major VARCHAR(50) NULL,
     date_enrolled DATETIME NULL DEFAULT CURRENT_TIMESTAMP,
+    image TEXT NULL,
     phone VARCHAR(20) NULL,
     PRIMARY KEY (id)
 );
@@ -82,6 +83,7 @@ CREATE TABLE tutor (
     password CHAR(64) NOT NULL,
     status VARCHAR(10) NULL,
     date_hired DATETIME NULL DEFAULT CURRENT_TIMESTAMP,
+    image TEXT NULL,
     phone VARCHAR(20) NULL,
     PRIMARY KEY (id)
 );
