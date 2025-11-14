@@ -1,0 +1,56 @@
+/* TUTOR PROFILE VIEW CONTAINER */
+.div-tutor-profile-view-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-width: 80rem;
+    box-shadow: 0 0.4rem 1.6rem var(--opaque-shadow-sm);
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+/* TUTOR PROFILE VIEW CONTAINER */
+.header-tutor-profile-view-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 2.4rem;
+}
+
+.header-tutor-profile-view-container p {
+    font-size: 1.6rem;
+}
+
+.header-tutor-profile-view-container span {
+    color: var(--primary);
+}
+
+/* TUTOR PROFILE VIEW CONTAINER NAV LIST */
+.nav-tutor-profile-view-container-list {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+}
+
+/* TUTOR PROFILE VIEW CONTAINER NAV LIST ITEM */
+.nav-tutor-profile-view-container-list-item a:link,
+.nav-tutor-profile-view-container-list-item button {
+    font-size: 1.8rem;
+    color: var(--primary);
+}
+
+.nav-tutor-profile-view-container-list-item a:hover,
+.nav-tutor-profile-view-container-list-item .active-link:link,
+.nav-tutor-profile-view-container-list-item button:hover,
+.nav-tutor-profile-view-container-list-item .active-link {
+    color: var(--primary-shade);
+    transform: scale(1.1);
+}
+
+/* TUTOR PROFILE VIEW OVERVIEW CONTAINER */
+.div-tutor-profile-view-overview-container {
+    display: grid;
+}
