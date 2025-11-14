@@ -15,6 +15,7 @@ class Student
     private string $grade;
     private string $major;
     private string $dateEnrolled;
+    private string $image;
     private string $phone;
     private Database $database;
 
@@ -41,6 +42,7 @@ class Student
             $this->grade = $result['grade'] ?? '';
             $this->major = $result['major'] ?? '';
             $this->dateEnrolled = $result['date_enrolled'];
+            $this->image = $result['image'] ?? '';
             $this->phone = $result['phone'] ?? '';
         }
     }
@@ -80,13 +82,18 @@ class Student
         return $this->major;
     }
 
-    public function getPhone()
-    {
-        return $this->phone;
-    }
-
     public function getDateEnrolled()
     {
         return $this->dateEnrolled;
+    }
+
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    public function getPhone()
+    {
+        return $this->phone;
     }
 }

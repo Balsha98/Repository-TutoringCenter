@@ -14,6 +14,7 @@ class Tutor
     private string $email;
     private string $status = 'inactive';
     private string $dateHired;
+    private string $image;
     private string $phone;
     private Database $database;
 
@@ -39,6 +40,7 @@ class Tutor
             $this->email = $result['email_address'];
             $this->status = $result['status'] ?? $this->status;
             $this->dateEnrolled = $result['date_hired'];
+            $this->image = $result['image'] ?? '';
             $this->phone = $result['phone'] ?? '';
         }
     }
@@ -76,6 +78,11 @@ class Tutor
     public function getDateHired()
     {
         return $this->dateHired;
+    }
+
+    public function getImage()
+    {
+        return $this->image;
     }
 
     public function getPhone()
