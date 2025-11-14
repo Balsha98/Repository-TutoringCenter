@@ -25,6 +25,10 @@ class Routes
             'path' => 'auth/logout',
             'title' => 'Logout'
         ],
+        '/profile' => [
+            'path' => 'profile/',
+            'title' => 'Profile'
+        ],
         '/reports' => [
             'path' => 'reports/',
             'title' => 'Reports'
