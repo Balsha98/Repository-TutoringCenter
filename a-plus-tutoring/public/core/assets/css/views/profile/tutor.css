@@ -12,7 +12,7 @@
     z-index: 1;
 }
 
-/* TUTOR PROFILE VIEW CONTAINER */
+/* TUTOR PROFILE VIEW CONTAINER HEADER */
 .header-tutor-profile-view-container {
     display: flex;
     align-items: center;
@@ -52,5 +52,108 @@
 
 /* TUTOR PROFILE VIEW OVERVIEW CONTAINER */
 .div-tutor-profile-view-overview-container {
+    position: relative;
     display: grid;
+    grid-template-columns: 30fr 70fr;
+    align-items: center;
+    column-gap: 2.4rem;
+    padding: 2.4rem;
+}
+
+.div-tutor-profile-view-overview-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0.2rem;
+    background-color: var(--primary);
+}
+
+/* TUTOR PROFILE VIEW BRIEF BIO CONTAINER */
+.div-tutor-profile-view-brief-bio-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    text-align: center;
+}
+
+/* TUTOR PROFILE VIEW BRIEF BIO IMAGE CONTAINER */
+.div-tutor-profile-view-brief-bio-image-container {
+    position: relative;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+}
+
+.div-tutor-profile-view-brief-bio-image-container img {
+    width: 100%;
+    border-radius: inherit;
+}
+
+/* TUTOR PROFILE VIEW CONTAINER FOOTER STATUS CONTAINER */
+.div-tutor-profile-view-brief-bio-status-container {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 50%;
+}
+
+.active.div-tutor-profile-view-brief-bio-status-container {
+    background-color: var(--success);
+}
+
+.inactive.div-tutor-profile-view-brief-bio-status-container {
+    background-color: var(--failure);
+}
+
+.div-tutor-profile-view-brief-bio-status-container ion-icon {
+    font-size: 1.4rem;
+    color: var(--white);
+}
+
+/* TUTOR PROFILE VIEW BRIEF BIO DATA CONTAINER */
+.div-tutor-profile-view-brief-bio-data-container p {
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.div-tutor-profile-view-brief-bio-data-container span {
+    font-size: 1.2rem;
+}
+
+/* TUTOR PROFILE VIEW DETAILS BIO FORM */
+.form-tutor-profile-view-detailed-bio {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+/* TUTOR PROFILE VIEW CONTAINER FOOTER */
+.footer-tutor-profile-view-container {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 2.4rem;
+}
+
+.footer-tutor-profile-view-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0.2rem;
+    background-color: var(--primary);
+}
+
+.footer-tutor-profile-view-container p {
+    font-size: 1.2rem;
 }
