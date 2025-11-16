@@ -40,7 +40,7 @@ label {
 
 input,
 textarea {
-    caret-color: var(--white);
+    caret-color: var(--black);
 }
 
 select {
@@ -53,7 +53,7 @@ textarea::placeholder {
     position: absolute;
     top: 50%;
     font-size: 1.4rem;
-    color: var(--white);
+    color: var(--black);
     transform: translateY(-50%);
 }
 

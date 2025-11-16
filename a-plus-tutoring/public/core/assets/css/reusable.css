@@ -38,19 +38,15 @@
     height: 100%;
     aspect-ratio: 1 / 1;
     font-size: 1.6rem;
-    border-top: 0.2rem solid var(--primary-tint);
-    border-right: 0.2rem solid var(--primary-tint);
-    border-bottom: 0.2rem solid var(--primary-tint);
+    box-shadow: inset 0 0 0 0.2rem var(--gray);
 }
 
 .div-invalid-input-container label {
-    border-top-color: var(--failure);
-    border-right-color: var(--failure);
-    border-bottom-color: var(--failure);
+    box-shadow: inset 0 0 0 0.2rem var(--failure);
 }
 
 .div-input-container label ion-icon {
-    color: var(--primary-tint);
+    color: var(--primary);
 }
 
 .div-invalid-input-container label ion-icon {
@@ -64,14 +60,9 @@
     height: 100%;
     padding: 0 1.2rem;
     font-size: 1.4rem;
-    color: var(--white);
-    background-color: var(--primary-tint);
+    color: var(--black);
+    background-color: var(--gray);
     border: none;
-}
-
-.div-invalid-input-container input,
-.div-invalid-input-container select {
-    box-shadow: inset 0 0 0 0.2rem var(--failure);
 }
 
 .div-input-container select option {
