@@ -330,7 +330,7 @@ CREATE TABLE session (
 CREATE TABLE rating (
     id INT NOT NULL AUTO_INCREMENT,
     session_id INT NOT NULL,
-    score_name VARCHAR(10) NOT NULL,
+    score_label VARCHAR(10) NOT NULL,
     score_value INT NOT NULL,
     comment VARCHAR(250) NULL,
     date_rated DATETIME DEFAULT CURRENT_TIMESTAMP,
