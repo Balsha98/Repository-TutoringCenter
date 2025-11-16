@@ -39,9 +39,9 @@ class Tutor
             $this->lastName = $result['last_name'];
             $this->email = $result['email_address'];
             $this->status = $result['status'] ?? $this->status;
-            $this->dateEnrolled = $result['date_hired'];
-            $this->image = $result['image'] ?? '';
-            $this->phone = $result['phone'] ?? '';
+            $this->dateHired = $result['date_hired'];
+            $this->image = $result['image'] ?? IMAGES_PATH . '/placeholder-profile.png';
+            $this->phone = $result['phone'] ?? '(###) ###-####';
         }
     }
 

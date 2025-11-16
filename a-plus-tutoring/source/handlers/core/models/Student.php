@@ -12,7 +12,8 @@ class Student
     private string $firstName;
     private string $lastName;
     private string $email;
-    private string $grade;
+    private string $gradeLabel;
+    private int $gradeValue;
     private string $major;
     private string $dateEnrolled;
     private string $image;
@@ -39,11 +40,12 @@ class Student
             $this->firstName = $result['first_name'];
             $this->lastName = $result['last_name'];
             $this->email = $result['email_address'];
-            $this->grade = $result['grade'] ?? '';
+            $this->gradeLabel = $result['grade_label'];
+            $this->gradeValue = (int) $result['grade_value'];
             $this->major = $result['major'] ?? '';
             $this->dateEnrolled = $result['date_enrolled'];
-            $this->image = $result['image'] ?? '';
-            $this->phone = $result['phone'] ?? '';
+            $this->image = $result['image'] ?? IMAGES_PATH . '/placeholder-profile.png';
+            $this->phone = $result['phone'] ?? '(###) ###-####';
         }
     }
 
@@ -72,9 +74,9 @@ class Student
         return $this->email;
     }
 
-    public function getGrade()
+    public function getGradeLabel()
     {
-        return $this->grade;
+        return $this->gradeLabel;
     }
 
     public function getMajor()
