@@ -43,9 +43,9 @@
 }
 
 .nav-tutor-reports-view-container-list-item a:hover,
-.nav-tutor-reports-view-container-list-item .active-link:link,
+.active.nav-tutor-reports-view-container-list-item a:link,
 .nav-tutor-reports-view-container-list-item button:hover,
-.nav-tutor-reports-view-container-list-item .active-link {
+.active.nav-tutor-reports-view-container-list-item {
     color: var(--primary-shade);
     transform: scale(1.1);
 }

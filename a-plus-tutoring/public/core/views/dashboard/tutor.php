@@ -9,8 +9,8 @@
             <p>Welcome, <span><?php echo $tutor->getFirstName(); ?></span>!</p>
             <nav class="nav-tutor-dashboard-view-container">
                 <ul class="nav-tutor-dashboard-view-container-list">
-                    <li class="nav-tutor-dashboard-view-container-list-item">
-                        <a class="link link-icon active-link" href="/dashboard">
+                    <li class="nav-tutor-dashboard-view-container-list-item active">
+                        <a class="link link-icon" href="/dashboard">
                             <ion-icon src="<?php echo ICONS_PATH . '/grid.svg'; ?>"></ion-icon>
                         </a>
                     </li>

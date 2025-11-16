@@ -43,9 +43,9 @@
 }
 
 .nav-tutor-profile-view-container-list-item a:hover,
-.nav-tutor-profile-view-container-list-item .active-link:link,
+.active.nav-tutor-profile-view-container-list-item a:link,
 .nav-tutor-profile-view-container-list-item button:hover,
-.nav-tutor-profile-view-container-list-item .active-link {
+.active.nav-tutor-profile-view-container-list-item {
     color: var(--primary-shade);
     transform: scale(1.1);
 }
@@ -79,16 +79,36 @@
     text-align: center;
 }
 
+/* TUTOR PROFILE VIEW BRIEF BIO IMAGE DATA CONTAINER */
+.div-tutor-profile-view-brief-bio-image-data-container {
+    position: relative;
+}
+
+.div-tutor-profile-view-brief-bio-image-data-container button {
+    position: absolute;
+    top: -0.4rem;
+    left: -0.4rem;
+    padding: 0.8rem;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    z-index: -1;
+}
+
+.div-tutor-profile-view-brief-bio-image-data-container:hover button {
+    opacity: 1;
+    z-index: 1;
+}
+
 /* TUTOR PROFILE VIEW BRIEF BIO IMAGE CONTAINER */
 .div-tutor-profile-view-brief-bio-image-container {
-    position: relative;
     width: 8rem;
-    height: 8rem;
+    aspect-ratio: 1 / 1;
     border-radius: 50%;
 }
 
 .div-tutor-profile-view-brief-bio-image-container img {
-    width: 100%;
+    width: inherit;
     border-radius: inherit;
 }
 

@@ -14,8 +14,8 @@
                             <ion-icon src="<?php echo ICONS_PATH . '/grid.svg'; ?>"></ion-icon>
                         </a>
                     </li>
-                    <li class="nav-tutor-reports-view-container-list-item">
-                        <a class="link link-icon active-link" href="/reports">
+                    <li class="nav-tutor-reports-view-container-list-item active">
+                        <a class="link link-icon" href="/reports">
                             <ion-icon src="<?php echo ICONS_PATH . '/book.svg'; ?>"></ion-icon>
                         </a>
                     </li>

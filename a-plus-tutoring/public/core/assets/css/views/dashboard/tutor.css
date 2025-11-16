@@ -43,9 +43,9 @@
 }
 
 .nav-tutor-dashboard-view-container-list-item a:hover,
-.nav-tutor-dashboard-view-container-list-item .active-link:link,
+.active.nav-tutor-dashboard-view-container-list-item a:link,
 .nav-tutor-dashboard-view-container-list-item button:hover,
-.nav-tutor-dashboard-view-container-list-item .active-link {
+.active.nav-tutor-dashboard-view-container-list-item {
     color: var(--primary-shade);
     transform: scale(1.1);
 }

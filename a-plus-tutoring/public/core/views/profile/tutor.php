@@ -1,5 +1,6 @@
-`   <?php require_once LOCAL_PATH . '/core/partials/loaders/page-loader.php'; ?>
+    <?php require_once LOCAL_PATH . '/core/partials/loaders/page-loader.php'; ?>
     <?php require_once LOCAL_PATH . '/core/partials/modals/logout-modal.php'; ?>
+    <?php require_once LOCAL_PATH . '/core/partials/modals/image-modal.php'; ?>
 
     <!-- TUTOR PROFILE VIEW CONTAINER -->
     <div class="div-tutor-profile-view-container">
@@ -24,8 +25,8 @@
                             <ion-icon src="<?php echo ICONS_PATH . '/calendar.svg'; ?>"></ion-icon>
                         </a>
                     </li>
-                    <li class="nav-tutor-profile-view-container-list-item">
-                        <a class="link link-icon active-link" href="/profile/<?php echo $tutor->getID(); ?>">
+                    <li class="nav-tutor-profile-view-container-list-item active">
+                        <a class="link link-icon" href="/profile/<?php echo $tutor->getID(); ?>">
                             <ion-icon src="<?php echo ICONS_PATH . '/user.svg'; ?>"></ion-icon>
                         </a>
                     </li>
@@ -41,10 +42,15 @@
         <div class="div-tutor-profile-view-overview-container">
             <div class="div-tutor-profile-view-brief-bio-container">
                 <?php $icon = $status === 'active' ? 'check' : 'x'; ?>
-                <div class="div-tutor-profile-view-brief-bio-image-container">
-                    <img src="<?php echo $tutor->getImage(); ?>" alt="Tutor Profile Image">
-                    <div class="div-tutor-profile-view-brief-bio-status-container <?php echo $status; ?>">
-                        <ion-icon src="<?php echo ICONS_PATH . '/' . $icon . '.svg'; ?>"></ion-icon>
+                <div class="div-tutor-profile-view-brief-bio-image-data-container">
+                    <button class="btn btn-icon btn-primary btn-image-modal-toggle">
+                        <ion-icon src="<?php echo ICONS_PATH . '/upload.svg'; ?>"></ion-icon>
+                    </button>
+                    <div class="div-tutor-profile-view-brief-bio-image-container">
+                        <img src="<?php echo $tutor->getImage(); ?>" alt="Tutor Profile Image">
+                        <div class="div-tutor-profile-view-brief-bio-status-container <?php echo $status; ?>">
+                            <ion-icon src="<?php echo ICONS_PATH . '/' . $icon . '.svg'; ?>"></ion-icon>
+                        </div>
                     </div>
                 </div>
                 <div class="div-tutor-profile-view-brief-bio-data-container">
