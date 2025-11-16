@@ -41,7 +41,7 @@
                             student.first_name, 
                             student.last_name,
                             student.email_address,
-                            student.grade_name,
+                            student.grade_label,
                             rating.score_name,
                             rating.score_value,
                             rating.date_rated
@@ -61,6 +61,8 @@
                     $dbInstance = Source\Handlers\Core\Database\Database::getInstance();
                     $students = $dbInstance->executeQuery($query, [':tutor_id' => $id])->getQueryResult(true);
                     $columnNameCache = [];
+
+                    print_r($students);
 
                     $overallRating = 0;
                     $totalRecords = 0;

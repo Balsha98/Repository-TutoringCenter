@@ -40,7 +40,7 @@
                             student.first_name, 
                             student.last_name,
                             student.email_address,
-                            student.grade_name, 
+                            student.grade_label,
                             student.major
                         FROM
                             session
@@ -69,7 +69,7 @@
                                     <p>' . $students['id'] . '</p>
                                     <p>' . $students['first_name'] . ' ' . $students['last_name'] . '</p>
                                     <p>' . $students['email_address'] . '</p>
-                                    <p>' . $students['grade_name'] . '</p>
+                                    <p>' . $students['grade_label'] . '</p>
                                 </li>
                             ';
                         } else {  // Multiple students exists.
@@ -91,7 +91,7 @@
                                         <p>' . $student['id'] . '</p>
                                         <p>' . $student['first_name'] . ' ' . $student['last_name'] . '</p>
                                         <p>' . $student['email_address'] . '</p>
-                                        <p>' . $student['grade_name'] . '</p>
+                                        <p>' . $student['grade_label'] . '</p>
                                     </li>
                                 ';
                             }
