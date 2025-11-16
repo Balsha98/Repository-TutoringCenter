@@ -139,16 +139,16 @@ CREATE TABLE tutor (
 );
 
 INSERT INTO tutor (id, first_name, last_name, email_address, password, status, date_hired, image, phone) VALUES
-(1, 'Alice', 'Johnson', 'aj4823@rit.edu', '2bd806c97f0e00af1a1fc3328fa763a9269723c8db8fac4f93af71db186d6e90', 'Active', '2023-01-10', NULL, '(585) 555-1010'),
-(2, 'Bob', 'Smith', 'bs2369@rit.edu', '81b637d8fcd2c6da6359e6963113a1170de795e4b725b84d1e0b4cfd9ec58ce9', 'Active', '2023-02-15', NULL, '(585) 555-2020'),
-(3, 'Charlie', 'Nguyen', 'cn5930@rit.edu', 'b9dd960c1753459a78115d3cb845a57d924b6877e805b08bd01086ccdf34433c', 'Inactive', '2022-11-03', NULL, '(585) 555-3030'),
-(4, 'Diana', 'Lopez', 'dl2942@rit.edu', '1b2fc9341a16ae4e30082965d537ae47c21a0f27fd43eab78330ed81751ae6db', 'Active', '2024-03-12', NULL, '(585) 555-4040'),
-(5, 'Evan', 'Martinez', 'em2130@rit.edu', 'ae74f72d212fb9871302a2459aeaf7b20bc2f792e4852be648a7d4e63967d9b1', 'Active', '2023-07-18', NULL, '(585) 555-5050'),
-(6, 'Fiona', 'Garcia', 'fg8894@rit.edu', '4c0db82499ca9a6d65c396d1fbb8e77078e315bd8db0e9476a88cd244aa76ca6', 'Inactive', '2022-09-27', NULL, '(585) 555-6060'),
-(7, 'George', 'Brown', 'gb2888@rit.edu', '0522a55e2d5f0993a3d66d28864b2862a7218a75ea7968b075333434404485c3', 'Active', '2023-05-22', NULL, '(585) 555-7070'),
-(8, 'Hannah', 'Davis', 'hd7924@rit.edu', 'fc881aa34d44660e1012dec26ccda0b469d6c8359e91dc674dab4c095b9fe832', 'Active', '2024-01-08', NULL, '(585) 555-8080'),
-(9, 'Ian', 'Miller', 'im2874@rit.edu', 'b54a95127a4b573f41e335fdbd339dcc2208fbfb1ae0b6fab7599d6e2d6ec754', 'Inactive', '2021-12-19', NULL, '(585) 555-9090'),
-(10, 'Julia', 'Wilson', 'jw1050@rit.edu', 'd277670919a94ba361be1887d39852c3f31d7eed817343cbb70fcd8910841f86', 'Active', '2023-04-05', NULL, '(585) 555-0001');
+(1, 'Alice', 'Johnson', 'aj4823@rit.edu', '2bd806c97f0e00af1a1fc3328fa763a9269723c8db8fac4f93af71db186d6e90', 'active', '2023-01-10', NULL, '(585) 555-1010'),
+(2, 'Bob', 'Smith', 'bs2369@rit.edu', '81b637d8fcd2c6da6359e6963113a1170de795e4b725b84d1e0b4cfd9ec58ce9', 'active', '2023-02-15', NULL, '(585) 555-2020'),
+(3, 'Charlie', 'Nguyen', 'cn5930@rit.edu', 'b9dd960c1753459a78115d3cb845a57d924b6877e805b08bd01086ccdf34433c', 'inactive', '2022-11-03', NULL, '(585) 555-3030'),
+(4, 'Diana', 'Lopez', 'dl2942@rit.edu', '1b2fc9341a16ae4e30082965d537ae47c21a0f27fd43eab78330ed81751ae6db', 'active', '2024-03-12', NULL, '(585) 555-4040'),
+(5, 'Evan', 'Martinez', 'em2130@rit.edu', 'ae74f72d212fb9871302a2459aeaf7b20bc2f792e4852be648a7d4e63967d9b1', 'active', '2023-07-18', NULL, '(585) 555-5050'),
+(6, 'Fiona', 'Garcia', 'fg8894@rit.edu', '4c0db82499ca9a6d65c396d1fbb8e77078e315bd8db0e9476a88cd244aa76ca6', 'inactive', '2022-09-27', NULL, '(585) 555-6060'),
+(7, 'George', 'Brown', 'gb2888@rit.edu', '0522a55e2d5f0993a3d66d28864b2862a7218a75ea7968b075333434404485c3', 'active', '2023-05-22', NULL, '(585) 555-7070'),
+(8, 'Hannah', 'Davis', 'hd7924@rit.edu', 'fc881aa34d44660e1012dec26ccda0b469d6c8359e91dc674dab4c095b9fe832', 'active', '2024-01-08', NULL, '(585) 555-8080'),
+(9, 'Ian', 'Miller', 'im2874@rit.edu', 'b54a95127a4b573f41e335fdbd339dcc2208fbfb1ae0b6fab7599d6e2d6ec754', 'inactive', '2021-12-19', NULL, '(585) 555-9090'),
+(10, 'Julia', 'Wilson', 'jw1050@rit.edu', 'd277670919a94ba361be1887d39852c3f31d7eed817343cbb70fcd8910841f86', 'active', '2023-04-05', NULL, '(585) 555-0001');
 
 
 
