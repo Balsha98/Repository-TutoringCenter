@@ -3,7 +3,7 @@ import requestHandler from "../../../requestHandler.js";
 import * as pageLoaderController from "../../partials/loaders/pageLoaderController.js";
 import loginView from "../../../views/auth/loginView.js";
 
-const handleUserLogin = function (e) {
+const controlUserLogin = function (e) {
     e.preventDefault();
 
     const url = loginView.getLoginForm().attr("action");
@@ -21,7 +21,7 @@ const handleUserLogin = function (e) {
 const initController = function () {
     pageLoaderController.controlHidePageLoader(1);
 
-    loginView.handleUserLogin(handleUserLogin);
+    loginView.handleUserLogin(controlUserLogin);
 };
 
 initController();

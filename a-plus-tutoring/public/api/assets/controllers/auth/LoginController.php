@@ -57,10 +57,13 @@ class LoginController extends AbstractController
 
     private function fetchAccount(string $email)
     {
-        foreach (['student', 'tutor'] as $table) {
+        $tables = ['student', 'tutor'];
+
+        foreach ($tables as $table) {
+            $query = 'SELECT * FROM ' . $table . ' WHERE email_address = :email_address;';
+
             $return = $this->getDbInstance()->executeQuery(
-                'SELECT * FROM ' . $table . ' WHERE email_address = :email_address;',
-                [':email_address' => $email]
+                $query, ['email_address' => $email]
             )->getQueryResult(true);
 
             if (!empty($return)) {
