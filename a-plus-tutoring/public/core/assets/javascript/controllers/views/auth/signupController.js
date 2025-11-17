@@ -3,7 +3,7 @@ import requestHandler from "../../../requestHandler.js";
 import * as pageLoaderController from "../../partials/loaders/pageLoaderController.js";
 import signupView from "../../../views/auth/signupView.js";
 
-const handleFormSteps = function () {
+const controlFormSteps = function () {
     const btnStep = +$(this).data("step");
 
     if (btnStep === 2) {
@@ -24,7 +24,7 @@ const handleFormSteps = function () {
     });
 };
 
-const handleUserSignup = function (e) {
+const controlUserSignup = function (e) {
     e.preventDefault();
 
     const url = signupView.getSignupForm().attr("action");
@@ -47,8 +47,8 @@ const handleUserSignup = function (e) {
 const initController = function () {
     pageLoaderController.controlHidePageLoader(1);
 
-    signupView.handleFormSteps(handleFormSteps);
-    signupView.handleUserSignup(handleUserSignup);
+    signupView.handleFormSteps(controlFormSteps);
+    signupView.handleUserSignup(controlUserSignup);
 };
 
 initController();

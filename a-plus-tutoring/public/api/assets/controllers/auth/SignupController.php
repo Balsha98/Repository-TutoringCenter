@@ -60,28 +60,27 @@ class SignupController extends AbstractController
     {
         $query = 'SELECT * FROM ' . $role . ' WHERE email_address = :email_address;';
         return $this->getDbInstance()->executeQuery(
-            $query, [':email_address' => $email]
+            $query, ['email_address' => $email]
         )->getQueryResult(true);
     }
 
     private function createNewUserAccount(array $data)
     {
-        $formattedParams = [];
         $query = 'INSERT INTO ' . $data['role'] . ' SET ';
 
         foreach ($data as $key => $value) {
-            if ($key === 'role')
-                continue;
+            if ($key === 'role') {
+                continue;  // Guard clause.
+            }
 
-            $formattedParams[':' . $key] = $value;
             $query .= $key . ' = :' . $key . ',';
         }
 
-        $formattedParams[':password'] = hash('sha256', $formattedParams[':password']);
         $query = substr($query, 0, strlen($query) - 1) . ';';
+        $data['password'] = hash('sha256', $data['password']);
 
         return $this->getDbInstance()->executeQuery(
-            $query, $formattedParams
+            $query, $data
         )->getQueryResult(true);
     }
 
