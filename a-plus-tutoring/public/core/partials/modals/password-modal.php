@@ -9,7 +9,7 @@
                     <h2>Change Your Profile Password</h2>
                     <p>Please provide a <span>valid</span> password.</p>
                 </header>
-                <form class="form-password-modal" action="/api/profile/password/tutor" method="PUT">
+                <form class="form-password-modal" action="/api/profile/password" method="PUT">
                     <div class="div-input-container">
                         <input id="password" type="password" name="password" placeholder="Password">
                         <label for="password">
