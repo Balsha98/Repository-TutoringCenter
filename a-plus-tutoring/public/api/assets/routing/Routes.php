@@ -10,7 +10,13 @@ class Routes
             '/auth/login',
             '/auth/signup'
         ],
-        'PUT' => [],
+        'PUT' => [
+            '/profile/tutor',
+            '/profile/image/tutor',
+            '/profile/image/student',
+            '/profile/password/tutor',
+            '/profile/password/student'
+        ],
         'DELETE' => []
     ];
 

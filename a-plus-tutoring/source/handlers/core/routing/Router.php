@@ -14,7 +14,9 @@ class Router
         $baseUri = $uri === '/' ? $uri . 'login' : $uri;
         $baseUriParts = explode('/', $baseUri);
         array_shift($baseUriParts);
-        $route['self'] = $baseUri;
+
+        $route['base'] = $baseUriParts[0];
+        $route['full'] = $baseUri;
 
         // Check for route ID.
         $lastPartIndex = count($baseUriParts) - 1;
