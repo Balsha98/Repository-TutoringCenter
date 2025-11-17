@@ -1,5 +1,6 @@
     <?php require_once LOCAL_PATH . '/core/partials/loaders/page-loader.php'; ?>
     <?php require_once LOCAL_PATH . '/core/partials/modals/logout-modal.php'; ?>
+    <?php require_once LOCAL_PATH . '/core/partials/modals/password-modal.php'; ?>
     <?php require_once LOCAL_PATH . '/core/partials/modals/image-modal.php'; ?>
 
     <!-- TUTOR PROFILE VIEW CONTAINER -->
@@ -81,35 +82,30 @@
                         </label>
                     </div>
                     <div class="div-input-container">
-                        <input id="password" type="password" name="password" placeholder="Password">
-                        <label for="password">
-                            <ion-icon src="<?php echo ICONS_PATH . '/lock.svg'; ?>"></ion-icon>
-                        </label>
-                    </div>
-                </div>
-                <div class="div-multi-input-containers grid-2-columns">
-                    <div class="div-input-container">
                         <input id="phone" type="text" name="phone" value="<?php echo $tutor->getPhone(); ?>" placeholder="Phone Number">
                         <label for="phone">
                             <ion-icon src="<?php echo ICONS_PATH . '/phone.svg'; ?>"></ion-icon>
                         </label>
                     </div>
-                    <div class="div-input-container">
-                        <select id="status" name="status" value="<?php echo $status; ?>">
-                            <option value="">Status</option>
-                            <option value="inactive" <?php echo $status === 'inactive' ? 'selected' : ''; ?>>Inactive</option>
-                            <option value="active" <?php echo $status === 'active' ? 'selected' : ''; ?>>Active</option>
-                        </select>
-                        <label for="status">
-                            <ion-icon src="<?php echo ICONS_PATH . '/activity.svg'; ?>"></ion-icon>
-                        </label>
-                    </div>
+                </div>
+                <div class="div-input-container">
+                    <select id="status" name="status" value="<?php echo $status; ?>">
+                        <option value="">Status</option>
+                        <option value="inactive" <?php echo $status === 'inactive' ? 'selected' : ''; ?>>Inactive</option>
+                        <option value="active" <?php echo $status === 'active' ? 'selected' : ''; ?>>Active</option>
+                    </select>
+                    <label for="status">
+                        <ion-icon src="<?php echo ICONS_PATH . '/activity.svg'; ?>"></ion-icon>
+                    </label>
                 </div>
             </form>
         </div>
         <?php $dateObj = date_create($tutor->getDateHired()); ?>
         <footer class="footer-tutor-profile-view-container">
             <p>Member since <?php echo $dateObj->format('j F, Y'); ?>.</p>
-            <button class="btn btn-primary btn-profile-update">Update</button>
+            <div class="div-footer-student-profile-view-form-controls-container">
+                <button class="btn btn-secondary btn-password-modal-toggle">Change Password?</button>
+                <button class="btn btn-primary btn-profile-update">Update Profile</button>
+            </div>
         </footer>
     </div>
