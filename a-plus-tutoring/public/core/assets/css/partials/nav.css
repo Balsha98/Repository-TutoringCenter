@@ -1,0 +1,37 @@
+/* USER DASHBOARD VIEW CONTAINER HEADER */
+.header-user-dashboard-view-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 2.4rem;
+}
+
+.header-user-dashboard-view-container p {
+    font-size: 1.6rem;
+}
+
+.header-user-dashboard-view-container span {
+    color: var(--primary);
+}
+
+/* user DASHBOARD VIEW CONTAINER NAV LIST */
+.nav-user-dashboard-view-container-list {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+}
+
+/* user DASHBOARD VIEW CONTAINER NAV LIST ITEM */
+.nav-user-dashboard-view-container-list-item a:link,
+.nav-user-dashboard-view-container-list-item button {
+    font-size: 1.8rem;
+    color: var(--primary);
+}
+
+.nav-user-dashboard-view-container-list-item a:hover,
+.active.nav-user-dashboard-view-container-list-item a:link,
+.nav-user-dashboard-view-container-list-item button:hover,
+.active.nav-user-dashboard-view-container-list-item {
+    color: var(--primary-shade);
+    transform: scale(1.1);
+}

@@ -1,0 +1,47 @@
+/* USER DASHBOARD VIEW OVERVIEW CONTROLS */
+.div-user-dashboard-view-overview-controls {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.2rem;
+    padding: 2.4rem;
+}
+
+.div-user-dashboard-view-overview-controls::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0.4rem;
+    background-color: var(--primary);
+}
+
+.div-user-dashboard-view-overview-controls > p {
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.div-user-dashboard-view-overview-controls > p span {
+    color: var(--primary);
+}
+
+/* USER DASHBOARD VIEW OVERVIEW NAV CONTROLS LIST */
+.nav-user-dashboard-view-overview-controls-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.2rem;
+    height: 100%;
+}
+
+/* USER DASHBOARD VIEW OVERVIEW NAV CONTROLS LIST ITEM */
+.nav-user-dashboard-view-overview-controls-list-item a:link {
+    justify-content: space-between;
+    width: 100%;
+}
+
+.nav-user-dashboard-view-overview-controls-list-item a:hover ion-icon {
+    transform: translateX(0.2rem);
+}
