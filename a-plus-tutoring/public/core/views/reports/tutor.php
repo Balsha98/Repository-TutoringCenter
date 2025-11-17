@@ -3,9 +3,9 @@
 
     <!-- TUTOR REPORTS VIEW CONTAINER -->
     <div class="div-tutor-reports-view-container">
+        <?php $dbInstance = Source\Handlers\Helpers\Classes\Session::getDb(); ?>
+        <?php $tutor = new Source\Handlers\Core\Models\Tutor($dbInstance); ?>
         <header class="header-tutor-reports-view-container">
-            <?php $dbInstance = Source\Handlers\Helpers\Classes\Session::getDb(); ?>
-            <?php $tutor = new Source\Handlers\Core\Models\Tutor($dbInstance); ?>
             <p>Welcome, <span><?php echo $tutor->getFirstName(); ?></span>!</p>
             <nav class="nav-tutor-reports-view-container">
                 <ul class="nav-tutor-reports-view-container-list">
