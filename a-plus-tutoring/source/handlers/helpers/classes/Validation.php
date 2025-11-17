@@ -10,7 +10,8 @@ class Validation
     private static array $patterns = [
         'only-letters' => '#[^a-zA-Z]#',
         'certain-symbols' => '#[^a-zA-Z0-9.,!&? ]#',
-        'none-symbols' => '#[^a-zA-Z0-9- ]#'
+        'phone-symbols' => '#[^0-9()+ -]#',
+        'none-symbols' => '#[^a-zA-Z0-9 -]#'
     ];
 
     private static array $response = [];
@@ -49,6 +50,8 @@ class Validation
                         if (strlen($value) < $min || strlen($value) > $max) {
                             return self::buildErrorMessage($key, $columnType, 'length');
                         }
+                    } else if ($columnType === 'url' && !filter_var($value, FILTER_VALIDATE_URL)) {
+                        return self::buildErrorMessage($key, $columnType);
                     } else if ($columnType === 'email' && !filter_var($value, FILTER_VALIDATE_EMAIL)) {
                         return self::buildErrorMessage($key, $columnType);
                     } else if ($columnType === 'number') {
@@ -80,7 +83,8 @@ class Validation
                         'length' => $capitalizedKey . ' must be between ' . $length['min'] . ' and ' . $length['max'] . ' chars, inclusively.'
                     },
                     'email' => $capitalizedKey . ' is of the wrong format.',
-                    'number' => $capitalizedKey . ' must be between ' . $length['min'] . ' and ' . $length['max'] . ' chars, inclusively.'
+                    'number' => $capitalizedKey . ' must be between ' . $length['min'] . ' and ' . $length['max'] . ' chars, inclusively.',
+                    'url' => $capitalizedKey . ' is of the wrong format.'
                 },
             ],
             'invalid-input-id' => $key
