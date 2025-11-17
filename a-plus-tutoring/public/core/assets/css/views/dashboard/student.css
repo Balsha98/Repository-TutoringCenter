@@ -12,44 +12,6 @@
     z-index: 1;
 }
 
-/* STUDENT DASHBOARD VIEW CONTAINER */
-.header-student-dashboard-view-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1.2rem 2.4rem;
-}
-
-.header-student-dashboard-view-container p {
-    font-size: 1.6rem;
-}
-
-.header-student-dashboard-view-container span {
-    color: var(--primary);
-}
-
-/* STUDENT DASHBOARD VIEW CONTAINER NAV LIST */
-.nav-student-dashboard-view-container-list {
-    display: flex;
-    align-items: center;
-    gap: 1.6rem;
-}
-
-/* STUDENT DASHBOARD VIEW CONTAINER NAV LIST ITEM */
-.nav-student-dashboard-view-container-list-item a:link,
-.nav-student-dashboard-view-container-list-item button {
-    font-size: 1.8rem;
-    color: var(--primary);
-}
-
-.nav-student-dashboard-view-container-list-item a:hover,
-.active.nav-student-dashboard-view-container-list-item a:link,
-.nav-student-dashboard-view-container-list-item button:hover,
-.active.nav-student-dashboard-view-container-list-item {
-    color: var(--primary-shade);
-    transform: scale(1.1);
-}
-
 /* STUDENT DASHBOARD VIEW OVERVIEW CONTAINER */
 .div-student-dashboard-view-overview-container {
     display: grid;
@@ -66,52 +28,4 @@
 
 .div-student-dashboard-view-overview-brand img {
     width: 32rem;
-}
-
-/* STUDENT DASHBOARD VIEW OVERVIEW CONTROLS */
-.div-student-dashboard-view-overview-controls {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1.2rem;
-    padding: 2.4rem;
-}
-
-.div-student-dashboard-view-overview-controls::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 0.4rem;
-    background-color: var(--primary);
-}
-
-.div-student-dashboard-view-overview-controls > p {
-    font-size: 1.4rem;
-    text-align: center;
-}
-
-.div-student-dashboard-view-overview-controls > p span {
-    color: var(--primary);
-}
-
-/* STUDENT DASHBOARD VIEW OVERVIEW NAV CONTROLS LIST */
-.nav-student-dashboard-view-overview-controls-list {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1.2rem;
-    height: 100%;
-}
-
-/* STUDENT DASHBOARD VIEW OVERVIEW NAV CONTROLS LIST ITEM */
-.nav-student-dashboard-view-overview-controls-list-item a:link {
-    justify-content: space-between;
-    width: 100%;
-}
-
-.nav-student-dashboard-view-overview-controls-list-item a:hover ion-icon {
-    transform: translateX(0.2rem);
 }

@@ -12,44 +12,6 @@
     z-index: 1;
 }
 
-/* STUDENT PROFILE VIEW CONTAINER HEADER */
-.header-student-profile-view-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1.2rem 2.4rem;
-}
-
-.header-student-profile-view-container p {
-    font-size: 1.6rem;
-}
-
-.header-student-profile-view-container span {
-    color: var(--primary);
-}
-
-/* STUDENT PROFILE VIEW CONTAINER NAV LIST */
-.nav-student-profile-view-container-list {
-    display: flex;
-    align-items: center;
-    gap: 1.6rem;
-}
-
-/* STUDENT PROFILE VIEW CONTAINER NAV LIST ITEM */
-.nav-student-profile-view-container-list-item a:link,
-.nav-student-profile-view-container-list-item button {
-    font-size: 1.8rem;
-    color: var(--primary);
-}
-
-.nav-student-profile-view-container-list-item a:hover,
-.active.nav-student-profile-view-container-list-item a:link,
-.nav-student-profile-view-container-list-item button:hover,
-.active.nav-student-profile-view-container-list-item {
-    color: var(--primary-shade);
-    transform: scale(1.1);
-}
-
 /* STUDENT PROFILE VIEW OVERVIEW CONTAINER */
 .div-student-profile-view-overview-container {
     position: relative;
