@@ -16,9 +16,9 @@
                             <ion-icon src="<?php echo ICONS_PATH . '/lock.svg'; ?>"></ion-icon>
                         </label>
                     </div>
-                    <button class="btn btn-primary btn-password-update">
+                    <button class="btn btn-primary btn-password-confirm">
                         <ion-icon src="<?php echo ICONS_PATH . '/check.svg' ?>"></ion-icon>
-                        <span>Change</span>
+                        <span>Confirm</span>
                     </button>
                 </form>
             </div>
