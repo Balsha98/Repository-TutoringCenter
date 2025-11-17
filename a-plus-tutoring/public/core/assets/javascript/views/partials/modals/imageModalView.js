@@ -2,11 +2,11 @@ class ImageModalView {
     #imageModal = $(".div-image-modal-container");
     #imageModalToggleBtns = $(".btn-image-modal-toggle");
 
-    handleToggleLogoutModal(handler) {
+    handleToggleImageModal(handler) {
         this.#imageModalToggleBtns.each((_, btn) => $(btn).click(handler));
     }
 
-    getLogoutModal() {
+    getImageModal() {
         return this.#imageModal;
     }
 }

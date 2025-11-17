@@ -1,4 +1,4 @@
-/* LOGOUT MODAL CONTAINER */
+/* IMAGE MODAL CONTAINER */
 .div-image-modal-container {
     position: fixed;
     top: 0;
@@ -19,7 +19,7 @@
     z-index: -1;
 }
 
-/* LOGOUT MODAL */
+/* IMAGE MODAL */
 .div-image-modal {
     position: relative;
     width: 80%;
@@ -52,7 +52,7 @@
     height: 100%;
 }
 
-/* LOGOUT MODAL HEADER */
+/* IMAGE MODAL HEADER */
 .header-image-modal {
     width: 100%;
     text-align: center;
