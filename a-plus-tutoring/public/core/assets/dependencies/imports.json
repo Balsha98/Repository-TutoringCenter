@@ -13,23 +13,35 @@
     },
     {
         "dashboard/student": {
-            "css": ["/core/assets/css/partials/loaders/page-loader", "/core/assets/css/partials/modals/logout-modal"],
+            "css": [
+                "/core/assets/css/partials/loaders/page-loader",
+                "/core/assets/css/partials/modals/logout-modal",
+                "/core/assets/css/partials/views/dashboard/controls",
+                "/core/assets/css/partials/nav"
+            ],
             "js": []
         }
     },
     {
         "dashboard/tutor": {
-            "css": ["/core/assets/css/partials/loaders/page-loader", "/core/assets/css/partials/modals/logout-modal"],
+            "css": [
+                "/core/assets/css/partials/loaders/page-loader",
+                "/core/assets/css/partials/modals/logout-modal",
+                "/core/assets/css/partials/views/dashboard/controls",
+                "/core/assets/css/partials/nav"
+            ],
             "js": []
         }
     },
     {
         "profile/student": {
             "css": [
+                "/core/assets/css/partials/modals/alert-modal",
                 "/core/assets/css/partials/loaders/page-loader",
                 "/core/assets/css/partials/modals/logout-modal",
                 "/core/assets/css/partials/modals/password-modal",
-                "/core/assets/css/partials/modals/image-modal"
+                "/core/assets/css/partials/modals/image-modal",
+                "/core/assets/css/partials/nav"
             ],
             "js": []
         }
@@ -37,17 +49,23 @@
     {
         "profile/tutor": {
             "css": [
+                "/core/assets/css/partials/modals/alert-modal",
                 "/core/assets/css/partials/loaders/page-loader",
                 "/core/assets/css/partials/modals/logout-modal",
                 "/core/assets/css/partials/modals/password-modal",
-                "/core/assets/css/partials/modals/image-modal"
+                "/core/assets/css/partials/modals/image-modal",
+                "/core/assets/css/partials/nav"
             ],
             "js": []
         }
     },
     {
         "reports/tutor": {
-            "css": ["/core/assets/css/partials/loaders/page-loader", "/core/assets/css/partials/modals/logout-modal"],
+            "css": [
+                "/core/assets/css/partials/loaders/page-loader",
+                "/core/assets/css/partials/modals/logout-modal",
+                "/core/assets/css/partials/nav"
+            ],
             "js": []
         }
     },
