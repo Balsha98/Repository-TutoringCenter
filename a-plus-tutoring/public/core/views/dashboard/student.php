@@ -47,7 +47,7 @@
                             </a>
                         </li>
                         <li class="nav-student-dashboard-view-overview-controls-list-item">
-                            <a class="link link-primary" href="/profile/{id}">
+                            <a class="link link-primary" href="/profile/<?php echo $student->getID(); ?>">
                                 <span>Profile</span>
                                 <ion-icon src="<?php echo ICONS_PATH . '/chevron-right.svg'; ?>"></ion-icon>
                             </a>

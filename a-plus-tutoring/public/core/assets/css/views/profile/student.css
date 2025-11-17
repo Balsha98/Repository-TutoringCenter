@@ -1,0 +1,175 @@
+/* STUDENT PROFILE VIEW CONTAINER */
+.div-student-profile-view-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-width: 80rem;
+    box-shadow: 0 0.4rem 1.6rem var(--opaque-shadow-sm);
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+/* STUDENT PROFILE VIEW CONTAINER HEADER */
+.header-student-profile-view-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 2.4rem;
+}
+
+.header-student-profile-view-container p {
+    font-size: 1.6rem;
+}
+
+.header-student-profile-view-container span {
+    color: var(--primary);
+}
+
+/* STUDENT PROFILE VIEW CONTAINER NAV LIST */
+.nav-student-profile-view-container-list {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+}
+
+/* STUDENT PROFILE VIEW CONTAINER NAV LIST ITEM */
+.nav-student-profile-view-container-list-item a:link,
+.nav-student-profile-view-container-list-item button {
+    font-size: 1.8rem;
+    color: var(--primary);
+}
+
+.nav-student-profile-view-container-list-item a:hover,
+.active.nav-student-profile-view-container-list-item a:link,
+.nav-student-profile-view-container-list-item button:hover,
+.active.nav-student-profile-view-container-list-item {
+    color: var(--primary-shade);
+    transform: scale(1.1);
+}
+
+/* STUDENT PROFILE VIEW OVERVIEW CONTAINER */
+.div-student-profile-view-overview-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: 30fr 70fr;
+    align-items: center;
+    column-gap: 2.4rem;
+    padding: 2.4rem;
+}
+
+.div-student-profile-view-overview-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0.2rem;
+    background-color: var(--primary);
+}
+
+/* STUDENT PROFILE VIEW BRIEF BIO CONTAINER */
+.div-student-profile-view-brief-bio-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    text-align: center;
+}
+
+/* STUDENT PROFILE VIEW BRIEF BIO IMAGE DATA CONTAINER */
+.div-student-profile-view-brief-bio-image-data-container {
+    position: relative;
+    width: 8rem;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+}
+
+.div-student-profile-view-brief-bio-image-data-container button {
+    position: absolute;
+    top: -0.4rem;
+    left: -0.4rem;
+    padding: 0.8rem;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    z-index: -1;
+}
+
+.div-student-profile-view-brief-bio-image-data-container:hover button {
+    opacity: 1;
+    z-index: 1;
+}
+
+.div-student-profile-view-brief-bio-image-data-container img {
+    width: inherit;
+    border-radius: inherit;
+}
+
+/* STUDENT PROFILE VIEW CONTAINER FOOTER STATUS CONTAINER */
+.div-student-profile-view-brief-bio-status-container {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 50%;
+}
+
+.active.div-student-profile-view-brief-bio-status-container {
+    background-color: var(--success);
+}
+
+.inactive.div-student-profile-view-brief-bio-status-container {
+    background-color: var(--failure);
+}
+
+.div-student-profile-view-brief-bio-status-container ion-icon {
+    font-size: 1.4rem;
+    color: var(--white);
+}
+
+/* STUDENT PROFILE VIEW BRIEF BIO DATA CONTAINER */
+.div-student-profile-view-brief-bio-data-container p {
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.div-student-profile-view-brief-bio-data-container span {
+    font-size: 1.2rem;
+}
+
+/* STUDENT PROFILE VIEW DETAILS BIO FORM */
+.form-student-profile-view-detailed-bio {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+/* STUDENT PROFILE VIEW CONTAINER FOOTER */
+.footer-student-profile-view-container {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 2.4rem;
+}
+
+.footer-student-profile-view-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0.2rem;
+    background-color: var(--primary);
+}
+
+.footer-student-profile-view-container p {
+    font-size: 1.2rem;
+}
