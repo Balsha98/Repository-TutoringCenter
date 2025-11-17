@@ -7,8 +7,8 @@ class Routes
     private static array $routes = [
         'GET' => [],
         'POST' => [
-            'auth/login',
-            'auth/signup'
+            '/auth/login',
+            '/auth/signup'
         ],
         'PUT' => [],
         'DELETE' => []

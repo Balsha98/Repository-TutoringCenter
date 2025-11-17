@@ -17,7 +17,8 @@ class Router
         $route['self'] = $baseUri;
 
         // Check for route ID.
-        if (is_numeric($baseUriParts[count($baseUriParts) - 1])) {
+        $lastPartIndex = count($baseUriParts) - 1;
+        if (is_numeric($baseUriParts[$lastPartIndex])) {
             $route['id'] = array_pop($baseUriParts);
 
             $baseUri = '';

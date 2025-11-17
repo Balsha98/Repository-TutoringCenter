@@ -11,6 +11,6 @@ class JSON
 
     public static function decode(string $json, bool $isAssoc = true)
     {
-        return json_decode($json, $isAssoc);
+        return json_decode($json, $isAssoc) ?? [];
     }
 }

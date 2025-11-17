@@ -22,19 +22,38 @@ class Router
         try {
             $uri = $_SERVER['REQUEST_URI'];
             $uriParts = explode('/', $uri);
-            $requestView = $uriParts[2] . '/' . $uriParts[3];
+            array_shift($uriParts);
 
-            self::$id = (int) ($uriParts[4] ?? 0);
+            $lastPartIndex = count($uriParts) - 1;
+            if (is_numeric($uriParts[$lastPartIndex])) {
+                self::$id = (int) array_pop($uriParts);
+            }
+
+            $requestView = '';
+            foreach ($uriParts as $uriPart) {
+                if ($uriPart === 'api') {
+                    continue;  // Guard clause.
+                }
+
+                $requestView .= '/' . $uriPart;
+            }
+
             self::$method = $_SERVER['REQUEST_METHOD'];
-            self::$data = JSON::decode(file_get_contents('php://input')) ?? [];
 
             // Guard clause: route does not exist.
             if (!Routes::checkRouteData(self::$method, $requestView)) {
                 throw new Exception('Error accessing missing API route.');
             }
 
-            $namespace = 'Api\\Assets\\Controllers\\' . ucfirst($uriParts[2]) . '\\';
-            $classPath = $namespace . ucfirst($uriParts[3]) . 'Controller';
+            $namespace = 'Api\Assets\Controllers';
+            $requestViewParts = explode('/', $requestView);
+            array_shift($requestViewParts);
+
+            foreach ($requestViewParts as $requestViewPart) {
+                $namespace .= '\\' . ucfirst($requestViewPart);
+            }
+
+            $classPath = $namespace . 'Controller';
             self::$controller = new $classPath();
 
             $response = self::handleRequest();
@@ -54,6 +73,8 @@ class Router
     private static function handleRequest()
     {
         self::$controller->setDbInstance(Session::getDb());
+
+        self::$data = JSON::decode(file_get_contents('php://input'));
 
         $response = match (self::$method) {
             'GET' => self::handleGET(),
