@@ -38,7 +38,7 @@ class Database
         if (!empty($params)) {
             foreach ($params as $key => $value) {
                 $type = is_numeric($value) ? PDO::PARAM_INT : PDO::PARAM_STR;
-                $this->statement->bindValue($key, $value, $type);
+                $this->statement->bindValue(':' . $key, $value, $type);
             }
         }
 
