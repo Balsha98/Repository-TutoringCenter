@@ -173,3 +173,10 @@
 .footer-student-profile-view-container p {
     font-size: 1.2rem;
 }
+
+/* STUDENT PROFILE VIEW CONTAINER FOOTER FORM CONTROLS CONTAINER*/
+.div-footer-student-profile-view-form-controls-container {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}

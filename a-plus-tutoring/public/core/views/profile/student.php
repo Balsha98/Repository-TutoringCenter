@@ -1,5 +1,6 @@
     <?php require_once LOCAL_PATH . '/core/partials/loaders/page-loader.php'; ?>
     <?php require_once LOCAL_PATH . '/core/partials/modals/logout-modal.php'; ?>
+    <?php require_once LOCAL_PATH . '/core/partials/modals/password-modal.php'; ?>
     <?php require_once LOCAL_PATH . '/core/partials/modals/image-modal.php'; ?>
 
     <!-- STUDENT PROFILE VIEW CONTAINER -->
@@ -74,37 +75,34 @@
                         </label>
                     </div>
                     <div class="div-input-container">
-                        <input id="password" type="password" name="password" placeholder="Password">
-                        <label for="password">
-                            <ion-icon src="<?php echo ICONS_PATH . '/lock.svg'; ?>"></ion-icon>
+                        <input id="phone" type="text" name="phone" value="<?php echo $student->getPhone(); ?>" placeholder="Phone Number">
+                        <label for="phone">
+                            <ion-icon src="<?php echo ICONS_PATH . '/phone.svg'; ?>"></ion-icon>
                         </label>
                     </div>
                 </div>
                 <div class="div-multi-input-containers grid-2-columns">
                     <div class="div-input-container">
-                        <input id="grade" type="text" name="grade" value="<?php echo $student->getFirstName(); ?>" placeholder="Grade Level">
+                        <input id="grade" type="text" name="grade" value="<?php echo $student->getGradeLabel(); ?>" placeholder="Grade Level">
                         <label for="grade">
                             <ion-icon src="<?php echo ICONS_PATH . '/activity.svg'; ?>"></ion-icon>
                         </label>
                     </div>
                     <div class="div-input-container">
-                        <input id="major" type="text" name="major" placeholder="Major">
+                        <input id="major" type="text" name="major" value="<?php echo $student->getMajor(); ?>" placeholder="Major">
                         <label for="major">
-                            <ion-icon src="<?php echo ICONS_PATH . '/lock.svg'; ?>"></ion-icon>
+                            <ion-icon src="<?php echo ICONS_PATH . '/book-open.svg'; ?>"></ion-icon>
                         </label>
                     </div>
-                </div>
-                <div class="div-input-container">
-                    <input id="phone" type="text" name="phone" value="<?php echo $student->getPhone(); ?>" placeholder="Phone Number">
-                    <label for="phone">
-                        <ion-icon src="<?php echo ICONS_PATH . '/phone.svg'; ?>"></ion-icon>
-                    </label>
                 </div>
             </form>
         </div>
         <?php $dateObj = date_create($student->getDateEnrolled()); ?>
         <footer class="footer-student-profile-view-container">
             <p>Enrolled on <?php echo $dateObj->format('j F, Y'); ?>.</p>
-            <button class="btn btn-primary btn-profile-update">Update</button>
+            <div class="div-footer-student-profile-view-form-controls-container">
+                <button class="btn btn-secondary btn-password-modal-toggle">Change Password?</button>
+                <button class="btn btn-primary btn-profile-update">Update Profile</button>
+            </div>
         </footer>
     </div>
