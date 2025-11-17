@@ -25,7 +25,12 @@
     },
     {
         "profile/student": {
-            "css": ["/core/assets/css/partials/loaders/page-loader", "/core/assets/css/partials/modals/logout-modal"],
+            "css": [
+                "/core/assets/css/partials/loaders/page-loader",
+                "/core/assets/css/partials/modals/logout-modal",
+                "/core/assets/css/partials/modals/password-modal",
+                "/core/assets/css/partials/modals/image-modal"
+            ],
             "js": []
         }
     },
@@ -34,6 +39,7 @@
             "css": [
                 "/core/assets/css/partials/loaders/page-loader",
                 "/core/assets/css/partials/modals/logout-modal",
+                "/core/assets/css/partials/modals/password-modal",
                 "/core/assets/css/partials/modals/image-modal"
             ],
             "js": []
