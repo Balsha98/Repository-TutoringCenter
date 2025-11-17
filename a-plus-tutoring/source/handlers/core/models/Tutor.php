@@ -30,7 +30,7 @@ class Tutor
     private function loadTutorData(int $id)
     {
         $result = $this->database->executeQuery(
-            'SELECT * FROM tutor WHERE id = :id;', [':id' => $id]
+            'SELECT * FROM tutor WHERE id = :id;', ['id' => $id]
         )->getQueryResult(true);
 
         if (!empty($result)) {
@@ -40,8 +40,8 @@ class Tutor
             $this->email = $result['email_address'];
             $this->status = $result['status'] ?? $this->status;
             $this->dateHired = $result['date_hired'];
-            $this->image = $result['image'] ?? IMAGES_PATH . '/placeholder-profile.png';
-            $this->phone = $result['phone'] ?? '(###) ###-####';
+            $this->image = $result['image'] ?? '';
+            $this->phone = $result['phone'] ?? '';
         }
     }
 
@@ -82,11 +82,19 @@ class Tutor
 
     public function getImage()
     {
+        if (empty($this->image)) {
+            $this->image = IMAGES_PATH . '/placeholder-profile.png';
+        }
+
         return $this->image;
     }
 
     public function getPhone()
     {
+        if (empty($this->phone)) {
+            $this->phone = '(###) ###-####';
+        }
+
         return $this->phone;
     }
 }

@@ -32,7 +32,7 @@ class Student
     private function loadStudentData(int $id)
     {
         $result = $this->database->executeQuery(
-            'SELECT * FROM student WHERE id = :id;', [':id' => $id]
+            'SELECT * FROM student WHERE id = :id;', ['id' => $id]
         )->getQueryResult(true);
 
         if (!empty($result)) {
@@ -44,8 +44,8 @@ class Student
             $this->gradeValue = (int) $result['grade_value'];
             $this->major = $result['major'] ?? '';
             $this->dateEnrolled = $result['date_enrolled'];
-            $this->image = $result['image'] ?? IMAGES_PATH . '/placeholder-profile.png';
-            $this->phone = $result['phone'] ?? '(###) ###-####';
+            $this->image = $result['image'] ?? '';
+            $this->phone = $result['phone'] ?? '';
         }
     }
 
@@ -91,11 +91,19 @@ class Student
 
     public function getImage()
     {
+        if (empty($this->image)) {
+            $this->image = IMAGES_PATH . '/placeholder-profile.png';
+        }
+
         return $this->image;
     }
 
     public function getPhone()
     {
+        if (empty($this->phone)) {
+            $this->phone = '(###) ###-####';
+        }
+
         return $this->phone;
     }
 }
