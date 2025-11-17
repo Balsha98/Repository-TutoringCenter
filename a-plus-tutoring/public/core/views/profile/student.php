@@ -17,11 +17,6 @@
                         </a>
                     </li>
                     <li class="nav-student-profile-view-container-list-item">
-                        <a class="link link-icon" href="/reports">
-                            <ion-icon src="<?php echo ICONS_PATH . '/book.svg'; ?>"></ion-icon>
-                        </a>
-                    </li>
-                    <li class="nav-student-profile-view-container-list-item">
                         <a class="link link-icon" href="/sessions">
                             <ion-icon src="<?php echo ICONS_PATH . '/calendar.svg'; ?>"></ion-icon>
                         </a>
