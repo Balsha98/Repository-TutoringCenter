@@ -1,15 +1,15 @@
-    <!-- IMAGE MODAL CONTAINER -->
-    <div class="div-image-modal-container hide-image-modal">
-        <div class="div-image-modal">
-            <button class="btn-icon btn-primary btn-image-modal-toggle">
+    <!-- UPLOAD IMAGE MODAL CONTAINER -->
+    <div class="div-upload-image-modal-container hide-upload-image-modal">
+        <div class="div-upload-image-modal">
+            <button class="btn-icon btn-primary btn-upload-image-modal-toggle">
                 <ion-icon src="<?php echo ICONS_PATH . '/x.svg' ?>"></ion-icon>
             </button>
-            <div class="div-image-modal-data-container">
-                <header class="header-image-modal">
+            <div class="div-upload-image-modal-data-container">
+                <header class="header-upload-image-modal">
                     <h2>Upload Your Profile Image URL</h2>
                     <p>Please provide your image <span>url</span> in the following field.</p>
                 </header>
-                <form class="form-image-modal" action="/api/profile/image" method="PUT">
+                <form class="form-upload-image-modal" action="/api/profile/image" method="PUT">
                     <div class="div-input-container">
                         <input id="image" type="text" name="image" placeholder="Image URL">
                         <label for="image">

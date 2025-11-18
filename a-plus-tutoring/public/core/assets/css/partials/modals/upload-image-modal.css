@@ -1,5 +1,5 @@
-/* IMAGE MODAL CONTAINER */
-.div-image-modal-container {
+/* UPLOAD IMAGE MODAL CONTAINER */
+.div-upload-image-modal-container {
     position: fixed;
     top: 0;
     left: 0;
@@ -14,13 +14,13 @@
     z-index: 9998;
 }
 
-.hide-image-modal {
+.hide-upload-image-modal {
     opacity: 0;
     z-index: -1;
 }
 
-/* IMAGE MODAL */
-.div-image-modal {
+/* UPLOAD IMAGE MODAL */
+.div-upload-image-modal {
     position: relative;
     width: 80%;
     max-width: 56rem;
@@ -31,19 +31,19 @@
 }
 
 /* BUTTON MODAL CLOSE */
-.div-image-modal > button {
+.div-upload-image-modal > button {
     position: absolute;
     top: 1.2rem;
     right: 1.2rem;
     width: 2.4rem;
 }
 
-.div-image-modal > button:hover {
+.div-upload-image-modal > button:hover {
     transform: scale(1.1);
 }
 
 /* BUTTON MODAL DATA CONTAINER */
-.div-image-modal-data-container {
+.div-upload-image-modal-data-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -52,26 +52,26 @@
     height: 100%;
 }
 
-/* IMAGE MODAL HEADER */
-.header-image-modal {
+/* UPLOAD IMAGE MODAL HEADER */
+.header-upload-image-modal {
     width: 100%;
     text-align: center;
 }
 
-.header-image-modal h2 {
+.header-upload-image-modal h2 {
     font-size: 2rem;
 }
 
-.header-image-modal p {
+.header-upload-image-modal p {
     font-size: 1.4rem;
 }
 
-.header-image-modal p span {
+.header-upload-image-modal p span {
     color: var(--primary);
 }
 
-/* IMAGE MODAL FORM */
-.form-image-modal {
+/* UPLOAD IMAGE MODAL FORM */
+.form-upload-image-modal {
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
