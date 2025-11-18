@@ -22,7 +22,7 @@
                     <span><?php echo $user->getEmail(); ?></span>
                 </div>
             </div>
-            <form class="form-student-profile-view-detailed-bio" action="/api/profile/student" method="PUT">
+            <form class="form-student-profile-view-detailed-bio" action="/api/profile/student/<?php echo $user->getID(); ?>" method="PUT">
                 <div class="div-multi-input-containers grid-2-columns">
                     <div class="div-input-container">
                         <input id="first_name" type="text" name="first_name" value="<?php echo $user->getFirstName(); ?>" placeholder="First Name">
@@ -51,9 +51,16 @@
                         </label>
                     </div>
                 </div>
+                <?php $grade = $user->getGradeLabel(); ?>
                 <div class="div-multi-input-containers grid-2-columns">
                     <div class="div-input-container">
-                        <input id="grade" type="text" name="grade" value="<?php echo $user->getGradeLabel(); ?>" placeholder="Grade Level">
+                        <select id="grade" name="grade" value="<?php echo $grade; ?>">
+                            <option value="">Grade</option>
+                            <option value="1|freshman" <?php echo $grade === 'freshman' ? 'selected' : ''; ?>>Freshman</option>
+                            <option value="2|sophomore" <?php echo $grade === 'sophomore' ? 'selected' : ''; ?>>Sophomore</option>
+                            <option value="3|junior" <?php echo $grade === 'junior' ? 'selected' : ''; ?>>Junior</option>
+                            <option value="4|senior" <?php echo $grade === 'senior' ? 'selected' : ''; ?>>Senior</option>
+                        </select>
                         <label for="grade">
                             <ion-icon src="<?php echo ICONS_PATH . '/activity.svg'; ?>"></ion-icon>
                         </label>
