@@ -12,6 +12,7 @@ class Routes
         ],
         'PUT' => [
             '/profile/tutor',
+            '/profile/student',
             '/profile/image/tutor',
             '/profile/image/student',
             '/profile/password/tutor',

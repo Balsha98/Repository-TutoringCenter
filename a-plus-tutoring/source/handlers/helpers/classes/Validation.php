@@ -8,7 +8,7 @@ class Validation
     private static array $constraints;
 
     private static array $patterns = [
-        'only-letters' => '#[^a-zA-Z]#',
+        'only-letters' => '#[^a-zA-Z ]#',
         'certain-symbols' => '#[^a-zA-Z0-9.,!&? ]#',
         'phone-symbols' => '#[^0-9()+ -]#',
         'none-symbols' => '#[^a-zA-Z0-9 -]#'
