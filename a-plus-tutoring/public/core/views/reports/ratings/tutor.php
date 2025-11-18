@@ -82,7 +82,7 @@
                                     <p>' . $students['id'] . '</p>
                                     <p>' . $students['first_name'] . ' ' . $students['last_name'] . '</p>
                                     <p>' . $students['email_address'] . '</p>
-                                    <p>' . $students['grade_name'] . '</p>
+                                    <p>' . ucfirst($students['grade_label']) . '</p>
                                     <p>' . $formattedDate . '</p>
                                 </li>
                             ';
@@ -109,7 +109,7 @@
                                         <p>' . $student['id'] . '</p>
                                         <p>' . $student['first_name'] . ' ' . $student['last_name'] . '</p>
                                         <p>' . $student['email_address'] . '</p>
-                                        <p>' . $student['grade_name'] . '</p>
+                                        <p>' . ucfirst($student['grade_label']) . '</p>
                                         <p>' . $formattedDate . '</p>
                                     </li>
                                 ';
