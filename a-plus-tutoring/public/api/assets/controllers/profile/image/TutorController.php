@@ -39,6 +39,28 @@ class TutorController extends AbstractController
         ];
     }
 
+    public function delete()
+    {
+        if (!empty($this->deleteProfileImage())) {
+            return [
+                'status' => 'error',
+                'response' => [
+                    'title' => 'Internal Error',
+                    'message' => 'Unable to process your request.'
+                ]
+            ];
+        }
+
+        return [
+            'status' => 'success',
+            'response' => [
+                'title' => 'Image Deletion Successful',
+                'message' => 'You have successfully deleted your image.'
+            ],
+            'route' => 'reload'
+        ];
+    }
+
     private function updateProfileImage(array $data)
     {
         $query = '
@@ -50,6 +72,20 @@ class TutorController extends AbstractController
 
         return $this->getDbInstance()->executeQuery(
             $query, [...$data, 'id' => $this->getID()]
+        )->getQueryResult(true);
+    }
+
+    private function deleteProfileImage()
+    {
+        $query = '
+            UPDATE tutor SET 
+                image = NULL
+            WHERE
+                id = :id;
+        ';
+
+        return $this->getDbInstance()->executeQuery(
+            $query, ['id' => $this->getID()]
         )->getQueryResult(true);
     }
 }
