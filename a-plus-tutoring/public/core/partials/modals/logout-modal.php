@@ -6,7 +6,7 @@
             </button>
             <div class="div-logout-modal-data-container">
                 <header class="header-logout-modal">
-                    <h2 class="heading-logout-modal">Sure about logging out?</h2>
+                    <h2>Sure about logging out?</h2>
                 </header>
                 <div class="div-modal-control-btns-container grid-2-columns">
                     <button class="btn btn-failure btn-logout-modal-toggle">
