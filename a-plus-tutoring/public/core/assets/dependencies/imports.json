@@ -40,7 +40,8 @@
                 "/core/assets/css/partials/loaders/page-loader",
                 "/core/assets/css/partials/modals/logout-modal",
                 "/core/assets/css/partials/modals/password-modal",
-                "/core/assets/css/partials/modals/image-modal",
+                "/core/assets/css/partials/modals/delete-image-modal",
+                "/core/assets/css/partials/modals/upload-image-modal",
                 "/core/assets/css/partials/nav"
             ],
             "js": []
@@ -53,7 +54,8 @@
                 "/core/assets/css/partials/loaders/page-loader",
                 "/core/assets/css/partials/modals/logout-modal",
                 "/core/assets/css/partials/modals/password-modal",
-                "/core/assets/css/partials/modals/image-modal",
+                "/core/assets/css/partials/modals/delete-image-modal",
+                "/core/assets/css/partials/modals/upload-image-modal",
                 "/core/assets/css/partials/nav"
             ],
             "js": []
