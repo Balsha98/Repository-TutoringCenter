@@ -49,12 +49,19 @@
 .div-tutor-profile-view-brief-bio-image-data-container button {
     position: absolute;
     top: -0.4rem;
-    left: -0.4rem;
     padding: 0.8rem;
     border-radius: 50%;
     transition: all 0.3s ease-in-out;
     opacity: 0;
     z-index: -1;
+}
+
+.div-tutor-profile-view-brief-bio-image-data-container button:first-child {
+    left: -0.4rem;
+}
+
+.div-tutor-profile-view-brief-bio-image-data-container button:last-child {
+    right: -0.4rem;
 }
 
 .div-tutor-profile-view-brief-bio-image-data-container:hover button {

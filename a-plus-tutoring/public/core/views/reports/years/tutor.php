@@ -35,7 +35,7 @@
                             student.first_name, 
                             student.last_name,
                             student.email_address,
-                            student.grade_name,
+                            student.grade_label,
                             student.grade_value,
                             student.date_enrolled
                         FROM
@@ -63,7 +63,7 @@
 
                             echo '
                                 <li class="tutor-years-report-content-rows-list-item ">
-                                    <p>' . $students['grade_name'] . '</p>
+                                    <p>' . ucfirst($students['grade_label']) . '</p>
                                     <p>' . $students['id'] . '</p>
                                     <p>' . $students['first_name'] . ' ' . $students['last_name'] . '</p>
                                     <p>' . $students['email_address'] . '</p>
@@ -76,7 +76,7 @@
                             foreach ($students as $student) {
                                 $dateObj = date_create($student['date_enrolled']);
                                 $formattedDate = date_format($dateObj, 'j F, Y');
-                                $studentYear = $student['grade_name'];
+                                $studentYear = $student['grade_label'];
 
                                 $listItemStyle = '';
                                 if (array_key_exists($studentYear, $columnNameCache)) {
@@ -87,7 +87,7 @@
 
                                 echo '
                                     <li class="tutor-years-report-content-rows-list-item ' . $listItemStyle . '">
-                                        <p>' . $studentYear . '</p>
+                                        <p>' . ucfirst($studentYear) . '</p>
                                         <p>' . $student['id'] . '</p>
                                         <p>' . $student['first_name'] . ' ' . $student['last_name'] . '</p>
                                         <p>' . $student['email_address'] . '</p>

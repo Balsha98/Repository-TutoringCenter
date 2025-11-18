@@ -37,7 +37,7 @@
                             student.last_name,
                             student.email_address,
                             student.grade_label,
-                            rating.score_name,
+                            rating.score_label,
                             rating.score_value,
                             rating.date_rated
                         FROM
@@ -57,8 +57,6 @@
                     $students = $dbInstance->executeQuery($query, ['tutor_id' => $id])->getQueryResult(true);
                     $columnNameCache = [];
 
-                    print_r($students);
-
                     $overallRating = 0;
                     $totalRecords = 0;
 
@@ -73,7 +71,7 @@
 
                             echo '
                                 <li class="tutor-ratings-report-content-rows-list-item">
-                                    <p>' . $students['score_name'] . '</p>
+                                    <p>' . $students['score_label'] . '</p>
                                     <p>' . $students['id'] . '</p>
                                     <p>' . $students['first_name'] . ' ' . $students['last_name'] . '</p>
                                     <p>' . $students['email_address'] . '</p>
@@ -87,20 +85,20 @@
                             foreach ($students as $student) {
                                 $dateObj = date_create($student['date_rated']);
                                 $formattedDate = date_format($dateObj, 'j F, Y');
-                                $ratingScoreName = $student['score_name'];
+                                $ratingScoreLabel = $student['score_label'];
 
                                 $listItemStyle = '';
-                                if (array_key_exists($ratingScoreName, $columnNameCache)) {
+                                if (array_key_exists($ratingScoreLabel, $columnNameCache)) {
                                     $listItemStyle = 'hide-rating-sorting-key-label';
                                 } else {
-                                    $columnNameCache[$ratingScoreName] = 1;
+                                    $columnNameCache[$ratingScoreLabel] = 1;
                                 }
 
                                 $overallRating += (int) $student['score_value'];
 
                                 echo '
                                     <li class="tutor-ratings-report-content-rows-list-item ' . $listItemStyle . '">
-                                        <p>' . $ratingScoreName . '</p>
+                                        <p>' . $ratingScoreLabel . '</p>
                                         <p>' . $student['id'] . '</p>
                                         <p>' . $student['first_name'] . ' ' . $student['last_name'] . '</p>
                                         <p>' . $student['email_address'] . '</p>
