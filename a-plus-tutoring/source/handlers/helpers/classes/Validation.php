@@ -93,10 +93,10 @@ class Validation
 
     private static function capitalize(string $string)
     {
-        if (preg_match('#[-]#', $string)) {
+        if (preg_match('#[_]#', $string)) {
             return implode(' ', array_map(
                 fn($part) => ucfirst($part),
-                explode('-', $string)
+                explode('_', $string)
             ));
         }
 
