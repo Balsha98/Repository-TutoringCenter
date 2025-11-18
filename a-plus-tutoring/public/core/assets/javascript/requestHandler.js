@@ -2,7 +2,7 @@
 import * as alertModalController from "./controllers/partials/modals/alertModalController.js";
 
 class RequestHandler {
-    async handleRequest(url, method, data) {
+    async handleRequest(url, method, data = {}) {
         const response = await $.ajax({
             url: url,
             method: method,
