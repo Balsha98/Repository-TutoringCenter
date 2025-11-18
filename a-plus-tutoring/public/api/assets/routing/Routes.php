@@ -18,7 +18,10 @@ class Routes
             '/profile/password/tutor',
             '/profile/password/student'
         ],
-        'DELETE' => []
+        'DELETE' => [
+            '/profile/image/tutor',
+            '/profile/image/student',
+        ]
     ];
 
     public static function checkRouteData(string $method, string $route)
