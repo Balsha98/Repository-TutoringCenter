@@ -2,7 +2,8 @@
     <?php require_once LOCAL_PATH . '/core/partials/loaders/page-loader.php'; ?>
     <?php require_once LOCAL_PATH . '/core/partials/modals/logout-modal.php'; ?>
     <?php require_once LOCAL_PATH . '/core/partials/modals/password-modal.php'; ?>
-    <?php require_once LOCAL_PATH . '/core/partials/modals/image-modal.php'; ?>
+    <?php require_once LOCAL_PATH . '/core/partials/modals/delete-image-modal.php'; ?>
+    <?php require_once LOCAL_PATH . '/core/partials/modals/upload-image-modal.php'; ?>
 
     <!-- STUDENT PROFILE VIEW CONTAINER -->
     <div class="div-student-profile-view-container">
@@ -12,10 +13,15 @@
         <div class="div-student-profile-view-overview-container">
             <div class="div-student-profile-view-brief-bio-container">
                 <div class="div-student-profile-view-brief-bio-image-data-container">
-                    <button class="btn btn-icon btn-primary btn-image-modal-toggle">
+                    <button class="btn btn-icon btn-primary btn-upload-image-modal-toggle">
                         <ion-icon src="<?php echo ICONS_PATH . '/upload.svg'; ?>"></ion-icon>
                     </button>
                     <img src="<?php echo $user->getImage(); ?>" alt="Student Profile Image">
+                    <?php if ($user->getImage() !== IMAGES_PATH . '/placeholder-profile.png') { ?>
+                    <button class="btn btn-icon btn-failure btn-delete-image-modal-toggle">
+                        <ion-icon src="<?php echo ICONS_PATH . '/trash-2.svg'; ?>"></ion-icon>
+                    </button>
+                    <?php } ?>
                 </div>
                 <div class="div-student-profile-view-brief-bio-data-container">
                     <p><?php echo $user->getFirstName(); ?> <?php echo $user->getLastName(); ?></p>

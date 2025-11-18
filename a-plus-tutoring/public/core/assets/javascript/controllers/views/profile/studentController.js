@@ -3,7 +3,8 @@ import requestHandler from "../../../requestHandler.js";
 import * as pageLoaderController from "../../partials/loaders/pageLoaderController.js";
 import * as logoutModalController from "../../partials/modals/logoutModalController.js";
 import * as passwordModalController from "../../partials/modals/passwordModalController.js";
-import * as imageModalController from "../../partials/modals/imageModalController.js";
+import * as deleteImageModalController from "../../partials/modals/deleteImageModalController.js";
+import * as uploadImageModalController from "../../partials/modals/uploadImageModalController.js";
 import studentView from "../../../views/profile/studentView.js";
 
 const controlProfileUpdate = function () {
@@ -30,7 +31,8 @@ const initController = function () {
 
     logoutModalController.initController();
     passwordModalController.initController();
-    imageModalController.initController();
+    deleteImageModalController.initController();
+    uploadImageModalController.initController();
 
     studentView.handleProfileUpdate(controlProfileUpdate);
 };
