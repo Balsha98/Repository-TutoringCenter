@@ -6,11 +6,6 @@
             <nav class="nav-tutor-ratings-report-view-container">
                 <ul class="nav-tutor-ratings-report-view-container-list">
                     <li class="nav-tutor-ratings-report-view-container-list-item">
-                        <a class="link link-icon" href="/reports">
-                            <ion-icon src="<?php echo ICONS_PATH . '/arrow-left.svg'; ?>"></ion-icon>
-                        </a>
-                    </li>
-                    <li class="nav-tutor-ratings-report-view-container-list-item">
                         <button class="btn btn-icon btn-print-report">
                             <ion-icon src="<?php echo ICONS_PATH . '/printer.svg'; ?>"></ion-icon>
                         </button>
@@ -59,7 +54,7 @@
                     ';
 
                     $dbInstance = Source\Handlers\Core\Database\Database::getInstance();
-                    $students = $dbInstance->executeQuery($query, [':tutor_id' => $id])->getQueryResult(true);
+                    $students = $dbInstance->executeQuery($query, ['tutor_id' => $id])->getQueryResult(true);
                     $columnNameCache = [];
 
                     print_r($students);
