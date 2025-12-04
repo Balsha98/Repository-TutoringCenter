@@ -1,0 +1,57 @@
+/* 404 VIEW CONTAINER */
+.div-404-view-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    max-width: 64rem;
+    padding: 2.4rem;
+    background-color: var(--white);
+    transform: translate(-50%, -50%);
+}
+
+.div-404-view-container h1 {
+    font-size: 9.6rem;
+    color: var(--primary);
+}
+
+/* 404 VIEW CONTENT CONTAINER */
+.div-404-view-content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3.2rem;
+}
+
+/* HEADER 404 VIEW CONTENT CONTAINER */
+.header-404-view-content-container {
+    position: relative;
+    text-align: center;
+}
+
+.header-404-view-content-container::after {
+    content: "";
+    position: absolute;
+    bottom: -1.2rem;
+    left: 50%;
+    width: 80%;
+    height: 0.2rem;
+    background-color: var(--primary);
+    transform: translate(-50%, -50%);
+}
+
+.header-404-view-content-container h2 {
+    font-size: 2.4rem;
+}
+
+.header-404-view-content-container p {
+    font-size: 1.6rem;
+}
+
+.header-404-view-content-container span {
+    color: var(--primary);
+}
