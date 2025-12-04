@@ -94,11 +94,13 @@
                                     $columnNameCache[$ratingScoreLabel] = 1;
                                 }
 
+                                $capitalizedRatingScoreLabel = Source\Handlers\Helpers\Classes\TextFormat::capitalizePartsOfString(' ', $ratingScoreLabel);
+
                                 $overallRating += (int) $student['score_value'];
 
                                 echo '
                                     <li class="tutor-ratings-report-content-rows-list-item ' . $listItemStyle . '">
-                                        <p>' . $ratingScoreLabel . '</p>
+                                        <p>' . $capitalizedRatingScoreLabel . '</p>
                                         <p>' . $student['id'] . '</p>
                                         <p>' . $student['first_name'] . ' ' . $student['last_name'] . '</p>
                                         <p>' . $student['email_address'] . '</p>
