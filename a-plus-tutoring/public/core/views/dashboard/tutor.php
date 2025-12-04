@@ -1,4 +1,4 @@
-`   <?php require_once LOCAL_PATH . '/core/partials/loaders/page-loader.php'; ?>
+    <?php require_once LOCAL_PATH . '/core/partials/loaders/page-loader.php'; ?>
     <?php require_once LOCAL_PATH . '/core/partials/modals/logout-modal.php'; ?>
 
     <!-- TUTOR DASHBOARD VIEW CONTAINER -->
