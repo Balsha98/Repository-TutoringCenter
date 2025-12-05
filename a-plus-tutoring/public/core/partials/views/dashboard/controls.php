@@ -12,7 +12,7 @@
                         </li>
                         <?php } ?>
                         <li class="nav-user-dashboard-view-overview-controls-list-item">
-                            <a class="link link-primary" href="/sessions">
+                            <a class="link link-primary" href="/sessions/<?php echo $user->getID(); ?>">
                                 <span>Sessions</span>
                                 <ion-icon src="<?php echo ICONS_PATH . '/chevron-right.svg'; ?>"></ion-icon>
                             </a>

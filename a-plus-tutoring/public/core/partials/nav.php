@@ -16,7 +16,7 @@
                     </li>
                     <?php } ?>
                     <li class="nav-user-dashboard-view-container-list-item <?php echo $base === 'sessions' ? 'active' : ''; ?>">
-                        <a class="link link-icon" href="/sessions">
+                        <a class="link link-icon" href="/sessions/<?php echo $user->getID(); ?>">
                             <ion-icon src="<?php echo ICONS_PATH . '/calendar.svg'; ?>"></ion-icon>
                         </a>
                     </li>
