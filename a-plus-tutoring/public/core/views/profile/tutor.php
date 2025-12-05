@@ -81,7 +81,7 @@
         <?php $dateObj = date_create($user->getDateHired()); ?>
         <footer class="footer-tutor-profile-view-container">
             <p>Member since <?php echo $dateObj->format('j F, Y'); ?>.</p>
-            <div class="div-footer-student-profile-view-form-controls-container">
+            <div class="div-footer-tutor-profile-view-form-controls-container">
                 <button class="btn btn-secondary btn-password-modal-toggle">Change Password?</button>
                 <button class="btn btn-primary btn-profile-update">Update Profile</button>
             </div>
