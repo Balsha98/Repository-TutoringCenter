@@ -45,6 +45,10 @@ class Routes
             'path' => 'reports/years/',
             'title' => 'Years Report'
         ],
+        '/sessions' => [
+            'path' => 'sessions/',
+            'title' => 'Sessions'
+        ],
         '/signup' => [
             'path' => 'auth/signup',
             'title' => 'Signup'

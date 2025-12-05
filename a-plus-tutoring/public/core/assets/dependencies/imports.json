@@ -88,5 +88,15 @@
             "css": ["/core/assets/css/partials/loaders/page-loader"],
             "js": []
         }
+    },
+    {
+        "sessions/tutor": {
+            "css": [
+                "/core/assets/css/partials/loaders/page-loader",
+                "/core/assets/css/partials/modals/logout-modal",
+                "/core/assets/css/partials/nav"
+            ],
+            "js": []
+        }
     }
 ]
