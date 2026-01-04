@@ -125,7 +125,7 @@ Repository-TutoringCenter/
 │   │   │   │   │   ├── views/          # View-specific styles.
 │   │   │   │   │   ├── general.css     # General styling.
 │   │   │   │   │   ├── reusable.css    # Reusable classes.
-│   │   │   │   │   └── vars.css        # CSS variables.
+│   │   │   │   │   └── variables.css        # CSS variables.
 │   │   │   │   │
 │   │   │   │   ├── dependencies/       # Dynamic JSON imports.
 │   │   │   │   │
