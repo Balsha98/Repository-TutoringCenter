@@ -198,10 +198,10 @@ CREATE TABLE assignments (
     subject_id INT NOT NULL,
     proficiency ENUM("beginner", "intermediate", "expert") NOT NULL,
     PRIMARY KEY (tutor_id, subject_id),
-    FOREIGN KEY (tutor_id) REFERENCES tutor (id)
+    FOREIGN KEY (tutor_id) REFERENCES tutors (id)
         ON UPDATE CASCADE
         ON DELETE CASCADE,
-    FOREIGN KEY (subject_id) REFERENCES subject (id)
+    FOREIGN KEY (subject_id) REFERENCES subjects (id)
         ON UPDATE CASCADE
         ON DELETE CASCADE
 );
@@ -310,16 +310,16 @@ CREATE TABLE sessions (
     time_start DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     time_end DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (id),
-    FOREIGN KEY (student_id) REFERENCES student (id)
+    FOREIGN KEY (student_id) REFERENCES students (id)
         ON UPDATE CASCADE
         ON DELETE CASCADE,
-    FOREIGN KEY (tutor_id) REFERENCES tutor (id)
+    FOREIGN KEY (tutor_id) REFERENCES tutors (id)
         ON UPDATE CASCADE
         ON DELETE CASCADE,
-    FOREIGN KEY (subject_id) REFERENCES subject (id)
+    FOREIGN KEY (subject_id) REFERENCES subjects (id)
         ON UPDATE CASCADE
         ON DELETE CASCADE,
-    FOREIGN KEY (room_id) REFERENCES room (id)
+    FOREIGN KEY (room_id) REFERENCES rooms (id)
         ON UPDATE CASCADE
         ON DELETE CASCADE
 );
@@ -537,7 +537,7 @@ CREATE TABLE ratings (
     comment VARCHAR(250) NULL,
     date_rated DATETIME DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (id),
-    FOREIGN KEY (session_id) REFERENCES session (id)
+    FOREIGN KEY (session_id) REFERENCES sessions (id)
         ON UPDATE CASCADE
         ON DELETE CASCADE
 );
