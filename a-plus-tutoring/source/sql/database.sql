@@ -5,7 +5,7 @@ CREATE DATABASE aplus_tutoring_center;
 USE aplus_tutoring_center;
 
 -- TABLE STUDENT
-CREATE TABLE student (
+CREATE TABLE students (
     id INT NOT NULL AUTO_INCREMENT,
     first_name VARCHAR(100) NOT NULL,
     last_name VARCHAR(100) NOT NULL,
@@ -20,7 +20,7 @@ CREATE TABLE student (
     PRIMARY KEY (id)
 );
 
-INSERT INTO student (id, first_name, last_name, email_address, password, grade_label, grade_value, major, date_enrolled, image, phone) VALUES
+INSERT INTO students (id, first_name, last_name, email_address, password, grade_label, grade_value, major, date_enrolled, image, phone) VALUES
 (1, 'Ian', 'Johnson', 'ij3130@rit.edu', 'b54a95127a4b573f41e335fdbd339dcc2208fbfb1ae0b6fab7599d6e2d6ec754', 'senior', 4, 'Business Administration', '2022-02-04', NULL, '(585) 555-8750'),
 (2, 'Hannah', 'Brown', 'hb5664@rit.edu', 'fc881aa34d44660e1012dec26ccda0b469d6c8359e91dc674dab4c095b9fe832', 'junior', 3, 'Information Technology', '2021-01-01', NULL, '(585) 555-4180'),
 (3, 'George', 'Smith', 'gs6768@rit.edu', '0522a55e2d5f0993a3d66d28864b2862a7218a75ea7968b075333434404485c3', 'junior', 3, 'Software Engineering', '2023-02-16', NULL, '(585) 555-2653'),
@@ -125,7 +125,7 @@ INSERT INTO student (id, first_name, last_name, email_address, password, grade_l
 
 
 -- TABLE TUTOR
-CREATE TABLE tutor (
+CREATE TABLE tutors (
     id INT NOT NULL AUTO_INCREMENT,
     first_name VARCHAR(100) NOT NULL,
     last_name VARCHAR(100) NOT NULL,
@@ -138,7 +138,7 @@ CREATE TABLE tutor (
     PRIMARY KEY (id)
 );
 
-INSERT INTO tutor (id, first_name, last_name, email_address, password, status, date_hired, image, phone) VALUES
+INSERT INTO tutors (id, first_name, last_name, email_address, password, status, date_hired, image, phone) VALUES
 (1, 'Alice', 'Johnson', 'aj4823@rit.edu', '2bd806c97f0e00af1a1fc3328fa763a9269723c8db8fac4f93af71db186d6e90', 'active', '2023-01-10', NULL, '(585) 555-1010'),
 (2, 'Bob', 'Smith', 'bs2369@rit.edu', '81b637d8fcd2c6da6359e6963113a1170de795e4b725b84d1e0b4cfd9ec58ce9', 'active', '2023-02-15', NULL, '(585) 555-2020'),
 (3, 'Charlie', 'Nguyen', 'cn5930@rit.edu', 'b9dd960c1753459a78115d3cb845a57d924b6877e805b08bd01086ccdf34433c', 'inactive', '2022-11-03', NULL, '(585) 555-3030'),
@@ -153,7 +153,7 @@ INSERT INTO tutor (id, first_name, last_name, email_address, password, status, d
 
 
 -- TABLE SUBJECT
-CREATE TABLE subject (
+CREATE TABLE subjects (
     id INT NOT NULL AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
     department VARCHAR(100) NOT NULL,
@@ -163,7 +163,7 @@ CREATE TABLE subject (
     PRIMARY KEY (id)
 );
 
-INSERT INTO subject (id, name, department, professor, credits, term) VALUES
+INSERT INTO subjects (id, name, department, professor, credits, term) VALUES
 (1, 'Intro to Computer Science', 'Computer Science', 'Dr. Alice Johnson', 4, 'fall'),
 (2, 'Data Structures', 'Computer Science', 'Dr. Bob Smith', 4, 'spring'),
 (3, 'Software Engineering Principles', 'Software Engineering', 'Dr. Charlie Nguyen', 3, 'fall'),
@@ -193,7 +193,7 @@ INSERT INTO subject (id, name, department, professor, credits, term) VALUES
 
 
 -- TABLE ASSIGNED
-CREATE TABLE assigned (
+CREATE TABLE assignments (
     tutor_id INT NOT NULL,
     subject_id INT NOT NULL,
     proficiency ENUM("beginner", "intermediate", "expert") NOT NULL,
@@ -206,7 +206,7 @@ CREATE TABLE assigned (
         ON DELETE CASCADE
 );
 
-INSERT INTO assigned (tutor_id, subject_id, proficiency) VALUES
+INSERT INTO assignments (tutor_id, subject_id, proficiency) VALUES
 (1, 1, 'expert'),
 (2, 2, 'intermediate'),
 (3, 3, 'beginner'),
@@ -261,7 +261,7 @@ INSERT INTO assigned (tutor_id, subject_id, proficiency) VALUES
 
 
 -- TABLE ROOM
-CREATE TABLE room (
+CREATE TABLE rooms (
     id INT NOT NULL AUTO_INCREMENT,
     room_number CHAR(7) NOT NULL,
     building VARCHAR(50) NOT NULL,
@@ -269,7 +269,7 @@ CREATE TABLE room (
     PRIMARY KEY (id)
 );
 
-INSERT INTO room (id, room_number, building, capacity) VALUES
+INSERT INTO rooms (id, room_number, building, capacity) VALUES
 (1, '101', 'Gleason Hall', 30),
 (2, '102', 'Gleason Hall', 35),
 (3, '201', 'Bausch & Lomb Center', 25),
@@ -299,7 +299,7 @@ INSERT INTO room (id, room_number, building, capacity) VALUES
 
 
 -- TABLE SESSION
-CREATE TABLE session (
+CREATE TABLE sessions (
     id INT NOT NULL AUTO_INCREMENT,
     student_id INT NOT NULL,
     tutor_id INT NOT NULL,
@@ -529,7 +529,7 @@ INSERT INTO session (id, student_id, tutor_id, subject_id, room_id, date_schedul
 
 
 -- TABLE RATING
-CREATE TABLE rating (
+CREATE TABLE ratings (
     id INT NOT NULL AUTO_INCREMENT,
     session_id INT NOT NULL,
     score_label ENUM("subpar", "needs work", "great") NOT NULL,
@@ -542,7 +542,7 @@ CREATE TABLE rating (
         ON DELETE CASCADE
 );
 
-INSERT INTO rating (id, session_id, score_label, score_value, comment, date_rated) VALUES
+INSERT INTO ratings (id, session_id, score_label, score_value, comment, date_rated) VALUES
 (1, 1, 'needs work', 3, 'Helpful overall, but I needed more step-by-step guidance.', '2025-04-19'),
 (2, 2, 'great', 5, 'Great experience—solid explanations and a very supportive tutor.', '2025-05-28'),
 (3, 3, 'subpar', 1, 'The tutor seemed distracted and the explanations were confusing.', '2025-06-11'),
