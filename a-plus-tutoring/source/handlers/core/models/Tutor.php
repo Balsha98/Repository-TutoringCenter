@@ -30,7 +30,7 @@ class Tutor
     private function loadTutorData(int $id)
     {
         $result = $this->database->executeQuery(
-            'SELECT * FROM tutor WHERE id = :id;', ['id' => $id]
+            'SELECT * FROM tutors WHERE id = :id;', ['id' => $id]
         )->getQueryResult(true);
 
         if (!empty($result)) {

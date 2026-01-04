@@ -32,7 +32,7 @@ class Student
     private function loadStudentData(int $id)
     {
         $result = $this->database->executeQuery(
-            'SELECT * FROM student WHERE id = :id;', ['id' => $id]
+            'SELECT * FROM students WHERE id = :id;', ['id' => $id]
         )->getQueryResult(true);
 
         if (!empty($result)) {

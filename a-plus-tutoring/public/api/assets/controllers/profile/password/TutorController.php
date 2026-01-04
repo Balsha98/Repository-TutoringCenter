@@ -42,7 +42,7 @@ class TutorController extends AbstractController
     private function updateProfilePassword(array $data)
     {
         $query = '
-            UPDATE tutor SET 
+            UPDATE tutors SET 
                 password = :password
             WHERE
                 id = :id;

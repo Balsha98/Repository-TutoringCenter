@@ -64,7 +64,7 @@ class StudentController extends AbstractController
     private function updateProfileImage(array $data)
     {
         $query = '
-            UPDATE student SET 
+            UPDATE students SET 
                 image = :image
             WHERE
                 id = :id;
@@ -78,7 +78,7 @@ class StudentController extends AbstractController
     private function deleteProfileImage()
     {
         $query = '
-            UPDATE student SET 
+            UPDATE students SET 
                 image = NULL
             WHERE
                 id = :id;

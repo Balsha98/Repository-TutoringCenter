@@ -31,21 +31,21 @@
                     <?php
                     $query = '
                         SELECT 
-                            student.id, 
-                            student.first_name, 
-                            student.last_name,
-                            student.email_address,
-                            student.grade_label,
-                            student.grade_value,
-                            student.date_enrolled
+                            students.id, 
+                            students.first_name, 
+                            students.last_name,
+                            students.email_address,
+                            students.grade_label,
+                            students.grade_value,
+                            students.date_enrolled
                         FROM
                             session
                         JOIN
-                            student ON session.student_id = student.id
+                            students ON session.student_id = students.id
                         WHERE
                             session.tutor_id = :tutor_id
                         ORDER BY
-                            student.grade_value ASC;
+                            students.grade_value ASC;
                     ';
 
                     $dbInstance = Source\Handlers\Core\Database\Database::getInstance();
@@ -55,7 +55,7 @@
                     $totalRecords = 0;
 
                     if (!empty($students)) {
-                        if (isset($students['id'])) {  // A single student exists.
+                        if (isset($students['id'])) {  // A single students exists.
                             $totalRecords = 1;
 
                             $dateObj = date_create($students['date_enrolled']);

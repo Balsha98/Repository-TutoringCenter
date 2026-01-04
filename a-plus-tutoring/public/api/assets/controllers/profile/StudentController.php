@@ -42,7 +42,7 @@ class StudentController extends AbstractController
     private function updateTutorProfile(array $data)
     {
         $query = '
-            UPDATE student SET 
+            UPDATE students SET 
                 first_name = :first_name,
                 last_name = :last_name,
                 email_address = :email_address,

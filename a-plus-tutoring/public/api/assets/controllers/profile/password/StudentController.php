@@ -42,7 +42,7 @@ class StudentController extends AbstractController
     private function updateProfilePassword(array $data)
     {
         $query = '
-            UPDATE student SET 
+            UPDATE students SET 
                 password = :password
             WHERE
                 id = :id;
