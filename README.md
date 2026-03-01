@@ -4,48 +4,48 @@ A web application for facilitating tutoring sessions between tutors and students
 
 ## Features
 
--   **Role-Based Access** - Separate interfaces for tutors and students.
--   **User Authentication** - Secure login and registration system.
--   **Profile Management** - Personalized user profiles for both roles.
--   **Session View** - Schedule and view tutoring sessions (prototype).
--   **Reports Dashboard** - Tutor-exclusive analytics and reporting.
--   **Session Scheduling** - Book and manage tutoring appointments (in development).
+- **Role-Based Access** - Separate interfaces for tutors and students.
+- **User Authentication** - Secure login and registration system.
+- **Profile Management** - Personalized user profiles for both roles.
+- **Session View** - Schedule and view tutoring sessions (prototype).
+- **Reports Dashboard** - Tutor-exclusive analytics and reporting.
+- **Session Scheduling** - Book and manage tutoring appointments (in development).
 
 ## User Roles & Access
 
 ### Students
 
--   **Profile View** - Manage personal information and preferences.
--   **Sessions View** - Schedule, view, and manage tutoring sessions.
+- **Profile View** - Manage personal information and preferences.
+- **Sessions View** - Schedule, view, and manage tutoring sessions.
 
 ### Tutors
 
--   **Profile View** - Manage professional information and availability.
--   **Sessions View** - View, schedule, and manage sessions with students.
--   **Reports View** - Access analytics, session history, and performance metrics.
+- **Profile View** - Manage professional information and availability.
+- **Sessions View** - View, schedule, and manage sessions with students.
+- **Reports View** - Access analytics, session history, and performance metrics.
 
 ### Administrators (Future Update)
 
--   Full system access and control.
--   User management capabilities.
--   System-wide analytics and oversight.
+- Full system access and control.
+- User management capabilities.
+- System-wide analytics and oversight.
 
 ## Tech Stack
 
--   **PHP** - Server-Side Logic & Backend
--   **MySQL** - Database Management
--   **HTML5** - Structure & Content
--   **CSS3** - Styling & Layout
--   **JavaScript** - Client-Side Interactivity
--   **jQuery** - DOM Manipulation & AJAX Requests
+- **PHP** - Server-Side Logic & Backend
+- **MySQL** - Database Management
+- **HTML5** - Structure & Content
+- **CSS3** - Styling & Layout
+- **JavaScript** - Client-Side Interactivity
+- **jQuery** - DOM Manipulation & AJAX Requests
 
 ## Installation
 
 ### Prerequisites
 
--   PHP 7.4 or higher.
--   MySQL 5.7 or higher.
--   Apache web server.
+- PHP 7.4 or higher.
+- MySQL 5.7 or higher.
+- Apache web server.
 
 ### Setup Instructions
 
@@ -80,26 +80,26 @@ http://localhost/local-repository-directory
 
 ### Profile View
 
--   View and edit personal information
--   Update contact details
--   Manage account settings
--   Upload profile picture
+- View and edit personal information
+- Update contact details
+- Manage account settings
+- Upload profile picture
 
 ### Sessions View (Prototype)
 
 **Planned Features**:
 
--   Browse available tutoring sessions.
--   Schedule new sessions.
--   View upcoming sessions.
--   Edit or cancel existing sessions.
--   Session calendar view.
+- Browse available tutoring sessions.
+- Schedule new sessions.
+- View upcoming sessions.
+- Edit or cancel existing sessions.
+- Session calendar view.
 
 ### Reports View (Tutors Only)
 
--   View session history.
--   Track student progress.
--   Export data and reports.
+- View session history.
+- Track student progress.
+- Export data and reports.
 
 ## Project Structure
 
@@ -196,49 +196,50 @@ Repository-TutoringCenter/
 
 The application uses a relational database with the following main tables:
 
--   **students** - Student account information and profiles.
--   **tutors** - Tutor account information, qualifications, and profiles.
--   **subjects** - Available tutoring subjects and categories.
--   **assignments** - Bridge table linking tutors to their teaching subjects (many-to-many).
--   **rooms** - Virtual or physical tutoring room assignments.
--   **sessions** - Scheduled tutoring sessions between students and tutors.
--   **ratings** - Student ratings and feedback for tutors and sessions.
+- **students** - Student account information and profiles.
+- **tutors** - Tutor account information, qualifications, and profiles.
+- **subjects** - Available tutoring subjects and categories.
+- **assignments** - Bridge table linking tutors to their teaching subjects (many-to-many).
+- **rooms** - Virtual or physical tutoring room assignments.
+- **sessions** - Scheduled tutoring sessions between students and tutors.
+- **ratings** - Student ratings and feedback for tutors and sessions.
 
 ## Security Features
 
--   Password hashing with PHP's `hash()` function.
--   SQL injection prevention with prepared statements.
--   Session management for user authentication.
--   Role-based access control (RBAC).
--   Input validation and sanitization.
+- Password hashing with PHP's `hash()` function.
+- SQL injection prevention with prepared statements.
+- Session management for user authentication.
+- Role-based access control (RBAC).
+- Input validation and sanitization.
 
 ## Current Status
 
 ### Completed Features
 
--   [x] User authentication (login/registration).
--   [x] Role-based access control.
--   [x] Profile view for both roles.
--   [x] Reports view for tutors.
--   [x] Basic session view layout.
+- [x] User authentication (login/registration).
+- [x] Role-based access control.
+- [x] Profile view for both roles.
+- [x] Reports view for tutors.
+- [x] Basic session view layout.
 
 ### In Development
 
--   [ ] Full session scheduling functionality.
--   [ ] Session editing and cancellation.
--   [ ] Calendar integration.
--   [ ] Session reminders and notifications.
+- [ ] Full session scheduling functionality.
+- [ ] Session editing and cancellation.
+- [ ] Calendar integration.
+- [ ] Session reminders and notifications.
 
 ### Planned Features
 
--   [ ] Administrator role and dashboard.
--   [ ] Advanced reporting and analytics.
--   [ ] Rating and review system.
+- [ ] Administrator role and dashboard.
+- [ ] Advanced reporting and analytics.
+- [ ] Rating and review system.
 
 ## Let's Connect
 
 If you enjoyed this project or have any questions, feel free to reach out!
 
+[![Portfolio](https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=todoist&logoColor=white)](https://bazovich.dev)
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:balsa.bazovic@gmail.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/balsha-bazovich)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Balsha98)
